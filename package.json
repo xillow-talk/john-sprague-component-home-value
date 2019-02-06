@@ -5,17 +5,18 @@
   "main": ".eslintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/git-push-force/comment_section_kevin.git"
+    "url": "git+https://github.com/ZoundLoud/comment_section_kevin.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/git-push-force/comment_section_kevin/issues"
+    "url": "https://github.com/ZoundLoud/comment_section_kevin/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -32,6 +33,7 @@
   "homepage": "https://github.com/git-push-force/comment_section_kevin#readme",
   "dependencies": {
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.1.3"
   }
 }
