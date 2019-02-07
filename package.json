@@ -12,7 +12,8 @@
     "mongoose": "^5.4.10"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git"
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "faker": "^4.1.0"
   },
   "version": "1.0.0",
   "main": "index.js",
