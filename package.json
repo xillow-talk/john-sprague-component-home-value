@@ -1,17 +1,30 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
+  "name": "john-sprague-component-home-value",
+  "description": "Front end capstone project, zillow.com home values component.",
+  "author": "John Sprague",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
+    "mongo": "^0.1.0",
+    "mongoose": "^5.4.10"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zillow-talk/john-sprague-component-home-value.git"
+  },
+  "keywords": [
+    "front-end-capstone-project"
+  ],
+  "bugs": {
+    "url": "https://github.com/zillow-talk/john-sprague-component-home-value/issues"
+  },
+  "homepage": "https://github.com/zillow-talk/john-sprague-component-home-value#readme"
 }
