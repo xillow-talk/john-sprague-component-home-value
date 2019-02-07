@@ -15,7 +15,7 @@ const Comment = (props) => {
       <Profile />
       <Styles.Container>
         <Username username={props.username} commentTime={props.commentTime} />
-        <Styles.Comment>Amazing</Styles.Comment>
+        <Styles.Comment>{props.Text}</Styles.Comment>
       </Styles.Container>
       <Styles.ReplyContainer>
         <Styles.TimeStamp>
