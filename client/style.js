@@ -16,6 +16,7 @@ export const TimeStamp = styled.span`
     padding: 5px;
     display: flex;
     width: 23%;
+    color: #ccc;
     justify-content: flex-end;
 `;
 
