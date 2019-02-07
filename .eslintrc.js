@@ -6,5 +6,16 @@
  */
 
 module.exports = {
-    extends: './node_modules/eslint-config-hackreactor/index.js'
+    extends: "airbnb",
+    "env": {
+          "browser": true,
+          "node": true
+    },
+    "plugins": [
+        "react"
+     ],
+     "rules": {
+       "react/prop-types": 0,
+       "react/destructuring-assignment": 0
+     }
 };
