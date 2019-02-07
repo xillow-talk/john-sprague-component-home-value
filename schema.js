@@ -26,7 +26,7 @@ let comparableHomes = new Schema({
   sellPrice: Number,
   beds: Number, 
   baths: Number,
-  squft: Number, 
+  sqft: Number, 
   streetAddress: String, 
   priceSqft: Number,
 });
@@ -37,7 +37,7 @@ let localHomes = new Schema({
   sellPrice: Number,
   beds: Number, 
   baths: Number,
-  squft: Number, 
+  sqft: Number, 
   streetAddress: String, 
   priceSqft: Number,
 });
