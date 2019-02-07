@@ -1,6 +1,6 @@
 {
   "name": "john-sprague-component-home-value",
-  "description": "> Project description",
+  "description": "Front end capstone project, zillow.com home values component.",
   "author": "John Sprague",
   "license": "ISC",
   "engines": {
