@@ -5,7 +5,7 @@ export const CommentContainer = styled.div`
     font-family: sans-serif;
     font-size: 12px;
     padding: 12px;
-    width: 30%;
+    width: 40%;
 `;
 
 export const Container = styled.div`
