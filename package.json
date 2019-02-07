@@ -5,17 +5,19 @@
   "main": ".eslintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "webpack_watch": "webpack --watch",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/git-push-force/comment_section_kevin.git"
+    "url": "git+https://github.com/ZoundLoud/comment_section_kevin.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/git-push-force/comment_section_kevin/issues"
+    "url": "https://github.com/ZoundLoud/comment_section_kevin/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -23,7 +25,13 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "babel-preset-airbnb": "^3.2.0",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "react-hot-loader": "^4.6.3",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
@@ -32,6 +40,7 @@
   "homepage": "https://github.com/git-push-force/comment_section_kevin#readme",
   "dependencies": {
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.1.3"
   }
 }
