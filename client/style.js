@@ -43,7 +43,7 @@ export const BorderContainer = styled.div`
 export const Comment = styled.span`
     padding-left: 9px;
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 13px;
 `;
 
 
