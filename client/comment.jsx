@@ -8,6 +8,8 @@ import Input from './components/Input/input';
 const Comment = (props) => {
   const [reply, showReply] = useState(false);
   const [comment, showComment] = useState(false);
+
+  // TODO: Delete the fake data with api data
   return (
     <>
       <Styles.CommentContainer
