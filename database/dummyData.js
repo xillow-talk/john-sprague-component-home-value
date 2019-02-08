@@ -13,14 +13,14 @@ for (let i = 0; i < 100; i++) {
     startPriceRange: faker.random.number({'min': 500000, 'max': 5000000}),
     endPriceRange: faker.random.number({'min': 500000, 'max': 5000000}),
     thirtyDayPriceChange: faker.random.number({'min': 15000, 'max': 50000}),
-    oneYearForcast: faker.random.number({'min': obj.zestimationPrice, 'max': (obj.zestimationPrice + 100000)),
+    oneYearForcast: faker.random.number({'min': obj.zestimationPrice, 'max': (obj.zestimationPrice + 100000)}),
     propertyLastSalePrice: faker.random.number({'min': (obj.zestimationPrice - 100000), 'max': (obj.zestimationPrice)}), 
     propertLastSaleDate: faker.date.past(), 
     comparableHomePrice: faker.random.number({'min': (obj.zeistimationPrice- 100000), 'max': (obj.zeistimationPrice + 100000)}), 
-    marketAppreciationPrice: faker.random.number({'min': (obj.zeistimationPrice- 200,000), 'max': (obj.zeistimationPrice)}),
+    marketAppreciationPrice: faker.random.number({'min': (obj.zeistimationPrice- 200000), 'max': (obj.zeistimationPrice)}),
     localSalesAvg: faker.random.number({'min': (obj.zeistimationPrice- 100000), 'max': (obj.zeistimationPrice + 100000)})
   };
-  propertyData.push(obj)
+  propertyData.push(obj);
 }
 
 // Generate a list of fake comparable data with 100 items
@@ -57,6 +57,6 @@ module.exports = {
   propertyData,
   comparableHomeData,
   localHomesData
-}
+};
 
 
