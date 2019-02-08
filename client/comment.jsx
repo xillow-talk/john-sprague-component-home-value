@@ -1,25 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Styles from './style';
 import Profile from './components/ProfilePicture/profilePicture';
 import Username from './components/Username/username';
+import Input from './components/Input/input';
 
-const Comment = props => (
-  <Styles.CommentContainer>
-    <Profile />
-    <Styles.Container>
-      <Username username={props.username} commentTime={props.commentTime} />
-      <Styles.Comment>{props.comment}</Styles.Comment>
-    </Styles.Container>
-    <Styles.TimeStamp>
-      {props.time}
-    </Styles.TimeStamp>
-    {/* going to have the profile pic here first  */}
-    {/* neeed the user name and time in the song which this was submitted  */}
-    {/* need the time stamp of the song it self */}
-    {/* need the comment itself */}
-    {/* add the hover for the reply that a user should be able to make to that comment  */}
-    {/* when the reply button is hit should be able to add upon that comment and post to it  */}
-  </Styles.CommentContainer>
-);
+const Comment = (props) => {
+  const [reply, showReply] = useState(false);
+  const [comment, showComment] = useState(false);
+
+  // TODO: Delete the fake data with api data
+  return (
+    <>
+      <Styles.CommentContainer
+        onMouseEnter={() => showReply(!reply)}
+        onMouseLeave={() => showReply(!reply)}
+      >
+        <Profile />
+        <Styles.Container>
+          <Username username="kevinbece" commentTime="12:05" />
+          <Styles.Comment>Bump</Styles.Comment>
+        </Styles.Container>
+        <Styles.ReplyContainer>
+          <Styles.TimeStamp>
+          8 hours ago
+          </Styles.TimeStamp>
+          {(reply || comment)
+          && (
+          <Styles.FontContainer>
+            <Styles.BorderContainer onClick={() => showComment(true)}>
+              <FontAwesomeIcon icon="reply" />
+              <Styles.Reply>Reply</Styles.Reply>
+            </Styles.BorderContainer>
+          </Styles.FontContainer>
+          )
+        }
+          {/* here the input will go  */}
+          {/* input should have the username of the user that it is being relpied to */}
+
+        </Styles.ReplyContainer>
+      </Styles.CommentContainer>
+      {
+      comment && (
+        <Input />
+      )
+    }
+    </>
+  );
+};
 
 export default Comment;
