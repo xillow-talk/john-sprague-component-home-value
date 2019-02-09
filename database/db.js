@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/fetcher');
+const dummyData = require(',/dummyData.js');
+const shell = require('shelljs');
+mongoose.connect('mongodb://localhost/properties');
 
 // Initialize mongodb schema
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-// Create db schema 
+// Create db schema for properties
 let propertySchema = new Schema({
   id: { type: Number, unique: true },
   zeistimationPrice: Number,
@@ -49,4 +51,14 @@ let LocalHomes = mongoose.model('LocalHomes', localHomes);
 
 
 
+
+
+
+Property.insertMany(dummyData.propertyData, (err, mongooseDocuments) => { 
+  if (err) {
+    console.log('error inserting many documents into mongo')
+    return;
+  }  
+  console.log('inserted many documents into mongoose');
+});
 
