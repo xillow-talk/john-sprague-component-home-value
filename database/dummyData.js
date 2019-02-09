@@ -16,9 +16,9 @@ for (let i = 0; i < 100; i++) {
     oneYearForcast: faker.random.number({'min': obj.zestimationPrice, 'max': (obj.zestimationPrice + 100000)}),
     propertyLastSalePrice: faker.random.number({'min': (obj.zestimationPrice - 100000), 'max': (obj.zestimationPrice)}), 
     propertLastSaleDate: faker.date.past(), 
-    comparableHomePrice: faker.random.number({'min': (obj.zeistimationPrice- 100000), 'max': (obj.zeistimationPrice + 100000)}), 
-    marketAppreciationPrice: faker.random.number({'min': (obj.zeistimationPrice- 200000), 'max': (obj.zeistimationPrice)}),
-    localSalesAvg: faker.random.number({'min': (obj.zeistimationPrice- 100000), 'max': (obj.zeistimationPrice + 100000)})
+    comparableHomePrice: faker.random.number({'min': (obj.zeistimationPrice - 100000), 'max': (obj.zeistimationPrice + 100000)}), 
+    marketAppreciationPrice: faker.random.number({'min': (obj.zeistimationPrice - 200000), 'max': (obj.zeistimationPrice)}),
+    localSalesAvg: faker.random.number({'min': (obj.zeistimationPrice - 100000), 'max': (obj.zeistimationPrice + 100000)})
   };
   propertyData.push(obj);
 }
