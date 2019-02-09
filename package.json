@@ -3,12 +3,13 @@
   "description": "Front end capstone project, buy a home from zillow.com, home value component.",
   "author": "John Sprague",
   "license": "ISC",
+  "main": "index.js",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch",
-    "start": "nodemon index/index.js"
+    "react-dev": "webpack -d --watch --display-error-details",
+    "start": "nodemon server/index.js"
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
@@ -19,25 +20,28 @@
     "mongo": "^0.1.0",
     "mongoose": "^5.4.10",
     "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "webpack": "^4.29.3"
+    "react-dom": "^16.8.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "faker": "^4.1.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
   },
   "version": "1.0.0",
-  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zillow-talk/john-sprague-component-home-value.git"
+    "url": "git+https://github.com/xillow-talk/john-sprague-component-home-value.git"
   },
   "keywords": [
     "front-end-capstone-project"
   ],
   "bugs": {
-    "url": "https://github.com/zillow-talk/john-sprague-component-home-value/issues"
+    "url": "https://github.com/xillow-talk/john-sprague-component-home-value/issues"
   },
-  "homepage": "https://github.com/zillow-talk/john-sprague-component-home-value#readme"
+  "homepage": "https://github.com/xillow-talk/john-sprague-component-home-value#readme"
 }
