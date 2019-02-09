@@ -9,7 +9,9 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch --display-error-details",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "dummyData" : "node database/dummyData.js", 
+    "seed-db": "node database/db.js"
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
