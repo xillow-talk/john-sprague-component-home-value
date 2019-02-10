@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const app = express(); 
 let port = 3000;
 
-app.use(express.static(path.resolve(__dirname + '../client/dist')));
+const serve = express.static('./public/dist');
+app.use(serve);
 app.use(bodyParser.json());
 
 
