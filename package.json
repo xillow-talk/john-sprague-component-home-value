@@ -10,13 +10,12 @@
   "scripts": {
     "react-dev": "webpack -d --watch --display-error-details",
     "start": "nodemon server/index.js",
-    "dummyData" : "node database/dummyData.js", 
     "seed-db": "node database/db.js"
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-react": gi"^7.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongo": "^0.1.0",
