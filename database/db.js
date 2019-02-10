@@ -101,7 +101,7 @@ let ComparableHomes = mongoose.model('ComparableHomes', comparableHomes);
 let LocalHomes = mongoose.model('LocalHomes', localHomes);
 
 // Insert dummydata into property model
-Property.insertMany(dummyData.propertyData, (err, data) => { 
+Property.insertMany(propertyData, (err, data) => { 
   if (err) {
     console.log('error inserting many documents into mongo', err)
     return;
@@ -110,7 +110,7 @@ Property.insertMany(dummyData.propertyData, (err, data) => {
 });
 
 // Insert dummydata into comparableHomes model
-ComparableHomes.insertMany(dummyData.comparableHomeData, (err, data) => {
+ComparableHomes.insertMany(comparableHomeData, (err, data) => {
   if (err) {
     console.log('error inserting many documents into comparable homes', err);
     return;
@@ -119,7 +119,7 @@ ComparableHomes.insertMany(dummyData.comparableHomeData, (err, data) => {
 });
 
 // Insert dummydata into localHomes model
-LocalHomes.insertMany(dummyData.localHomesData, (err, data) => {
+LocalHomes.insertMany(localHomesData, (err, data) => {
   if (err) {
     console.log('error inserting many documents into comparable homes', err);
     return;
@@ -130,24 +130,24 @@ LocalHomes.insertMany(dummyData.localHomesData, (err, data) => {
 // query to grab data for a single property 
 module.exports = {
   getAllProperties: (callback) => {
-    Porperties.find((err, data) => {
+    Property.find((err, data) => {
       callback(err, data);
     }).setOptions({
       limit: 1
-    })
+    });
   }, 
   getAllComparableHomes: (callback) => {
     ComparableHomes.find((err, data) => {
       callback(err, data);
     }).setOptions({
       limit: 10
-    })
+    });
   }, 
-  getLocalHomes: (callback) => {
+  getAllLocalHomes: (callback) => {
     LocalHomes.find((err, data) => {
       callback(err, data);
     }).setOptions({
       limit: 10
-    })
+    });
   }
-}
+};
