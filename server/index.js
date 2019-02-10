@@ -10,9 +10,7 @@ app.use(serve);
 app.use(bodyParser.json());
 
 
-// app.get('/', (req, res) => {
-//   res.send('connected');
-// });
+app.get('/properties', controller.get);
 
 
 app.listen(port, function() {
