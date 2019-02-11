@@ -17,12 +17,22 @@ const connection = mysql.createConnection({
 });
 
 
-app.use('/comments', (req, res) => {
+app.get('/comments', (req, res) => {
   connection.query('SELECT * FROM comments', (err, response) => {
     if (err) {
       res.sendStatus(403);
     } else {
       res.send(response);
+    }
+  });
+});
+
+app.get('/commentCount', (req, res) => {
+  connection.query('SELECT COUNT(*) FROM comments', (err, response) => {
+    if (err) {
+      res.sendStatus(403);
+    } else {
+      res.send({ count: response[0]['COUNT(*)'] });
     }
   });
 });

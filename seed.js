@@ -45,7 +45,7 @@ const createTable = async () => {
 
 const getRandomTime = () => {
   const randomNum = () => Math.floor(Math.random() * 30 + 1);
-  return moment().subtract(randomNum);
+  return moment().subtract(randomNum(), 'minutes');
 };
 
 const randomSongTime = () => {
@@ -70,7 +70,7 @@ const createMessage = async (count) => {
 const createMessages = () => {
   let count = 1;
   const message = () => {
-    if (count === 101) {
+    if (count === 100) {
       return count;
     }
     count += 1;

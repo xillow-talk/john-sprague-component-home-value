@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import moment from 'moment';
 import * as Styles from './style';
 import Profile from './components/ProfilePicture/profilePicture';
 import Username from './components/Username/username';
 import Input from './components/Input/input';
 
+
 const Comment = (props) => {
   const [reply, showReply] = useState(false);
   const [comment, showComment] = useState(false);
-
-  // TODO: Delete the fake data with api data
+  const postedAt = moment(props.postedAt).startOf().fromNow();
   return (
     <>
       <Styles.CommentContainer
         onMouseEnter={() => showReply(!reply)}
         onMouseLeave={() => showReply(!reply)}
       >
-        <Profile />
+        <Profile image={props.image} />
         <Styles.Container>
-          <Username username="kevinbece" commentTime="12:05" />
-          <Styles.Comment>Bump</Styles.Comment>
+          <Username username={props.username} commentTime={props.songTime} />
+          <Styles.Comment>{props.message}</Styles.Comment>
         </Styles.Container>
         <Styles.ReplyContainer>
           <Styles.TimeStamp>
-          8 hours ago
+            {postedAt}
           </Styles.TimeStamp>
           {(reply || comment)
           && (
@@ -35,14 +36,11 @@ const Comment = (props) => {
           </Styles.FontContainer>
           )
         }
-          {/* here the input will go  */}
-          {/* input should have the username of the user that it is being relpied to */}
-
         </Styles.ReplyContainer>
       </Styles.CommentContainer>
       {
       comment && (
-        <Input />
+        <Input username={props.username} image={props.image} />
       )
     }
     </>
