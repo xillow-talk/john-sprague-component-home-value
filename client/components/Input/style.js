@@ -11,7 +11,7 @@ export const InputContainer = styled.div`
 `;
 
 export const InputBorder = styled.div`
-    width: 35%;
+    width: 92%;
     display: flex;
     justify-content: center;
     margin: 0 0 0 60px;
