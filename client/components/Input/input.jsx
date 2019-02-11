@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Styles from './style';
+
 
 const Input = (props) => {
   const [value, valueChange] = useState('');
   const [username, removeUsername] = useState(null);
+  let replyInput;
+
+  useEffect(() => {
+    replyInput.focus();
+  });
 
   const removeUser = (e) => {
     if (!username) {
@@ -22,11 +28,11 @@ const Input = (props) => {
   return (
     <Styles.InputBorder>
       <Styles.InputContainer>
-        <Styles.ProfilePicture image={props.userPic} />
+        <Styles.ProfilePicture image={props.image} />
         {!username
-        && <Styles.User deleting={username}>{props.username}</Styles.User>
+        && <Styles.User deleting={username}>{`@${props.username}`}</Styles.User>
       }
-        <Styles.ReplyInput value={value} onKeyUp={e => removeUser(e)} onChange={e => valueChange(e.target.value)} placeholder="Write a Reply" />
+        <Styles.ReplyInput ref={(input) => { replyInput = input; }} value={value} onKeyUp={e => removeUser(e)} onChange={e => valueChange(e.target.value)} placeholder="Write a Reply" />
       </Styles.InputContainer>
     </Styles.InputBorder>
   );
