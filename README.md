@@ -2,8 +2,6 @@
 
 > Microservice which handles display of any home comparisons for a single property to the Xillow Talk application.
 
-
-
 ## Related Projects
 
   - https://github.com/xillow-talk/brian-component-neighborhood
@@ -18,9 +16,10 @@
 
 ## Usage
 
->  From the root directory of this service, grab dependencies by running npm install. Then run npm start to get the server going on localhost:3000. Then run npm run react-dev to transpose the es6 files into a bundle using webpack. Start your mongodb by typing in mongod into the console. Next, npm run seed-db. This script will create a properties database with 3 tables (properties comparablehomes and localhomes), and then populate the three tables with 100 documents each. 
+>  From the root directory of this service, grab dependencies (see below). Then use the command npm run start to get the server going on localhost:3000. Then use the command npm run react-dev to transpose the es6 files into a bundle using webpack. Start your mongodb by typing in mongod into the console. Next, npm run seed-db. This script will create a properties database with 3 tables (properties comparablehomes and localhomes), and then populate the three tables with 100 documents each. 
 
 ## Requirements
+> Must have mongodb installed and running on your workstation. 
 
 ## Development
 
@@ -28,8 +27,5 @@
 
 From within the root directory:
 
-```sh
 npm install -g webpack
 npm install
-```
-
