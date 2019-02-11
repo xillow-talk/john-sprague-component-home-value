@@ -3,6 +3,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faReply, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 import Comment from './comment';
 import CommentConut from './components/CommentCount/commentCount.jsx';
+import * as _ from 'lodash';
+import moment from 'moment';
 
 library.add(faReply);
 library.add(faCommentAlt);
@@ -29,8 +31,11 @@ export default class App extends React.Component {
       return res.json()
     })
     .then((comments) => {
+      const sortedComments = _.sortBy(comments, (i) => {
+        return new moment(i.postedAt)
+      }).reverse();
       this.setState({
-        comments
+        comments: sortedComments
       })
     })
   }
