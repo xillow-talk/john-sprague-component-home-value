@@ -19,9 +19,10 @@ export const ReplyContainer = styled(Container)`
 `;
 
 export const TimeStamp = styled.span`
+    font-size: 11px;
     padding: 5px;
     display: flex;
-    color: #ccc;
+    color: #999;
     justify-content: flex-end;
 `;
 
