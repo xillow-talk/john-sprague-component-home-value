@@ -1,6 +1,6 @@
 import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faReply, faCommentAlt } from '@fortawesome/free-solid-svg-icons';
+import { faReply, faCommentAlt, faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import Comment from './comment';
 import CommentConut from './components/CommentCount/commentCount.jsx';
 import * as _ from 'lodash';
@@ -8,6 +8,7 @@ import moment from 'moment';
 import Loader from './components/Loader/loader';
 
 library.add(faReply);
+library.add(faUserFriends);
 library.add(faCommentAlt);
 
 export default class App extends React.Component {
@@ -101,7 +102,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div onScroll={this.handleScroll}>
+      <div style={{paddingLeft: '50px'}} onScroll={this.handleScroll}>
       {this.state.count &&
         <CommentConut count={this.state.count} />
       }
@@ -113,6 +114,7 @@ export default class App extends React.Component {
         username={i.username}
         songTime={i.songTime}
         comment={i.message}
+        followers={i.followers}
         postedAt={i.postedAt}
         />
       ))}

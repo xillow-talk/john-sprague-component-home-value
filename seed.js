@@ -39,7 +39,8 @@ const createTable = async () => {
     username VARCHAR(200),
     message VARCHAR(200),
     postedAt VARCHAR(200),
-    songTime VARCHAR(200)
+    songTime VARCHAR(200),
+    followers VARCHAR(200)
   )`);
 };
 
@@ -56,14 +57,17 @@ const randomSongTime = () => {
   return `${minute}:${second}`;
 };
 
+const randomFollowers = () => Math.floor(Math.random() * 10000 + 1);
+
 const createMessage = async (count) => {
   await connection.query(`
-    INSERT INTO comments(profilePic, username, message, postedAt, songTime) 
+    INSERT INTO comments(profilePic, username, message, postedAt, songTime, followers) 
     VALUES('https://s3.us-east-2.amazonaws.com/kevinbece5/userpics/user${count}.jpg',
       '${loremIpsum({ count: 1, units: 'words' })}',
       '${loremIpsum()}',
       '${getRandomTime()}',
-      '${randomSongTime()}'
+      '${randomSongTime()}',
+      '${randomFollowers()}'
     )
   `);
 };
