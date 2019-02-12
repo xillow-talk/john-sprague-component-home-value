@@ -4,6 +4,7 @@ mongoose.connect('mongodb://localhost/properties');
 
 // Initialize mongodb schema
 const Schema = mongoose.Schema;
+
 const ObjectId = Schema.ObjectId;
 // Create db schema for properties
 let propertySchema = new Schema({

@@ -6,6 +6,7 @@ const controller = require('./controller.js');
 const app = express();
 const port = 3000;
 const serve = express.static('./public/dist');
+
 app.use(serve);
 app.use(bodyParser.json());
 app.get('/api/properties', controller.get);
