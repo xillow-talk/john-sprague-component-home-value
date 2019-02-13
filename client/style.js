@@ -11,10 +11,11 @@ export const CommentContainer = styled.div`
 export const Container = styled.div`
     flex-direction: column;
     display: flex;
+    width: 100%;
 `;
 
 export const ReplyContainer = styled(Container)`
-    width: 100%;
+    width: 20%;
     height: 55px;
 `;
 

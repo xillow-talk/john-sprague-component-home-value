@@ -3,9 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Styles from './style';
 
 const ProfilePic = (props) => {
-  const [userProfile, showProfile] = useState(false);
+  const [userProfileHover, showProfileHover] = useState(false);
   return (
-    <>
+    <div
+      onMouseEnter={() => showProfileHover(true)}
+      onMouseLeave={() => showProfileHover(false)}
+    >
+      {userProfileHover && (
       <Styles.ProfileContainer>
         <Styles.Arrow />
         <Styles.Profile>
@@ -15,15 +19,16 @@ const ProfilePic = (props) => {
             <FontAwesomeIcon icon="user-friends" />
             <Styles.Followers>{props.followers}</Styles.Followers>
           </Styles.FollowersContainer>
+          <Styles.Follow>Follow</Styles.Follow>
         </Styles.Profile>
       </Styles.ProfileContainer>
-      <Styles.PictureContainer
-        onMouseEnter={() => showProfile(!userProfile)}
-        onMouseLeave={() => showProfile(!userProfile)}
-      >
-        <Styles.Picture image={props.image} />
+      )}
+      <Styles.PictureContainer>
+        <Styles.Picture
+          image={props.image}
+        />
       </Styles.PictureContainer>
-    </>
+    </div>
   );
 };
 

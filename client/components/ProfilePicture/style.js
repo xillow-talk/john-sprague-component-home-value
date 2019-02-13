@@ -25,14 +25,16 @@ export const ProfileContainer = styled.div`
 `;
 
 export const Arrow = styled.div`
-    border: 2px solid #333;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 7px -1px rgba(0,0,0,.4);
     border-width: 1px 1px 0 0;
     padding: 4px;
     transform: rotate(-45deg);
+    background-color: #fff;
 `;
 
 export const Profile = styled.div`
-    background-color: tomato;
+    background-color: #fff;
     width: 150px;
     height: 200px;
     display: flex;
@@ -41,6 +43,9 @@ export const Profile = styled.div`
     margin-top: 5px;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 2px 7px -1px rgba(0,0,0,.4);
+    outline: none;
+    border-radius: 4px;
 `;
 
 export const Photo = styled.span`
@@ -67,7 +72,13 @@ export const Followers = styled.span`
     padding-left: 6px;
 `;
 
-
-export const Follow = styled.div`
-
+export const Follow = styled.span`
+    border: 1px solid #ccc;
+    &:hover{
+        border-color: #999;
+    }
+    margin-top: 10px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 `;
