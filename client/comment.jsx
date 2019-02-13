@@ -17,10 +17,10 @@ const Comment = (props) => {
         onMouseEnter={() => showReply(!reply)}
         onMouseLeave={() => showReply(!reply)}
       >
-        <Profile image={props.image} />
+        <Profile username={props.username} followers={props.followers} image={props.image} />
         <Styles.Container>
           <Username username={props.username} commentTime={props.songTime} />
-          <Styles.Comment>{props.message}</Styles.Comment>
+          <Styles.Comment>{props.comment}</Styles.Comment>
         </Styles.Container>
         <Styles.ReplyContainer>
           <Styles.TimeStamp>
