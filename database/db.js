@@ -8,14 +8,14 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 // Create db schema for properties
 let propertySchema = new Schema({
-  id: { type: Number},
-  zeistimationPrice: Number,
+  id: Number,
+  zestimationPrice: Number,
   startPriceRange: Number,
   endPriceRange: Number,
   thirtyDayPriceChange: Number,
   oneYearForcast: Number,
   propertyLastSalePrice: Number, 
-  propertLastSaleDate: {date: Date},
+  propertLastSaleDate: String,
   comparableHomePrice: Number,
   marketAppreciationPrice: Number,
   localSalesAvg: Number
@@ -23,22 +23,22 @@ let propertySchema = new Schema({
 
 let comparableHomes = new Schema({
   id: {type: Number},
-  sellDate: Number, 
+  sellDate: String, 
   sellPrice: Number,
   beds: Number, 
   baths: Number,
-  squft: Number, 
+  sqft: Number, 
   streetAddress: String, 
   priceSqft: Number,
 });
 
 let localHomes = new Schema({
   id: {type: Number},
-  sellDate: Number, 
+  sellDate: String, 
   sellPrice: Number,
   beds: Number, 
   baths: Number,
-  squft: Number, 
+  sqft: Number, 
   streetAddress: String, 
   priceSqft: Number,
 });
