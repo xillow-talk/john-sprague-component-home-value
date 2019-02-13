@@ -6,7 +6,7 @@ module.exports = {
       if (err) {
         callback(err);
       }
-      db.getAllComparableHomes((err, comparableHomeData) => {
+      db.getAllComparableHomes((err, comparableHomesData) => {
         if (err) {
           callback(err);
           return;
@@ -19,10 +19,10 @@ module.exports = {
           // To do, return one object and return data to the controller
           var data = {
             propertyData: propertyData, 
-            comparableHomeData: comparableHomeData,
+            comparableHomesData: comparableHomesData,
             localHomesData: localHomesData
           };
-          console.log('weve fetched all of the data')
+          console.log('weve fetched all of the data');
           callback(null, data); 
         });
       });
