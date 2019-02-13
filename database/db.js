@@ -43,6 +43,11 @@ let localHomes = new Schema({
   priceSqft: Number,
 });
 
+// Accessing the models for each schema
+let Property = mongoose.model('Property', propertySchema);
+let ComparableHomes = mongoose.model('ComparableHomes', comparableHomes);
+let LocalHomes = mongoose.model('LocalHomes', localHomes);
+
 // query to grab data for a single property 
 module.exports = {
   getAllProperties: (callback) => {
