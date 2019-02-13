@@ -6,6 +6,7 @@ import CommentConut from './components/CommentCount/commentCount.jsx';
 import * as _ from 'lodash';
 import moment from 'moment';
 import Loader from './components/Loader/loader';
+import axios from 'axios';
 
 library.add(faReply);
 library.add(faUserFriends);
@@ -36,12 +37,9 @@ export default class App extends React.Component {
   }
 
   getComments = () => {
-    fetch('/comments')
+    axios.get('/comments')
     .then((res) => {
-      return res.json()
-    })
-    .then((comments) => {
-      const sortedComments = _.sortBy(comments, (i) => {
+      const sortedComments = _.sortBy(res.data, (i) => {
         return new moment(i.postedAt)
       }).reverse();
       this.setState({
@@ -54,13 +52,10 @@ export default class App extends React.Component {
   }
 
   getCommentCount = () => {
-    fetch('/commentCount')
-    .then((res) => {
-      return res.json();
-    })
+    axios.get('/commentCount')
     .then((response) => {
       this.setState({
-        count: response.count
+        count: response.data.count
       })
     })
   }
