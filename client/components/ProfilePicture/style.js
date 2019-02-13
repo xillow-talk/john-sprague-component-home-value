@@ -12,6 +12,8 @@ export const Picture = styled.span`
     width: 40px;
     height: 40px;
     background-image: url(${props => props.image});
+    background-position: center; 
+    background-size: cover;
 `;
 
 
@@ -54,6 +56,8 @@ export const Photo = styled.span`
     border-radius: 50%;
     margin-top: 18px;
     background-image: url(${props => props.image});
+    background-position: center; 
+    background-size: cover;
 `;
 
 
