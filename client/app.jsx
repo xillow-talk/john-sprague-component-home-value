@@ -5,6 +5,7 @@ import Comment from './comment';
 import CommentConut from './components/CommentCount/commentCount.jsx';
 import * as _ from 'lodash';
 import moment from 'moment';
+import Loader from './components/Loader/loader';
 
 library.add(faReply);
 library.add(faCommentAlt);
@@ -16,6 +17,9 @@ export default class App extends React.Component {
     this.state = {
       comments: [],
       count: '',
+      displayedComments: [],
+      commentCount: 20, 
+      loading: true
     };
   }
 
@@ -23,6 +27,11 @@ export default class App extends React.Component {
   componentDidMount() {
     this.getComments();
     this.getCommentCount();
+    window.addEventListener('scroll', this.onScroll, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll, false);
   }
 
   getComments = () => {
@@ -38,6 +47,9 @@ export default class App extends React.Component {
         comments: sortedComments
       })
     })
+    .then(() => {
+      this.renderComments()
+    })
   }
 
   getCommentCount = () => {
@@ -52,26 +64,60 @@ export default class App extends React.Component {
     })
   }
 
+  handleScroll = (e) => {
+      if(this.state.commentCount !== this.state.comments.length){
+          if(this.state.commentCount + 20 > this.state.comments.length){
+            this.setState(state => {
+              state.loading = false
+              state.commentCount = state.commentCount = this.state.comments.length;
+            }, () => this.renderComments());
+          }else{
+            // this.setState(state => state.commentCount = state.commentCount + 20, () => this.renderComments());
+            this.setState(state => {
+              state.commentCount = state.commentCount = state.commentCount + 20;
+            }, () => this.renderComments());
+          }
+        }
+  }
+
+    onScroll = () => {
+      if (
+        (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 500) 
+      ) {
+        this.handleScroll()
+      }
+    }
+  
+  renderComments = () => {
+    this.setState({displayedComments: []}, () => {
+      for (let i = 0; i < this.state.commentCount; i++) {
+        this.setState(state => {
+          return state.displayedComments.push(state.comments[i])
+          }
+        )
+      }
+    })
+  }
 
   render() {
     return (
-      <>
+      <div onScroll={this.handleScroll}>
       {this.state.count &&
         <CommentConut count={this.state.count} />
       }
-      {this.state.comments&& 
-      this.state.comments.map((i) => (
+      {this.state.displayedComments&& 
+      this.state.displayedComments.map((i, index) => (
         <Comment 
-        key={i.id}
+        key={index}
         image={i.profilePic}
         username={i.username}
         songTime={i.songTime}
         comment={i.message}
         postedAt={i.postedAt}
-
         />
       ))}
-      </>
+        <Loader loading={this.state.loading} />
+      </div>
     );
   }
 }
