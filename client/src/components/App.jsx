@@ -22,8 +22,11 @@ font-weight: '900';
 font-size: 28px;
 line-height: 31px;
 color: #444444
-border-bottom: 1px solid #444444;
-border-top: 1px solid #444444;
+border-top: solid 1px #eee;
+border-bottom: solid 1px #eee;
+padding-top: 20px;
+padding-bottom: 20px;
+margin-bottom: 15px;
 :hover {
   
 }
@@ -40,6 +43,10 @@ font-weight:;
 const HomeDetails = styled.div`
 
 `;
+
+const ZestimateHeaderContainer = styled.div`
+padding: 20px 0px 20px 0px;
+`;
 const ZestimateTitle = styled.div`
 float: center;
 text-align:center;
@@ -47,8 +54,7 @@ style: normal;
 font-weight: 700;
 font-size: 20px;
 line-height: 30px;
-color: #444444;
-`;
+color: #444444;`;
 
 const ZestimateValue = styled.div`
 text-align:center;
@@ -59,7 +65,9 @@ line-height: 36px;
 color: #444444;
 `;
 
-const CollapsibleContent = styled.div``;
+const CollapsibleContent = styled.div`
+margin-top: 20px;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -100,14 +108,14 @@ class App extends React.Component {
         </div>
         <CollapsibleContent>
           <HomeDetails>
-            <div className='container'>
+            <ZestimateHeaderContainer>
               <ZestimateTitle>
               Zestimate
               </ZestimateTitle>
               <ZestimateValue> 
                 {`$${this.state.propertyData[0].zestimationPrice}`}
               </ZestimateValue>
-            </div>
+            </ZestimateHeaderContainer>
           </HomeDetails>
         </CollapsibleContent>
         

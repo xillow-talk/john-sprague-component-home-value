@@ -52,7 +52,8 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: 700;
 font-size: 15px;
 line-height: 15px;
-padding-top: 23px;
+margin-top: 40px;
+
 `;
 
 const ComparableHomesListHeaderSqft = styled.span`
