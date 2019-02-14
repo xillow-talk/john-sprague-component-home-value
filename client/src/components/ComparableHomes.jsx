@@ -1,42 +1,126 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const HomeDetailsCollapsibleComponent = styled.section``;
 
 const CollapsibleContent = styled.div``;
 
-const ComparableHomesHeader = styled.div``;
+const ComparableHomesHeader = styled.div`
+text-align: left;
+float: left;
+text-align: left;
+style: normal;
+color: #444444;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: 400;
+font-size: 15px;
+line-height: 15px;
+padding-top: 23px;
+`;
 
-const ComparableHomesToolTip = styled.span``;
+const ComparableHomesToolTip = styled.span`
+style: normal;
+font-weight: 300;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 15px;
+line-height: 23px;
+color: #0074e4;
+: hover {
+  color: #62aef7;
+}
 
-const ComparableHomesToolTipText = styled.a``;
+`;
 
-const ComparableHomesListHeader = styled.p``;
+const ComparableHomesToolTipText = styled.a`
+text-align: left;
+float: left;
+text-align: left;
+style: normal;
+color: #444444;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: 700;
+font-size: 15px;
+line-height: 23px;
+`;
+
+const ComparableHomesListHeader = styled.p`
+text-align: left;
+style: normal;
+color: #444444;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: 700;
+font-size: 15px;
+line-height: 15px;
+padding-top: 23px;
+`;
+
+const ComparableHomesListHeaderSqft = styled.span`
+  float: right;
+`;
 
 const ComparableHomesList = styled.section``;
 
 const PropertyList = styled.div``;
 
-const PropertyCard = styled.div``;
+const PropertyCard = styled.div`
+  border-top: solid 1px #eee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  white-space: nowrap;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #444;
+
+  :after, :before {
+    bow-sizing: border-box;
+  }
+`;
 
 const PropertyDetailSection = styled.div``;
 
 const HomeStatus = styled.h5``;
 
-const RecentlySoldIcon = styled.span``;
+const RecentlySoldIcon = styled.span`
+font-size: 13px;
+line-height: 15px;
+font-weight: 700;
+`;
 
-const Price = styled.div``;
+const Price = styled.div`
+font-size: 28px;
+line-height: 40px;
+font-weight: 400;
+`;
 
-const PropertyDetailedInfo = styled.div``;
+const PropertyDetailedInfo = styled.div`
+font-size: 15px;
+line-height: 20px;
+font-weight: 700;
+`;
 
-const PropertyAddress = styled.div``;
+const PropertyAddress = styled.div`
+font-size: 15px;
+line-height: 20px;
+font-weight: 400;
+color: #0074e4;
+: hover {
+  color: #62aef7;
+}
+`;
 
-const PropertySqftCalculation = styled.h3``;
-
-
-
-
-
+const PropertySqftCalculation = styled.span`
+flex: 3;
+text-align: right
+padding-top: 30px;
+font-size: 20px;
+line-height: 15px;
+font-weight: 400;
+`;
 
 var ComparableHomes = (props) => {
   return (
@@ -53,7 +137,7 @@ var ComparableHomes = (props) => {
         </ComparableHomesHeader>
         <ComparableHomesListHeader>
           Top comparable homes in this estimate
-          <span>$/sqft</span>  
+          <ComparableHomesListHeaderSqft>$/sqft</ComparableHomesListHeaderSqft>
         </ComparableHomesListHeader>
         <ComparableHomesList>
           <PropertyList>
@@ -71,15 +155,15 @@ var ComparableHomes = (props) => {
                   $16,232,232
                 </Price>
                 <PropertyDetailedInfo>
-                ` 6 bds - 6.5 ba - 6,180 sqft
+                  6 bds - 6.5 ba - 6,180 sqft
                 </PropertyDetailedInfo>
                 <PropertyAddress>
                   454 Francisco St
                 </PropertyAddress>
-                <PropertySqftCalculation>
-                  $2,434
-                </PropertySqftCalculation>
               </PropertyDetailSection>
+              <PropertySqftCalculation>
+                    $2,434
+              </PropertySqftCalculation>
             </PropertyCard>
 
 
@@ -96,15 +180,15 @@ var ComparableHomes = (props) => {
                   $16,232,232
                 </Price>
                 <PropertyDetailedInfo>
-                ` 6 bds - 6.5 ba - 6,180 sqft
+                ` 6 bds - 6.5 ba - 6,180 sqft                            
                 </PropertyDetailedInfo>
                 <PropertyAddress>
                   454 Francisco St
                 </PropertyAddress>
-                <PropertySqftCalculation>
-                  $2,434
-                </PropertySqftCalculation>
               </PropertyDetailSection>
+              <PropertySqftCalculation>
+              $2,434
+              </PropertySqftCalculation>
             </PropertyCard>
 
           </PropertyList>
