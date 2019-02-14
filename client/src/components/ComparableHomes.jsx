@@ -1,160 +1,116 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const HomeDetailsCollapsibleComponent = styled.section``;
+
+const CollapsibleContent = styled.div``;
+
+const ComparableHomesHeader = styled.div``;
+
+const ComparableHomesToolTip = styled.span``;
+
+const ComparableHomesToolTipText = styled.a``;
+
+const ComparableHomesListHeader = styled.p``;
+
+const ComparableHomesList = styled.section``;
+
+const PropertyList = styled.div``;
+
+const PropertyCard = styled.div``;
+
+const PropertyDetailSection = styled.div``;
+
+const HomeStatus = styled.h5``;
+
+const RecentlySoldIcon = styled.span``;
+
+const Price = styled.div``;
+
+const PropertyDetailedInfo = styled.div``;
+
+const PropertyAddress = styled.div``;
+
+const PropertySqftCalculation = styled.h3``;
+
+
+
+
+
 
 var ComparableHomes = (props) => {
   return (
-    <section className='home-details-collapsible-component'>
 
-      <div className='collapsible-content'>
-        <div className='comparables-header'>
-          This estimate looks at for-sale or recently sold homes with similar features to this home, like its location, square footage and beds/baths. We then adjust the price of each comparable home based on its “similarity score” and local appreciation rate and use that set of adjusted values to calculate this estimate.
-          <span className='zest-deep-dive-tooltip-text'>
-            <a>What affects the accuracy of this estimate?</a>
-          </span>
-        </div>
-        <div id='listHeader'>
-          <p>
-            Top comparable homes in this estimate
-            <span>$/sqft</span>  
-          </p>
-        </div>
-
-        {/* Additional comparable home property section cards */}
-        <section>
-          <div className='property-list'>
-            <div className='property-card'>
-              <a href='#'></a>
-              <div className='property-detail-section'>
-                <h5 className='home-status'>
-                  <span className='recently-sold-icon'></span>  
-                  <div>
-                  SOLD 4/14/2018
-                  </div>
-                </h5>
-                <div className='price'>
+    <HomeDetailsCollapsibleComponent>
+      <CollapsibleContent>
+        <ComparableHomesHeader>
+         This estimate looks at for-sale or recently sold homes with similar features to this home, like its location, square footage and beds/baths. We then adjust the price of each comparable home based on its “similarity score” and local appreciation rate and use that set of adjusted values to calculate this estimate.
+          <ComparableHomesToolTip>
+            <ComparableHomesToolTipText>
+              What affects the accuracy of this estimate?
+            </ComparableHomesToolTipText>
+          </ComparableHomesToolTip>
+        </ComparableHomesHeader>
+        <ComparableHomesListHeader>
+          Top comparable homes in this estimate
+          <span>$/sqft</span>  
+        </ComparableHomesListHeader>
+        <ComparableHomesList>
+          <PropertyList>
+            {/* property cards, this will be refactored into a component */}
+            <PropertyCard>
+              <PropertyDetailSection>
+                <HomeStatus>
+                  <RecentlySoldIcon>
+                    <div>
+                      SOLD 4/14/2018
+                    </div>
+                  </RecentlySoldIcon>
+                </HomeStatus>
+                <Price>
                   $16,232,232
-                </div>
-                <div className='detailed-info'>
-                  <div>
-                  6 bds - 6.5 ba - 6,180 sqft
-                  </div>
-                  <div className='address'>
-                    454 Francisco St
-                  </div>
-                </div>
-                <h3 className='calculation'>
-                  $2,434
-                </h3>
-              </div>
-            </div>
-
-            <div className='property-card'>
-              <a href='#'></a>
-              <div className='property-detail-section'>
-                <h5 className='home-status'>
-                  <span className='recently-sold-icon'></span>  
-                  <div>
-                SOLD 4/14/2018
-                  </div>
-                </h5>
-                <div className='price'>
-                $16,232,232
-                </div>
-                <div className='detailed-info'>
-                  <div>
-                6 bds - 6.5 ba - 6,180 sqft
-                  </div>
-                  <div className='address'>
+                </Price>
+                <PropertyDetailedInfo>
+                ` 6 bds - 6.5 ba - 6,180 sqft
+                </PropertyDetailedInfo>
+                <PropertyAddress>
                   454 Francisco St
-                  </div>
-                </div>
-                <h3 className='calculation'>
-                $2,434
-                </h3>
-              </div>
-            </div>
-          
-            <div className='property-card'>
-              <a href='#'></a>
-              <div className='property-detail-section'>
-                <h5 className='home-status'>
-                  <span className='recently-sold-icon'></span>  
-                  <div>
-                  SOLD 4/14/2018
-                  </div>
-                </h5>
-                <div className='price'>
-                  $16,232,232
-                </div>
-                <div className='detailed-info'>
-                  <div>
-                  6 bds - 6.5 ba - 6,180 sqft
-                  </div>
-                  <div className='address'>
-                    454 Francisco St
-                  </div>
-                </div>
-                <h3 className='calculation'>
+                </PropertyAddress>
+                <PropertySqftCalculation>
                   $2,434
-                </h3>
-              </div>
-            </div>
+                </PropertySqftCalculation>
+              </PropertyDetailSection>
+            </PropertyCard>
 
-            <div className='property-card'>
-              <a href='#'></a>
-              <div className='property-detail-section'>
-                <h5 className='home-status'>
-                  <span className='recently-sold-icon'></span>  
-                  <div>
-                  SOLD 4/14/2018
-                  </div>
-                </h5>
-                <div className='price'>
+
+            <PropertyCard>
+              <PropertyDetailSection>
+                <HomeStatus>
+                  <RecentlySoldIcon>
+                    <div>
+                      SOLD 4/14/2018
+                    </div>
+                  </RecentlySoldIcon>
+                </HomeStatus>
+                <Price>
                   $16,232,232
-                </div>
-                <div className='detailed-info'>
-                  <div>
-                  6 bds - 6.5 ba - 6,180 sqft
-                  </div>
-                  <div className='address'>
-                    454 Francisco St
-                  </div>
-                </div>
-                <h3 className='calculation'>
-                  $2,434
-                </h3>
-              </div>
-            </div>
-
-            <div className='property-card'>
-              <a href='#'></a>
-              <div className='property-detail-section'>
-                <h5 className='home-status'>
-                  <span className='recently-sold-icon'></span>  
-                  <div>
-                SOLD 4/14/2018
-                  </div>
-                </h5>
-                <div className='price'>
-                $16,232,232
-                </div>
-                <div className='detailed-info'>
-                  <div>
-                6 bds - 6.5 ba - 6,180 sqft
-                  </div>
-                  <div className='address'>
+                </Price>
+                <PropertyDetailedInfo>
+                ` 6 bds - 6.5 ba - 6,180 sqft
+                </PropertyDetailedInfo>
+                <PropertyAddress>
                   454 Francisco St
-                  </div>
-                </div>
-                <h3 className='calculation'>
-                $2,434
-                </h3>
-              </div>
-            </div>
-          </div>
-        </section>
+                </PropertyAddress>
+                <PropertySqftCalculation>
+                  $2,434
+                </PropertySqftCalculation>
+              </PropertyDetailSection>
+            </PropertyCard>
 
-      </div>
-    </section>
+          </PropertyList>
+        </ComparableHomesList>
+      </CollapsibleContent>
+    </HomeDetailsCollapsibleComponent>
   );
 };
 
