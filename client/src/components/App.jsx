@@ -1,7 +1,6 @@
 import React from 'react';
 import ZestimateRow from './ZestimateRow.jsx';
 import ZestimateAdditionalInfo from './ZestimateAdditionalInfo.jsx';
-import fetchPropertyData from '../ajax/get.js';
 import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -123,6 +122,4 @@ class App extends React.Component {
   }
 }
 
-export default App; 
-
-
+export default App;
