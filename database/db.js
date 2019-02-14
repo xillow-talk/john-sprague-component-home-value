@@ -9,7 +9,7 @@ const ObjectId = Schema.ObjectId;
 // Create db schema for properties
 let propertySchema = new Schema({
   id: Number,
-  zestimationPrice: Number,
+  zestimationPrice: String,
   startPriceRange: Number,
   endPriceRange: Number,
   thirtyDayPriceChange: Number,
