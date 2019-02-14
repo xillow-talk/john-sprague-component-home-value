@@ -103,9 +103,6 @@ class App extends React.Component {
             <FontAwesomeIcon icon='angle-down' size='sm'/>
           </DropDownArrow>
         </Button>
-        <div className="content">
-          <p>Lorem ipsum...</p>
-        </div>
         <CollapsibleContent>
           <HomeDetails>
             <ZestimateHeaderContainer>
