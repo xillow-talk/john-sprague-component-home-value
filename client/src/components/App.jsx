@@ -79,7 +79,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:3003/api/properties')
+    fetch('http://localhost:3000/api/properties')
       .then((response) => {
         return response.json();
       })
