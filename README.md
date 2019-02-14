@@ -18,6 +18,7 @@
 
 >  From the root directory of this service, grab dependencies (see below). Then use the command npm run start to get the server going on localhost:3000. Then use the command npm run react-dev to transpose the es6 files into a bundle using webpack. Start your mongodb by typing in mongod into the console. Next, npm run seed-db. This script will create a properties database with 3 tables (properties comparablehomes and localhomes), and then populate the three tables with 100 documents each. 
 
+After the above steps, navigate to localhost:3001 and view the component!
 ## Requirements
 > Must have mongodb installed and running on your workstation. 
 
