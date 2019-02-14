@@ -2,10 +2,9 @@ import React from 'react';
 import ZestimateRow from './ZestimateRow.jsx';
 import ZestimateAdditionalInfo from './ZestimateAdditionalInfo.jsx';
 import styled from 'styled-components';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faHome } from '@fortawesome/free-solid-svg-icons'
-
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown, faHome } from '@fortawesome/free-solid-svg-icons';
 library.add(faAngleDown, faHome);
 
 const Button = styled.button`
@@ -74,7 +73,8 @@ class App extends React.Component {
     this.state = {
       propertyData: [{}],
       comparableHomesData: [{}],
-      localHomesData: [{}]
+      localHomesData: [{}], 
+      isHidden: true
     };
   }
 

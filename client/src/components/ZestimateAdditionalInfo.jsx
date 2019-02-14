@@ -57,6 +57,7 @@ class ZestimateAdditionalInfo extends React.Component {
       <div>
         <AdditionalZestimateInformation>
           <ZestDeepDive>
+          
             <ZestDeepDiveIntro>
               <ZestDeepDiveIntroTitle>
               Inside the Zestimate
@@ -66,14 +67,15 @@ class ZestimateAdditionalInfo extends React.Component {
               </ZestDeepDiveIntroContent>
               <ZestDeepDiveIntroEstimate>Estimate based on</ZestDeepDiveIntroEstimate>
             </ZestDeepDiveIntro>
-            
+
             <ZestDeepDiveCollapsible>
               <ZestDeepDiveButton name={'Comparable Homes'} estimate={'$10,233,343'} />
               <ComparableHomes />
               <ZestDeepDiveButton name={'Market Appreciation'} estimate={'$12,454,454'} />
               <MarketAppreciation />
             </ZestDeepDiveCollapsible>
-          </ZestDeepDive>  
+          </ZestDeepDive>
+
         </AdditionalZestimateInformation>
       </div>
     );
