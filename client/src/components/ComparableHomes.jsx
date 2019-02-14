@@ -87,40 +87,40 @@ const PropertyDetailSection = styled.div``;
 const HomeStatus = styled.h5``;
 
 const RecentlySoldIcon = styled.span`
-font-size: 13px;
-line-height: 15px;
-font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 700;
 `;
 
 const Price = styled.div`
-font-size: 28px;
-line-height: 40px;
-font-weight: 400;
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 400;
 `;
 
 const PropertyDetailedInfo = styled.div`
-font-size: 15px;
-line-height: 20px;
-font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
 `;
 
 const PropertyAddress = styled.div`
-font-size: 15px;
-line-height: 20px;
-font-weight: 400;
-color: #0074e4;
-: hover {
-  color: #62aef7;
-}
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #0074e4;
+  : hover {
+    color: #62aef7;
+  }
 `;
 
 const PropertySqftCalculation = styled.span`
-flex: 3;
-text-align: right
-padding-top: 30px;
-font-size: 20px;
-line-height: 15px;
-font-weight: 400;
+  flex: 3;
+  text-align: right
+  padding-top: 30px;
+  font-size: 20px;
+  line-height: 15px;
+  font-weight: 400;
 `;
 
 var ComparableHomes = (props) => {

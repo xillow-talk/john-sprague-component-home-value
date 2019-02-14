@@ -10,7 +10,7 @@ import { faCircle, faHome, faAngleDown} from '@fortawesome/free-solid-svg-icons'
 library.add(faHome, faCircle, faAngleDown);
 
 const AdditionalZestimateInformation = styled.div`
-display: flex;
+  display: flex;
 `;
 const ZestDeepDive = styled.div``;
 
@@ -24,22 +24,22 @@ const ZestDeepDiveIntro = styled.div`
 `;
 
 const ZestDeepDiveIntroTitle = styled.h3`
-font-weight: 700;
-font-size: 20px;
-line-height: 30px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
 `;
 
 const ZestDeepDiveIntroContent = styled.p`
-font-weight: 400;
-font-size: 15px;
-line-height: 23px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 23px;
 `;
 
 const ZestDeepDiveIntroEstimate = styled.h4`
-font-weight: 700;
-font-size: 13px;
-line-height: 20px;
-text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  text-transform: uppercase;
 `;
 
 const ZestDeepDiveCollapsible = styled.div``;
@@ -49,15 +49,30 @@ const ZestDeepDiveCollapisibleTitleText = styled.span``;
 class ZestimateAdditionalInfo extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isHiddenComparableHomes: true,
+      isHiddenMarketAppreciation: true
+    }
+  }
+
+  toggleHiddenComparableHomes () {
+    this.setState({
+      isHiddenComparableHomes: !this.state.isHiddenComparableHomes
+    });
+  }
+
+  toggleHiddenLocalHomes () {
+    this.setState({
+      isHiddenMarketAppreciation: !this.state.isHiddenMarketAppreciation
+    });
   }
 
   render () {
-    console.log(this.props.data.propertyData);
     return (
       <div>
         <AdditionalZestimateInformation>
           <ZestDeepDive>
-          
+
             <ZestDeepDiveIntro>
               <ZestDeepDiveIntroTitle>
               Inside the Zestimate
@@ -69,10 +84,10 @@ class ZestimateAdditionalInfo extends React.Component {
             </ZestDeepDiveIntro>
 
             <ZestDeepDiveCollapsible>
-              <ZestDeepDiveButton name={'Comparable Homes'} estimate={'$10,233,343'} />
-              <ComparableHomes />
+              <ZestDeepDiveButton name={'Comparable Homes'} estimate={'$10,233,343'} onClick={this.toggleHiddenComparableHomes.bind(this)}/>
+              {!this.state.isHiddenComparableHomes && <ComparableHomes /> }
               <ZestDeepDiveButton name={'Market Appreciation'} estimate={'$12,454,454'} />
-              <MarketAppreciation />
+              {!this.state.isHiddenMarketAppreciation && <MarketAppreciation />}
             </ZestDeepDiveCollapsible>
           </ZestDeepDive>
 

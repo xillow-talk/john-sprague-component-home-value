@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const controller = require('./controller.js');
 
 const app = express();
-const port = 3001;
+const port = 3003;
 const serve = express.static('./public/dist');
 
 app.use(serve);
