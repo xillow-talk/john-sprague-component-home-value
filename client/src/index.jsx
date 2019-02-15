@@ -1,8 +1,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-import App from './components/app.jsx';
+import App from './components/App.jsx';
 
 ReactDOM.render(
-  <App /> ,
+  <App />,
   document.getElementById('app')
 );
+

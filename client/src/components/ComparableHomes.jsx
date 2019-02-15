@@ -1,161 +1,101 @@
 import React from 'react';
+import styled from 'styled-components';
+import ComparableHomesItem from './ComparableHomesItem.jsx';
 
-var ComparableHomes = (props) => {
-  return (
-    <section className='home-details-collapsible-component'>
+const HomeDetailsCollapsibleComponent = styled.section``;
 
-      <div className='collapsible-content'>
-        <div className='comparables-header'>
+const CollapsibleContent = styled.div``;
+
+const ComparableHomesHeader = styled.div`
+text-align: left;
+float: left;
+text-align: left;
+style: normal;
+color: #444444;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: 400;
+font-size: 15px;
+line-height: 15px;
+padding-top: 23px;
+`;
+
+const ComparableHomesToolTip = styled.span`
+style: normal;
+font-weight: 300;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 15px;
+line-height: 23px;
+color: #0074e4;
+: hover {
+  color: #62aef7;
+}
+`;
+
+const ComparableHomesToolTipText = styled.a`
+text-align: left;
+float: left;
+text-align: left;
+style: normal;
+color: #444444;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: 700;
+font-size: 15px;
+line-height: 23px;
+`;
+
+const ComparableHomesListHeader = styled.p`
+text-align: left;
+style: normal;
+color: #444444;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight: 700;
+font-size: 15px;
+line-height: 15px;
+margin-top: 40px;
+`;
+
+const ComparableHomesListHeaderSqft = styled.span`
+  float: right;
+`;
+
+const ComparableHomesList = styled.section``;
+
+const PropertyList = styled.div``;
+
+class ComparableHomes extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render () {
+    return (
+      <HomeDetailsCollapsibleComponent>
+        <CollapsibleContent>
+          <ComparableHomesHeader>
           This estimate looks at for-sale or recently sold homes with similar features to this home, like its location, square footage and beds/baths. We then adjust the price of each comparable home based on its “similarity score” and local appreciation rate and use that set of adjusted values to calculate this estimate.
-          <span className='zest-deep-dive-tooltip-text'>
-            <a>What affects the accuracy of this estimate?</a>
-          </span>
-        </div>
-        <div id='listHeader'>
-          <p>
+            <ComparableHomesToolTip>
+              <ComparableHomesToolTipText>
+                What affects the accuracy of this estimate?
+              </ComparableHomesToolTipText>
+            </ComparableHomesToolTip>
+          </ComparableHomesHeader>
+          <ComparableHomesListHeader>
             Top comparable homes in this estimate
-            <span>$/sqft</span>  
-          </p>
-        </div>
+            <ComparableHomesListHeaderSqft>$/sqft</ComparableHomesListHeaderSqft>
+          </ComparableHomesListHeader>
+          <ComparableHomesList>
+            <PropertyList>
+              {this.props.comparableHomesData.map((home, i) => {
+                return <ComparableHomesItem key={i} homeData={home} />;
+              })}
+            </PropertyList>
+          </ComparableHomesList>
+        </CollapsibleContent>
+      </HomeDetailsCollapsibleComponent>
 
-        {/* Additional comparable home property section cards */}
-        <section>
-          <div className='property-list'>
-            <div className='property-card'>
-              <a href='#'></a>
-              <div className='property-detail-section'>
-                <h5 className='home-status'>
-                  <span className='recently-sold-icon'></span>  
-                  <div>
-                  SOLD 4/14/2018
-                  </div>
-                </h5>
-                <div className='price'>
-                  $16,232,232
-                </div>
-                <div className='detailed-info'>
-                  <div>
-                  6 bds - 6.5 ba - 6,180 sqft
-                  </div>
-                  <div className='address'>
-                    454 Francisco St
-                  </div>
-                </div>
-                <h3 className='calculation'>
-                  $2,434
-                </h3>
-              </div>
-            </div>
+    );
+  }
+} 
 
-            <div className='property-card'>
-              <a href='#'></a>
-              <div className='property-detail-section'>
-                <h5 className='home-status'>
-                  <span className='recently-sold-icon'></span>  
-                  <div>
-                SOLD 4/14/2018
-                  </div>
-                </h5>
-                <div className='price'>
-                $16,232,232
-                </div>
-                <div className='detailed-info'>
-                  <div>
-                6 bds - 6.5 ba - 6,180 sqft
-                  </div>
-                  <div className='address'>
-                  454 Francisco St
-                  </div>
-                </div>
-                <h3 className='calculation'>
-                $2,434
-                </h3>
-              </div>
-            </div>
-          
-            <div className='property-card'>
-              <a href='#'></a>
-              <div className='property-detail-section'>
-                <h5 className='home-status'>
-                  <span className='recently-sold-icon'></span>  
-                  <div>
-                  SOLD 4/14/2018
-                  </div>
-                </h5>
-                <div className='price'>
-                  $16,232,232
-                </div>
-                <div className='detailed-info'>
-                  <div>
-                  6 bds - 6.5 ba - 6,180 sqft
-                  </div>
-                  <div className='address'>
-                    454 Francisco St
-                  </div>
-                </div>
-                <h3 className='calculation'>
-                  $2,434
-                </h3>
-              </div>
-            </div>
-
-            <div className='property-card'>
-              <a href='#'></a>
-              <div className='property-detail-section'>
-                <h5 className='home-status'>
-                  <span className='recently-sold-icon'></span>  
-                  <div>
-                  SOLD 4/14/2018
-                  </div>
-                </h5>
-                <div className='price'>
-                  $16,232,232
-                </div>
-                <div className='detailed-info'>
-                  <div>
-                  6 bds - 6.5 ba - 6,180 sqft
-                  </div>
-                  <div className='address'>
-                    454 Francisco St
-                  </div>
-                </div>
-                <h3 className='calculation'>
-                  $2,434
-                </h3>
-              </div>
-            </div>
-
-            <div className='property-card'>
-              <a href='#'></a>
-              <div className='property-detail-section'>
-                <h5 className='home-status'>
-                  <span className='recently-sold-icon'></span>  
-                  <div>
-                SOLD 4/14/2018
-                  </div>
-                </h5>
-                <div className='price'>
-                $16,232,232
-                </div>
-                <div className='detailed-info'>
-                  <div>
-                6 bds - 6.5 ba - 6,180 sqft
-                  </div>
-                  <div className='address'>
-                  454 Francisco St
-                  </div>
-                </div>
-                <h3 className='calculation'>
-                $2,434
-                </h3>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </div>
-    </section>
-  );
-};
 
 export default ComparableHomes; 
