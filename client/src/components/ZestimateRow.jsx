@@ -154,14 +154,14 @@ class ZestimateRow extends React.Component {
           <ToggleHistory onClick={this.toggleHidden.bind(this)}>
           Zestimate history and details <ExpandDown><FontAwesomeIcon icon='angle-down' /> </ExpandDown>
           </ToggleHistory>
-          {!this.state.isHidden && 
-            <ZestimateAdditionalInfo 
-              propertyData={this.props.propertyData}
-              comparableHomesData={this.props.comparableHomesData}
-              localHomesData={this.props.localHomesData}
-            />
-          }
         </ToggleSection>
+        {!this.state.isHidden && 
+          <ZestimateAdditionalInfo 
+            propertyData={this.props.propertyData}
+            comparableHomesData={this.props.comparableHomesData}
+            localHomesData={this.props.localHomesData}
+          />
+        }
       </div> 
     );
   }
