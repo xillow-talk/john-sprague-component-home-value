@@ -7,41 +7,50 @@ mongoose.connect('mongodb://localhost/properties');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
+var numberWithCommas = (num) => {
+  num = num.toString();
+  var pattern = /(-?\d+)(\d{3})/;
+  while (pattern.test(num)) {
+    num = num.replace(pattern, "$1,$2");
+  }
+  return num;
+};
+
 // Create db schema for properties
 let propertySchema = new Schema({
   id: Number,
-  zestimationPrice: Number,
-  startPriceRange: Number,
-  endPriceRange: Number,
-  thirtyDayPriceChange: Number,
-  oneYearForcast: Number,
-  propertyLastSalePrice: Number, 
+  zestimationPrice: String,
+  startPriceRange: String,
+  endPriceRange: String,
+  thirtyDayPriceChange: String,
+  oneYearForcast: String,
+  propertyLastSalePrice: String, 
   propertLastSaleDate: String,
-  comparableHomePrice: Number,
-  marketAppreciationPrice: Number,
-  localSalesAvg: Number
+  comparableHomePrice: String,
+  marketAppreciationPrice: String,
+  localSalesAvg: String
 });
 
 let comparableHomes = new Schema({
   id: {type: Number},
   sellDate: String, 
-  sellPrice: Number,
+  sellPrice: String,
   beds: Number, 
   baths: Number,
-  squft: Number, 
+  sqft: String, 
   streetAddress: String, 
-  priceSqft: Number,
+  priceSqft: String,
 });
 
 let localHomes = new Schema({
   id: {type: Number},
   sellDate: String, 
-  sellPrice: Number,
+  sellPrice: String,
   beds: Number, 
   baths: Number,
-  squft: Number, 
+  sqft: String, 
   streetAddress: String, 
-  priceSqft: Number,
+  priceSqft: String,
 });
 
 
@@ -54,16 +63,16 @@ var localHomesData = [];
 for (let i = 0; i < 100; i++) {
   var obj = {
     id: i, 
-    zestimationPrice: faker.random.number({'min': 500000, 'max': 5000000}), 
-    startPriceRange: faker.random.number({'min': 500000, 'max': 5000000}),
-    endPriceRange: faker.random.number({'min': 500000, 'max': 5000000}),
-    thirtyDayPriceChange: faker.random.number({'min': 15000, 'max': 50000}),
-    oneYearForcast: faker.random.number({'min': 500000, 'max': (500000 + 100000)}),
-    propertyLastSalePrice: faker.random.number({'min': (500000 - 100000), 'max': (500000)}), 
-    propertLastSaleDate: faker.date.past(), 
-    comparableHomePrice: faker.random.number({'min': (500000 - 100000), 'max': (500000 + 100000)}), 
-    marketAppreciationPrice: faker.random.number({'min': (500000 - 200000), 'max': (500000)}),
-    localSalesAvg: faker.random.number({'min': (500000 - 100000), 'max': (500000 + 100000)})
+    zestimationPrice: numberWithCommas(faker.random.number({'min': 500000, 'max': 5000000})), 
+    startPriceRange: numberWithCommas(faker.random.number({'min': 500000, 'max': 5000000})),
+    endPriceRange: numberWithCommas(faker.random.number({'min': 500000, 'max': 5000000})),
+    thirtyDayPriceChange: numberWithCommas(faker.random.number({'min': 15000, 'max': 50000})),
+    oneYearForcast: numberWithCommas(faker.random.number({'min': 500000, 'max': (500000 + 100000)})),
+    propertyLastSalePrice: numberWithCommas(faker.random.number({'min': (500000 - 100000), 'max': (500000)})), 
+    propertLastSaleDate: `${faker.random.number({'min': 0, 'max': 12})}/${faker.random.number({'min': 0, 'max': 30})}/${faker.random.number({'min': 2010, 'max': 2019})}`, 
+    comparableHomePrice: numberWithCommas(faker.random.number({'min': (500000 - 100000), 'max': (500000 + 100000)})), 
+    marketAppreciationPrice: numberWithCommas(faker.random.number({'min': (500000 - 200000), 'max': (500000)})),
+    localSalesAvg: numberWithCommas(faker.random.number({'min': (500000 - 100000), 'max': (500000 + 100000)}))
   };
   propertyData.push(obj);
 }
@@ -72,13 +81,13 @@ for (let i = 0; i < 100; i++) {
 for (let i = 0; i < 100; i++) {
   var obj = {
     id: i,
-    sellDate: faker.date.past(),
-    sellPrice: faker.random.number({'min': 500000, 'max': 5000000}),
+    sellDate: `${faker.random.number({'min': 0, 'max': 12})}/${faker.random.number({'min': 0, 'max': 30})}/${faker.random.number({'min': 2010, 'max': 2019})}`,
+    sellPrice: numberWithCommas(faker.random.number({'min': 500000, 'max': 5000000})),
     beds: faker.random.number({'min': 2, 'max': 6}),
     baths: faker.random.number({'min': 2, 'max': 4}),
-    sqft: faker.random.number({'min': 1000, 'max': 3500}),
+    sqft: numberWithCommas(faker.random.number({'min': 1000, 'max': 3500})),
     streetAddress: faker.address.streetAddress(),
-    priceSqft: faker.random.number({'min': 1200, 'max': 2500})
+    priceSqft: numberWithCommas(faker.random.number({'min': 1200, 'max': 2500})), 
   };
   comparableHomeData.push(obj);
 }
@@ -87,13 +96,13 @@ for (let i = 0; i < 100; i++) {
 for (let i = 0; i < 100; i++) {
   var obj = {
     id: i,
-    sellDate: faker.date.past(),
-    sellPrice: faker.random.number({'min': 500000, 'max': 5000000}),
+    sellDate: `${faker.random.number({'min': 0, 'max': 12})}/${faker.random.number({'min': 0, 'max': 30})}/${faker.random.number({'min': 2010, 'max': 2019})}`,
+    sellPrice: numberWithCommas(faker.random.number({'min': 500000, 'max': 5000000})),
     beds: faker.random.number({'min': 2, 'max': 6}),
     baths: faker.random.number({'min': 2, 'max': 4}),
-    sqft: faker.random.number({'min': 1000, 'max': 3500}),
+    sqft: numberWithCommas(faker.random.number({'min': 1000, 'max': 3500})),
     streetAddress: faker.address.streetAddress(),
-    priceSqft: faker.random.number({'min': 1200, 'max': 2500})
+    priceSqft: numberWithCommas(faker.random.number({'min': 1200, 'max': 2500})),
   };
   localHomesData.push(obj);
 }
@@ -109,6 +118,7 @@ Property.insertMany(propertyData, (err, data) => {
     console.log('error inserting many documents into mongo', err)
     return;
   }  
+  console.log();
   console.log('inserted many documents into mongoose');
 });
 

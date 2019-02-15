@@ -29,7 +29,7 @@ let comparableHomes = new Schema({
   baths: Number,
   sqft: Number, 
   streetAddress: String, 
-  priceSqft: Number,
+  priceSqft: Number
 });
 
 let localHomes = new Schema({
@@ -40,7 +40,7 @@ let localHomes = new Schema({
   baths: Number,
   sqft: Number, 
   streetAddress: String, 
-  priceSqft: Number,
+  priceSqft: Number
 });
 
 // Accessing the models for each schema
