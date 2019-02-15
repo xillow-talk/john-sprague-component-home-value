@@ -74,7 +74,7 @@ const ToggleSection = styled.div`
 const ToggleHistory = styled.a``;
 
 const ExpandDown = styled.span`
-margin-top: 5px;
+  margin-top: 5px;
 `;
 
 class ZestimateRow extends React.Component {
