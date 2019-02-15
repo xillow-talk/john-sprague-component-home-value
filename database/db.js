@@ -10,37 +10,37 @@ const ObjectId = Schema.ObjectId;
 let propertySchema = new Schema({
   id: Number,
   zestimationPrice: String,
-  startPriceRange: Number,
-  endPriceRange: Number,
-  thirtyDayPriceChange: Number,
-  oneYearForcast: Number,
-  propertyLastSalePrice: Number, 
+  startPriceRange: String,
+  endPriceRange: String,
+  thirtyDayPriceChange: String,
+  oneYearForcast: String,
+  propertyLastSalePrice: String, 
   propertLastSaleDate: String,
-  comparableHomePrice: Number,
-  marketAppreciationPrice: Number,
-  localSalesAvg: Number
+  comparableHomePrice: String,
+  marketAppreciationPrice: String,
+  localSalesAvg: String
 });
 
 let comparableHomes = new Schema({
   id: {type: Number},
   sellDate: String, 
-  sellPrice: Number,
+  sellPrice: String,
   beds: Number, 
   baths: Number,
-  sqft: Number, 
+  sqft: String, 
   streetAddress: String, 
-  priceSqft: Number
+  priceSqft: String
 });
 
 let localHomes = new Schema({
   id: {type: Number},
   sellDate: String, 
-  sellPrice: Number,
+  sellPrice: String,
   beds: Number, 
   baths: Number,
-  sqft: Number, 
+  sqft: String, 
   streetAddress: String, 
-  priceSqft: Number
+  priceSqft: String
 });
 
 // Accessing the models for each schema
