@@ -82,8 +82,7 @@ class ZestimateRow extends React.Component {
     super(props);
     this.state = {
       isHidden: true
-    }
-
+    };
   }
 
   toggleHidden () {

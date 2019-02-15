@@ -69,7 +69,7 @@ var ComparableHomesItem = ({homeData}) => {
           <HomeStatus>
             <RecentlySoldIcon>
               <div>
-                SOLD 4/14/2018
+                SOLD ({homeData.sellDate})
               </div>
             </RecentlySoldIcon>
           </HomeStatus>

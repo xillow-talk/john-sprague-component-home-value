@@ -69,7 +69,6 @@ class ZestimateAdditionalInfo extends React.Component {
   }
 
   render () {
-    console.log(this.props)
     return (
       <div>
         <AdditionalZestimateInformation>
@@ -95,7 +94,7 @@ class ZestimateAdditionalInfo extends React.Component {
               <ZestDeepDiveButton 
                 name={'Market Appreciation'} 
                 estimate={`$${this.props.propertyData[0].marketAppreciationPrice}`} 
-                onclick={this.toggleHiddenComparableHomes.bind(this)}  
+                onClick={this.toggleHiddenMarketAppreciation.bind(this)}  
               />
               {!this.state.isHiddenMarketAppreciation && 
                 <MarketAppreciation marketAppreciationData={this.props.propertyData} />}

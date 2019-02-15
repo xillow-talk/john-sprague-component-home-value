@@ -41,7 +41,7 @@ const DropDownArrow = styled.span`
 
 var ZestDeepDiveButton = ({name, estimate, onClick}) => {
   return (
-    <ZestDeepDiveButtonContainer>
+    <ZestDeepDiveButtonContainer onClick={onClick}>
       {name}
       <ZestDeepDiveEstimate>
         {estimate}
