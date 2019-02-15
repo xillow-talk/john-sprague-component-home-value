@@ -52,7 +52,8 @@ class ZestimateAdditionalInfo extends React.Component {
     this.state = {
       isHiddenComparableHomes: true,
       isHiddenMarketAppreciation: true
-    }
+    };
+
   }
 
   toggleHiddenComparableHomes () {
@@ -61,13 +62,14 @@ class ZestimateAdditionalInfo extends React.Component {
     });
   }
 
-  toggleHiddenLocalHomes () {
+  toggleHiddenMarketAppreciation () {
     this.setState({
       isHiddenMarketAppreciation: !this.state.isHiddenMarketAppreciation
     });
   }
 
   render () {
+    console.log(this.props)
     return (
       <div>
         <AdditionalZestimateInformation>
@@ -84,10 +86,19 @@ class ZestimateAdditionalInfo extends React.Component {
             </ZestDeepDiveIntro>
 
             <ZestDeepDiveCollapsible>
-              <ZestDeepDiveButton name={'Comparable Homes'} estimate={'$10,233,343'} onClick={this.toggleHiddenComparableHomes.bind(this)}/>
-              {!this.state.isHiddenComparableHomes && <ComparableHomes /> }
-              <ZestDeepDiveButton name={'Market Appreciation'} estimate={'$12,454,454'} />
-              {!this.state.isHiddenMarketAppreciation && <MarketAppreciation />}
+              <ZestDeepDiveButton 
+                name={'Comparable Homes'} 
+                estimate={`$${this.props.propertyData[0].comparableHomePrice}`} 
+                onClick={this.toggleHiddenComparableHomes.bind(this)}
+              />
+              {!this.state.isHiddenComparableHomes && <ComparableHomes comparableHomesData={this.props.comparableHomesData} /> }
+              <ZestDeepDiveButton 
+                name={'Market Appreciation'} 
+                estimate={`$${this.props.propertyData[0].marketAppreciationPrice}`} 
+                onclick={this.toggleHiddenComparableHomes.bind(this)}  
+              />
+              {!this.state.isHiddenMarketAppreciation && 
+                <MarketAppreciation marketAppreciationData={this.props.propertyData} />}
             </ZestDeepDiveCollapsible>
           </ZestDeepDive>
 
