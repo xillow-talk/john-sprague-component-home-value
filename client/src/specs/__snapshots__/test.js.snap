@@ -33,8 +33,12 @@ exports[`App component Should render the app component correctly 1`] = `
 }
 
 <div>
+  <button>
+    hello
+  </button>
   <button
     className="c0"
+    id="hi"
     onClick={[Function]}
   >
     Home Value
@@ -63,4 +67,4 @@ exports[`App component Should render the app component correctly 1`] = `
 </div>
 `;
 
-exports[`App component should full DOM render 1`] = `ReactWrapper {}`;
+exports[`App component should pass a full DOM render 1`] = `ReactWrapper {}`;

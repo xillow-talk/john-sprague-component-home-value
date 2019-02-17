@@ -113,7 +113,8 @@ class App extends React.Component {
   render () {
     return (
       <div> 
-        <Button onClick={this.toggleHidden.bind(this)}>
+        <button >hello</button>
+        <Button id='hi' onClick={this.toggleHidden.bind(this)}>
           Home Value
           <DropDownArrow>
             <FontAwesomeIcon icon='angle-down' size='sm'/>
@@ -137,6 +138,7 @@ const Child = ({propertyData, comparableHomesData, localHomesData}) => {
       <CollapsibleContent>
         <HomeDetails>
           <ZestimateHeaderContainer>
+          
             <ZestimateTitle>
             Zestimate
             </ZestimateTitle>
@@ -159,5 +161,6 @@ const Child = ({propertyData, comparableHomesData, localHomesData}) => {
 module.exports = {
   App, 
   Button, 
-  DropDownArrow
+  DropDownArrow, 
+  Child
 };

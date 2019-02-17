@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Enzyme, { mount, render, shallow} from 'enzyme';
-import {App, Button, DropDownArrow} from '../components/App.jsx';
+import {App, Button, DropDownArrow, Child} from '../components/App.jsx';
 // import Modal from '..//components/Modal.jsx';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
@@ -42,7 +42,7 @@ describe('App component', () => {
   });
 
   // full DOM rendering
-  test('should full DOM render', () => {
+  test('should pass a full DOM render', () => {
     const wrapper = mount(<App />);
     expect(wrapper).toMatchSnapshot();
   });
@@ -84,6 +84,7 @@ describe('App component', () => {
     expect(wrapper.state('comparableHomesData')).toEqual([{}]);
     expect(wrapper.state('localHomesData')).toEqual([{}]);
   });
+
   // invoking lifecycle method. 
   it('Should call componentDidMount', () => {
     const mount = jest.spyOn(App.prototype, 'componentDidMount');
@@ -92,13 +93,45 @@ describe('App component', () => {
     mount.mockRestore();
   });
 
+  // it('should be possible to open menu with Spacebar', done => {
+  //   const component = mount(<App />);
+  //   component.find(<Button />).simulate('click');
+  //   console.log(component.find(<Button />))
+  //   expect(component).toMatchSnapshot();
+  //   component.unmount();
+  // });
+
+
+  it('Should set isHidden property to state to false when user clicks on button', () => {
+    const mount = jest.spyOn(App.prototype, 'toggleHidden');
+    var wrapper = shallow(<App />);
+    wrapper.find('#hi').simulate('click');
+    expect(App.prototype.toggleHidden).toHaveBeenCalled();
+    console.log(wrapper.state('comparableHomesData'));
+    expect(wrapper.state('isHidden')).toBe(false);
+    mount.mockRestore();
+  });
+
+
+  // it('Test', () => {
+  //   const wrapper = shallow(<App />);
+  //   expect(wrapper.contains(<div></div>)).toEqual(true);
+  // })
+
   // should have 4 properties in state ???
 
-  //should fetch data 
+
+  //should fetch data state(<propertyname>).length
 
   // should render data 
 
   // should show child component when button is clicked
+  // it('Should render child component', () => {
+  //   const wrapper = shallow(<Button />);
+  //   const app = shallow(<App />);
+  //   wrapper.simulate('click');
+  //   expect(app.state('isHidden')).toEqual(false);
+  // });
 
   // test('Should show child component upon toggleing isHidden', () => {
   //   const wrapper = shallow(<Child />);
