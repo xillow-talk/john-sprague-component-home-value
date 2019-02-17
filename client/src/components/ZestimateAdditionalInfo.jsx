@@ -1,5 +1,6 @@
 import React from 'react';
 import ComparableHomes from './ComparableHomes.jsx';
+import LocalHomes from './LocalHomes.jsx';
 import MarketAppreciation from './MarketAppreciation.jsx';
 import ZestDeepDiveButton from './ZestDeepDiveButton.jsx';
 import styled from 'styled-components';
@@ -51,7 +52,8 @@ class ZestimateAdditionalInfo extends React.Component {
     super(props);
     this.state = {
       isHiddenComparableHomes: true,
-      isHiddenMarketAppreciation: true
+      isHiddenMarketAppreciation: true,
+      isHiddenLocalHomes: true
     };
 
   }
@@ -68,6 +70,11 @@ class ZestimateAdditionalInfo extends React.Component {
     });
   }
 
+  toggleLocalHomes () {
+    this.setState({
+      isHiddenLocalHomes: !this.state.isHiddenLocalHomes
+    });
+  }
   render () {
     return (
       <div>
@@ -86,18 +93,26 @@ class ZestimateAdditionalInfo extends React.Component {
 
             <ZestDeepDiveCollapsible>
               <ZestDeepDiveButton 
-                name={'Comparable Homes'} 
+                name={'Comparable homes'} 
                 estimate={`$${this.props.propertyData[0].comparableHomePrice}`} 
                 onClick={this.toggleHiddenComparableHomes.bind(this)}
               />
               {!this.state.isHiddenComparableHomes && <ComparableHomes comparableHomesData={this.props.comparableHomesData} /> }
               <ZestDeepDiveButton 
-                name={'Market Appreciation'} 
+                name={'Market appreciation'} 
                 estimate={`$${this.props.propertyData[0].marketAppreciationPrice}`} 
                 onClick={this.toggleHiddenMarketAppreciation.bind(this)}  
               />
               {!this.state.isHiddenMarketAppreciation && 
                 <MarketAppreciation marketAppreciationData={this.props.propertyData} />}
+              <ZestDeepDiveButton 
+                name={'Local sale prices'}
+                estimate={`$${this.props.propertyData[0].comparableHomePrice}`} 
+                onClick={this.toggleLocalHomes.bind(this)}
+              />
+              {!this.state.isHiddenLocalHomes && 
+                <LocalHomes localHomesData={this.props.localHomesData} /> 
+              }
             </ZestDeepDiveCollapsible>
           </ZestDeepDive>
 
