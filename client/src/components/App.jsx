@@ -1,6 +1,5 @@
 import React from 'react';
 import ZestimateRow from './ZestimateRow.jsx';
-import ZestimateAdditionalInfo from './ZestimateAdditionalInfo.jsx';
 import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -157,4 +156,8 @@ const Child = ({propertyData, comparableHomesData, localHomesData}) => {
   );
 };
 
-export default App;
+module.exports = {
+  App, 
+  Button, 
+  DropDownArrow
+};

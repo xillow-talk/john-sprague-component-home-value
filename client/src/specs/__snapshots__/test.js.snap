@@ -1,14 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App component Should contain imported Components 1`] = `"<ZestimateRow />"`;
+
+exports[`App component Should cotain a button styled component 1`] = `"<Button />"`;
+
 exports[`App component Should render the app component correctly 1`] = `
+.c0 {
+  background: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  font-weight: '900';
+  font-size: 28px;
+  line-height: 31px;
+  color: #444444 border-top:solid 1px #eee;
+  border-bottom: solid 1px #eee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.c1 {
+  size: 27px;
+  line-height: 31px;
+  color: #444444;
+  text-align: right;
+  float: right;
+}
+
 <div>
   <button
-    className="App__Button-sc-1mjo2mv-0 gfBzeL"
+    className="c0"
     onClick={[Function]}
   >
     Home Value
     <span
-      className="App__DropDownArrow-sc-1mjo2mv-1 enxhgP"
+      className="c1"
     >
       <svg
         aria-hidden="true"
@@ -32,6 +63,4 @@ exports[`App component Should render the app component correctly 1`] = `
 </div>
 `;
 
-exports[`App component it works 1`] = `"<Button />"`;
-
-exports[`App component should contain an ImportedComponent 1`] = `"<ZestimateRow />"`;
+exports[`App component should full DOM render 1`] = `ReactWrapper {}`;
