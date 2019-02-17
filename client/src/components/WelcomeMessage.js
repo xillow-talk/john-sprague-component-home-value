@@ -1,11 +1,11 @@
-import React from 'react';
-import Enzyme, { mount, render, shallow} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-Enzyme.configure({adapter: new Adapter});
+// import React from 'react';
+// import Enzyme, { mount, render, shallow} from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
+// Enzyme.configure({adapter: new Adapter});
 
 
 // Components
-import WelcomeMessage from './WelcomeMessage';
+// import WelcomeMessage from './WelcomeMessage';
 
 // function setup() {
 //   const props = {

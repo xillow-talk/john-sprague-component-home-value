@@ -1,5 +1,6 @@
 ## MAC files ##
 .DS_Store
+.nvmrc
 
 ## NPM ##
 npm
@@ -21,7 +22,7 @@ coverage
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
-public/dist/bundle.js
+.public/dist/bundle.js
 v8-compile-cache-0/
 .babelrc
 .eslintrc
