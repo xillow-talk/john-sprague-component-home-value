@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Enzyme, { mount, render, shallow} from 'enzyme';
 import {App, Button, DropDownArrow, Child} from '../components/App.jsx';
@@ -10,30 +9,11 @@ import ComparableHomesItem from '../components/ComparableHomesItem.jsx';
 
 Enzyme.configure({adapter: new Adapter});
 
-// A setuup function, one way of implementing tests
-var setup = () => {
-  const props = {
-  };
-  const wrapper = shallow(<App />);
-  return { wrapper, props };
-};
-
-// Shallow rendering 
-describe('App component', () => {
-  it('Should exist', () => {
-    const { wrapper } = setup();
-    expect(wrapper.exists()).toBe(true);
-  });
-
   // Shallow rendering 
   test('Should successfully mount App', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.exists()).toBe(true);
   });
-
-  // it('Should render without throwing an error', () => {
-  //   expect(shallow(<App />).find('<style>').exists()).toBe(true);
-  // });
 
   // Shallow rendering 
   it('Should render the app component correctly', () => {  
@@ -92,15 +72,6 @@ describe('App component', () => {
     expect(App.prototype.componentDidMount).toHaveBeenCalled();
     mount.mockRestore();
   });
-
-  // it('should be possible to open menu with Spacebar', done => {
-  //   const component = mount(<App />);
-  //   component.find(<Button />).simulate('click');
-  //   console.log(component.find(<Button />))
-  //   expect(component).toMatchSnapshot();
-  //   component.unmount();
-  // });
-
 
   it('Should set isHidden property to state to false when user clicks on button', () => {
     const mount = jest.spyOn(App.prototype, 'toggleHidden');
