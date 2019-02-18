@@ -10,7 +10,8 @@
   "scripts": {
     "react-dev": "webpack -d --watch --display-error-details",
     "start": "nodemon server/index.js",
-    "seed-db": "node database/seeder.js"
+    "seed-db": "node database/seeder.js",
+    "generate-images": "node util/generator.js"
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
@@ -37,6 +38,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-styled-components": "^1.10.0",
     "eslint": "^5.13.0",

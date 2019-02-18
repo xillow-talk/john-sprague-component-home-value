@@ -44,10 +44,17 @@ let localHomes = new Schema({
   saleToList: Number
 });
 
+let photos = new Schema({
+  url: String, 
+  propertyId: Number 
+});
+
 // Accessing the models for each schema
 let Property = mongoose.model('Property', propertySchema);
 let ComparableHomes = mongoose.model('ComparableHomes', comparableHomes);
 let LocalHomes = mongoose.model('LocalHomes', localHomes);
+let Photos = mongoose.model('Photos', photos);
+
 
 // query to grab data for a single property 
 module.exports = {
