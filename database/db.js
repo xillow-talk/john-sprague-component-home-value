@@ -78,5 +78,12 @@ module.exports = {
     }).setOptions({
       limit: 10
     });
+  },
+  getAllPhotos: (callback) => {
+    Photos.find((err, data) => {
+      callback(err, data);
+    }).setOptions({
+      limit: 50
+    });
   }
 };
