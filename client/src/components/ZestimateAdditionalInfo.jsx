@@ -53,8 +53,7 @@ class ZestimateAdditionalInfo extends React.Component {
     this.state = {
       isHiddenComparableHomes: true,
       isHiddenMarketAppreciation: true,
-      isHiddenLocalHomes: true
-=======
+      isHiddenLocalHomes: true,
       isHiddenMarketAppreciation: true
     };
 

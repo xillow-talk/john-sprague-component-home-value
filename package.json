@@ -43,14 +43,10 @@
     "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-styled-components": "^1.10.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
     "enzyme": "^3.8.0",
->>>>>>> jest-enzyme-2
-=======
+
     "enzyme": "^3.8.0",
->>>>>>> 656252ba69e1091287c68b0718ed46d18b5be161
     "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
