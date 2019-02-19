@@ -24,7 +24,25 @@ const PropertyDetailSection = styled.div``;
 
 const HomeStatus = styled.h5``;
 
+const PropertyImage = styled.img`
+box-sizing: border-box;
+width: 150px;
+height: 112px;
+background-size: 150px 112px
+padding-right: 20px
+padding-top: -5px;
+`;
+
 const RecentlySoldIcon = styled.span`
+padding-top: 1px;
+background-color: #fce013;
+height: .75em;
+width: .75em;
+border-radius: 50%;
+display: inline-block;
+`;
+
+const RecentlySold = styled.span`
   font-size: 13px;
   line-height: 15px;
   font-weight: 700;
@@ -61,17 +79,15 @@ const PropertySqftCalculation = styled.span`
   font-weight: 400;
 `;
 
-var LocalHomesItem = ({homeData}) => {
+var LocalHomesItem = ({homeData, photo}) => {
   return (
     <div>
       <PropertyCard>
+        <PropertyImage src={photo.url}></PropertyImage>
         <PropertyDetailSection>
           <HomeStatus>
-            <RecentlySoldIcon>
-              <div>
-                SOLD ({homeData.sellDate})
-              </div>
-            </RecentlySoldIcon>
+            <RecentlySoldIcon></RecentlySoldIcon>
+            <RecentlySold> SOLD ({homeData.sellDate})</RecentlySold>
           </HomeStatus>
           <Price>
             {`$${homeData.sellPrice}`}
