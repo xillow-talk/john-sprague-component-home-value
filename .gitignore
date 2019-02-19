@@ -24,6 +24,7 @@ coverage
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 
+<<<<<<< HEAD
 .babelrc
 =======
 ## MAC files ##
@@ -55,5 +56,5 @@ v8-compile-cache-0/
 .babelrc
 .eslintrc.js
 nvmrc
-
->>>>>>> jest-enzyme-2
+babelrc
+images/

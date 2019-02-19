@@ -159,12 +159,12 @@ class ZestimateRow extends React.Component {
             propertyData={this.props.propertyData}
             comparableHomesData={this.props.comparableHomesData}
             localHomesData={this.props.localHomesData}
+            photosData={this.props.photosData}
           />
         }
       </div> 
     );
   }
 }
-
 
 export default ZestimateRow;

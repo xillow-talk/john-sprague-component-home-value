@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App Should cotain a button styled component 1`] = `"<Button />"`;
+
 exports[`App component Should contain imported Components 1`] = `"<ZestimateRow />"`;
 
 exports[`App component Should cotain a button styled component 1`] = `"<Button />"`;
