@@ -70,7 +70,6 @@ class ZestimateAdditionalInfo extends React.Component {
       isHiddenMarketAppreciation: !this.state.isHiddenMarketAppreciation
     });
   }
-
   toggleLocalHomes () {
     this.setState({
       isHiddenLocalHomes: !this.state.isHiddenLocalHomes

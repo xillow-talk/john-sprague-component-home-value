@@ -158,8 +158,14 @@ const Child = ({propertyData, comparableHomesData, localHomesData}) => {
   );
 };
 
-export default App
 
+export default App;
+// export default {
+//   App, 
+//   Button, 
+//   DropDownArrow,
+//   Child
+// };
 // module.exports = {
 //   App, 
 //   Button, 
