@@ -74,24 +74,34 @@ class App extends React.Component {
       propertyData: [{}],
       comparableHomesData: [{}],
       localHomesData: [{}], 
-      photosData: [{}],
       isHidden: true
     };
   }
 
   componentDidMount () {
-    fetch('http://localhost:3000/api/properties')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({
-          propertyData: data.propertyData, 
-          comparableHomesData: data.comparableHomesData,
-          localHomesData: data.localHomesData,
-          photosData: data.photosData
-        });
-      });
+    fetchPropertyData( (err, data) => {
+      if (err) {
+        console.log(err);
+        return;
+        console.log(data);
+      }
+      this.setState({
+        propertyData: data.propertyData, 
+        comparableHomesData: data.comparableHomesData,
+        localHomesData: data.localHomesData
+      });  
+    });
+    // fetch('http://localhost:3000/api/properties')
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     this.setState({
+    //       propertyData: data.propertyData, 
+    //       comparableHomesData: data.comparableHomesData,
+    //       localHomesData: data.localHomesData
+    //     });
+    //   });
   }
   
   toggleHidden () {
@@ -103,7 +113,7 @@ class App extends React.Component {
   render () {
     return (
       <div> 
-        <Button id='hi' onClick={this.toggleHidden.bind(this)}>
+        <Button onClick={this.toggleHidden.bind(this)}>
           Home Value
           <DropDownArrow>
             <FontAwesomeIcon icon='angle-down' size='sm'/>
@@ -113,8 +123,7 @@ class App extends React.Component {
           <Child 
             propertyData={this.state.propertyData} 
             comparableHomesData={this.state.comparableHomesData}
-            localHomesData={this.state.localHomesData}
-            photosData={this.state.photosData}
+            localHomesData={this.state.localHomesData} 
           />
         }  
       </div>
@@ -122,13 +131,12 @@ class App extends React.Component {
   }
 }
 
-const Child = ({propertyData, comparableHomesData, localHomesData, photosData}) => {
+const Child = ({propertyData, comparableHomesData, localHomesData}) => {
   return (
     <div>
       <CollapsibleContent>
         <HomeDetails>
           <ZestimateHeaderContainer>
-          
             <ZestimateTitle>
             Zestimate
             </ZestimateTitle>
@@ -143,10 +151,13 @@ const Child = ({propertyData, comparableHomesData, localHomesData, photosData}) 
         propertyData={propertyData}
         comparableHomesData={comparableHomesData}
         localHomesData={localHomesData}
-        photosData={photosData}
       /> 
     </div>
   );
 };
 
-export default App;
+module.exports = {
+  App, 
+  Button, 
+  DropDownArrow
+};

@@ -19,27 +19,15 @@ const PropertyCard = styled.div`
   }
 `;
 
-const PropertyDetailSection = styled.div`
-padding-top: 3px;
-`;
+const PropertyDetailSection = styled.div``;
 
-const HomeStatus = styled.span`
-font-size: .83em;
-`;
 
-const RecentlySold = styled.span`
+const HomeStatus = styled.h5``;
+
+const RecentlySoldIcon = styled.span`
   font-size: 13px;
   line-height: 15px;
   font-weight: 700;
-`;
-
-const RecentlySoldIcon = styled.span`
-padding-top: 1px;
-background-color: #fce013;
-height: .75em;
-width: .75em;
-border-radius: 50%;
-display: inline-block;
 `;
 
 const Price = styled.div`
@@ -73,25 +61,17 @@ const PropertySqftCalculation = styled.span`
   font-weight: 400;
 `;
 
-const PropertyImage = styled.img`
-box-sizing: border-box;
-width: 150px;
-height: 112px;
-background-size: 150px 112px
-padding-right: 20px
-padding-top: -5px;
-`;
-
-var ComparableHomesItem = ({homeData, photo}) => {
-  console.log('this is a photo', photo);
+var ComparableHomesItem = ({homeData}) => {
   return (
     <div>
       <PropertyCard>
-        <PropertyImage src={photo.url} />
         <PropertyDetailSection>
           <HomeStatus>
-            <RecentlySoldIcon></RecentlySoldIcon>
-            <RecentlySold> SOLD ({homeData.sellDate})</RecentlySold>
+            <RecentlySoldIcon>
+              <div>
+                SOLD ({homeData.sellDate})
+              </div>
+            </RecentlySoldIcon>
           </HomeStatus>
           <Price>
             {`$${homeData.sellPrice}`}
@@ -110,5 +90,6 @@ var ComparableHomesItem = ({homeData, photo}) => {
     </div>
   );
 };
+
 
 export default ComparableHomesItem; 

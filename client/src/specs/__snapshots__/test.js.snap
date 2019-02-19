@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Should cotain a button styled component 1`] = `"<Button />"`;
-
 exports[`App component Should contain imported Components 1`] = `"<ZestimateRow />"`;
 
 exports[`App component Should cotain a button styled component 1`] = `"<Button />"`;
@@ -35,12 +33,8 @@ exports[`App component Should render the app component correctly 1`] = `
 }
 
 <div>
-  <button>
-    hello
-  </button>
   <button
     className="c0"
-    id="hi"
     onClick={[Function]}
   >
     Home Value
@@ -69,4 +63,4 @@ exports[`App component Should render the app component correctly 1`] = `
 </div>
 `;
 
-exports[`App component should pass a full DOM render 1`] = `ReactWrapper {}`;
+exports[`App component should full DOM render 1`] = `ReactWrapper {}`;
