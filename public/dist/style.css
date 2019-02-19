@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+.contain {
+  display:flex;
+=======
 .collapsible {
   background-color: #eee;
   cursor: pointer;
@@ -42,4 +46,5 @@
   color: #444444;
   text-align: right; 
   float: right;
+>>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
 }

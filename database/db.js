@@ -40,7 +40,12 @@ let localHomes = new Schema({
   baths: Number,
   sqft: String, 
   streetAddress: String, 
+<<<<<<< HEAD
+  priceSqft: String,
+  saleToList: Number
+=======
   priceSqft: String
+>>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
 });
 
 // Accessing the models for each schema
