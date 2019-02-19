@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .contain {
   display:flex;
 =======
@@ -47,4 +48,8 @@
   text-align: right; 
   float: right;
 >>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
+=======
+.contain {
+  display:flex;
+>>>>>>> jest-enzyme-2
 }
