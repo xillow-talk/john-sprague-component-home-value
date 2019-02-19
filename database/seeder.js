@@ -51,7 +51,10 @@ let localHomes = new Schema({
   sqft: String, 
   streetAddress: String, 
   priceSqft: String,
+<<<<<<< HEAD
   saleToList: Number
+=======
+>>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
 });
 
 
@@ -104,7 +107,10 @@ for (let i = 0; i < 100; i++) {
     sqft: numberWithCommas(faker.random.number({'min': 1000, 'max': 3500})),
     streetAddress: faker.address.streetAddress(),
     priceSqft: numberWithCommas(faker.random.number({'min': 1200, 'max': 2500})),
+<<<<<<< HEAD
     saleToList: faker.random.number({'min': 91, 'max': 105})
+=======
+>>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
   };
   localHomesData.push(obj);
 }
