@@ -86,7 +86,7 @@ class LocalHomes extends React.Component {
           <LocalHomesList>
             <PropertyList>
               {this.props.localHomesData.map((home, i) => {
-                return <LocalHomesItem key={i} homeData={home} />;
+                return <LocalHomesItem key={i} homeData={home} photo={this.props.photosData[Math.floor(Math.random() * Math.floor(49))]} />;
               })}
             </PropertyList>
           </LocalHomesList>

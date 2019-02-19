@@ -68,6 +68,7 @@ class ComparableHomes extends React.Component {
   }
 
   render () {
+    
     return (
       <HomeDetailsCollapsibleComponent>
         <CollapsibleContent>
@@ -86,7 +87,7 @@ class ComparableHomes extends React.Component {
           <ComparableHomesList>
             <PropertyList>
               {this.props.comparableHomesData.map((home, i) => {
-                return <ComparableHomesItem key={i} homeData={home} />;
+                return <ComparableHomesItem key={i} homeData={home} photo={this.props.photosData[Math.floor(Math.random() * Math.floor(49))]}/>;
               })}
             </PropertyList>
           </ComparableHomesList>

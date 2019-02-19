@@ -30,7 +30,7 @@ const Button = styled.button`
   }
   `;
 
-  const DropDownArrow = styled.span`
+const DropDownArrow = styled.span`
   size: 27px;
   line-height: 31px;
   color: #444444;
@@ -74,6 +74,7 @@ class App extends React.Component {
       propertyData: [{}],
       comparableHomesData: [{}],
       localHomesData: [{}], 
+      photosData: [{}],
       isHidden: true
     };
   }
@@ -87,7 +88,8 @@ class App extends React.Component {
         this.setState({
           propertyData: data.propertyData, 
           comparableHomesData: data.comparableHomesData,
-          localHomesData: data.localHomesData
+          localHomesData: data.localHomesData,
+          photosData: data.photosData
         });
       });
   }
@@ -111,7 +113,8 @@ class App extends React.Component {
           <Child 
             propertyData={this.state.propertyData} 
             comparableHomesData={this.state.comparableHomesData}
-            localHomesData={this.state.localHomesData} 
+            localHomesData={this.state.localHomesData}
+            photosData={this.state.photosData}
           />
         }  
       </div>
@@ -119,7 +122,7 @@ class App extends React.Component {
   }
 }
 
-const Child = ({propertyData, comparableHomesData, localHomesData}) => {
+const Child = ({propertyData, comparableHomesData, localHomesData, photosData}) => {
   return (
     <div>
       <CollapsibleContent>
@@ -139,6 +142,7 @@ const Child = ({propertyData, comparableHomesData, localHomesData}) => {
         propertyData={propertyData}
         comparableHomesData={comparableHomesData}
         localHomesData={localHomesData}
+        photosData={photosData}
       /> 
     </div>
   );
