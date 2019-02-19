@@ -38,6 +38,5 @@ module.exports = {
   // When running npm start the output of dev server will be to this folder
   devServer: {
     contentBase: './dist',
-    hot: true,
   },
 };
