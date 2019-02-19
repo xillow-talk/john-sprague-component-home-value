@@ -26,3 +26,6 @@ v8-compile-cache-0/
 public/dist/bundle.js
 .babelrc
 .eslintrc.js
+/public/dist/bundle.js
+.eslintrc.js
+.nvmrc
