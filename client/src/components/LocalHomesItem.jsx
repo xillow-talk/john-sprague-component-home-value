@@ -19,17 +19,51 @@ const PropertyCard = styled.div`
   }
 `;
 
+<<<<<<< HEAD
 const PropertyDetailSection = styled.div``;
 
 
 const HomeStatus = styled.h5``;
 
 const RecentlySoldIcon = styled.span`
+=======
+const PropertyDetailSection = styled.div`
+padding-top: 8px;
+`;
+
+const PropertyImage = styled.img`
+box-sizing: border-box;
+width: 150px;
+height: 112px;
+background-size: 150px 112px
+padding-right: 20px
+padding-top: -5px;
+`;
+
+const HomeStatus = styled.span`
+
+`;
+
+const RecentlySoldIcon = styled.span`
+padding-top: 1px;
+background-color: #fce013;
+height: .75em;
+width: .75em;
+border-radius: 50%;
+display: inline-block;
+`;
+
+const RecentlySold = styled.span`
+>>>>>>> render-images
   font-size: 13px;
   line-height: 15px;
   font-weight: 700;
 `;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> render-images
 const Price = styled.div`
   font-size: 28px;
   line-height: 40px;
@@ -61,6 +95,7 @@ const PropertySqftCalculation = styled.span`
   font-weight: 400;
 `;
 
+<<<<<<< HEAD
 var LocalHomesItem = ({homeData}) => {
   return (
     <div>
@@ -72,6 +107,17 @@ var LocalHomesItem = ({homeData}) => {
                 SOLD ({homeData.sellDate})
               </div>
             </RecentlySoldIcon>
+=======
+var LocalHomesItem = ({homeData, photo}) => {
+  return (
+    <div>
+      <PropertyCard>
+      <PropertyImage src={photo.url}></PropertyImage>
+        <PropertyDetailSection>
+          <HomeStatus>
+            <RecentlySoldIcon></RecentlySoldIcon>
+            <RecentlySold> SOLD ({homeData.sellDate})</RecentlySold>
+>>>>>>> render-images
           </HomeStatus>
           <Price>
             {`$${homeData.sellPrice}`}

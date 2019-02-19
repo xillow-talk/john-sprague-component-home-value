@@ -53,8 +53,12 @@ class ZestimateAdditionalInfo extends React.Component {
     this.state = {
       isHiddenComparableHomes: true,
       isHiddenMarketAppreciation: true,
+<<<<<<< HEAD
       isHiddenLocalHomes: true,
       isHiddenMarketAppreciation: true
+=======
+      isHiddenLocalHomes: true
+>>>>>>> render-images
     };
 
   }
@@ -70,6 +74,10 @@ class ZestimateAdditionalInfo extends React.Component {
       isHiddenMarketAppreciation: !this.state.isHiddenMarketAppreciation
     });
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> render-images
   toggleLocalHomes () {
     this.setState({
       isHiddenLocalHomes: !this.state.isHiddenLocalHomes
@@ -97,7 +105,7 @@ class ZestimateAdditionalInfo extends React.Component {
                 estimate={`$${this.props.propertyData[0].comparableHomePrice}`} 
                 onClick={this.toggleHiddenComparableHomes.bind(this)}
               />
-              {!this.state.isHiddenComparableHomes && <ComparableHomes comparableHomesData={this.props.comparableHomesData} /> }
+              {!this.state.isHiddenComparableHomes && <ComparableHomes comparableHomesData={this.props.comparableHomesData} photosData={this.props.photosData} /> }
               <ZestDeepDiveButton 
                 name={'Market appreciation'} 
                 estimate={`$${this.props.propertyData[0].marketAppreciationPrice}`} 
@@ -111,7 +119,11 @@ class ZestimateAdditionalInfo extends React.Component {
                 onClick={this.toggleLocalHomes.bind(this)}
               />
               {!this.state.isHiddenLocalHomes && 
+<<<<<<< HEAD
                 <LocalHomes localHomesData={this.props.localHomesData} /> 
+=======
+                <LocalHomes localHomesData={this.props.localHomesData} photosData={this.props.photosData} /> 
+>>>>>>> render-images
               }
             </ZestDeepDiveCollapsible>
           </ZestDeepDive>

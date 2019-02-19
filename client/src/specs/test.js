@@ -8,7 +8,11 @@ import 'jest-styled-components';
 import ComparableHomesItem from '../components/ComparableHomesItem.jsx';
 
 Enzyme.configure({adapter: new Adapter});
+<<<<<<< HEAD
 describe('App', () => {
+=======
+
+>>>>>>> render-images
   // Shallow rendering 
   test('Should successfully mount App', () => {
     const wrapper = shallow(<App />);
