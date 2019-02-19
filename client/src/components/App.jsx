@@ -1,10 +1,10 @@
 import React from 'react';
 import ZestimateRow from './ZestimateRow.jsx';
-import ZestimateAdditionalInfo from './ZestimateAdditionalInfo.jsx';
 import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faHome } from '@fortawesome/free-solid-svg-icons';
+import fetchPropertyData from '../lib/get.js';
 library.add(faAngleDown, faHome);
 
 const Button = styled.button`
@@ -30,7 +30,7 @@ const Button = styled.button`
   }
   `;
 
-  const DropDownArrow = styled.span`
+const DropDownArrow = styled.span`
   size: 27px;
   line-height: 31px;
   color: #444444;
@@ -79,17 +79,29 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:3000/api/properties')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({
-          propertyData: data.propertyData, 
-          comparableHomesData: data.comparableHomesData,
-          localHomesData: data.localHomesData
-        });
-      });
+    fetchPropertyData( (err, data) => {
+      if (err) {
+        console.log(err);
+        return;
+        console.log(data);
+      }
+      this.setState({
+        propertyData: data.propertyData, 
+        comparableHomesData: data.comparableHomesData,
+        localHomesData: data.localHomesData
+      });  
+    });
+    // fetch('http://localhost:3000/api/properties')
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     this.setState({
+    //       propertyData: data.propertyData, 
+    //       comparableHomesData: data.comparableHomesData,
+    //       localHomesData: data.localHomesData
+    //     });
+    //   });
   }
   
   toggleHidden () {
@@ -144,4 +156,8 @@ const Child = ({propertyData, comparableHomesData, localHomesData}) => {
   );
 };
 
-export default App;
+module.exports = {
+  App, 
+  Button, 
+  DropDownArrow
+};

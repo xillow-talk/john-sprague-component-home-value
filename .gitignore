@@ -1,11 +1,11 @@
 ## MAC files ##
 .DS_Store
+.nvmrc
 
 ## NPM ##
 npm
 npm-debug.log
 node_modules/
-public/dist/bundle.js
 pids
 *.pid
 logs
@@ -22,5 +22,10 @@ coverage
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
+.public/dist/bundle.js
+v8-compile-cache-0/
+.babelrc
+.eslintrc
+.nvmrc
 
 .babelrc
