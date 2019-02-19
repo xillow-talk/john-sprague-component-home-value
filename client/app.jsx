@@ -2,10 +2,11 @@ import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faReply, faCommentAlt, faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import Comment from './comment';
-import CommentConut from './components/CommentCount/commentCount.jsx';
+import CommentCount from './components/CommentCount/commentCount.jsx';
 import * as _ from 'lodash';
 import moment from 'moment';
 import Loader from './components/Loader/loader';
+import axios from 'axios';
 
 library.add(faReply);
 library.add(faUserFriends);
@@ -36,12 +37,9 @@ export default class App extends React.Component {
   }
 
   getComments = () => {
-    fetch('/comments')
+    axios.get('/comments')
     .then((res) => {
-      return res.json()
-    })
-    .then((comments) => {
-      const sortedComments = _.sortBy(comments, (i) => {
+      const sortedComments = _.sortBy(res.data, (i) => {
         return new moment(i.postedAt)
       }).reverse();
       this.setState({
@@ -54,18 +52,15 @@ export default class App extends React.Component {
   }
 
   getCommentCount = () => {
-    fetch('/commentCount')
-    .then((res) => {
-      return res.json();
-    })
+    axios.get('/commentCount')
     .then((response) => {
       this.setState({
-        count: response.count
+        count: response.data.count
       })
     })
   }
 
-  handleScroll = (e) => {
+  handleScroll = () => {
       if(this.state.commentCount !== this.state.comments.length){
           if(this.state.commentCount + 20 > this.state.comments.length){
             this.setState(state => {
@@ -93,8 +88,7 @@ export default class App extends React.Component {
     this.setState({displayedComments: []}, () => {
       for (let i = 0; i < this.state.commentCount; i++) {
         this.setState(state => {
-          return state.displayedComments.push(state.comments[i])
-          }
+        return state.displayedComments.push(state.comments[i])}
         )
       }
     })
@@ -102,11 +96,11 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div style={{paddingLeft: '50px'}} onScroll={this.handleScroll}>
+      <div style={{paddingLeft: '50px'}} className={'container'} onScroll={this.handleScroll}>
       {this.state.count &&
-        <CommentConut count={this.state.count} />
+        <CommentCount className='commentCount' count={this.state.count} />
       }
-      {this.state.displayedComments&& 
+      {this.state.displayedComments && 
       this.state.displayedComments.map((i, index) => (
         <Comment 
         key={index}

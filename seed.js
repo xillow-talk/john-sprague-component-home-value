@@ -46,7 +46,7 @@ const createTable = async () => {
 
 const getRandomTime = () => {
   const randomNum = () => Math.floor(Math.random() * 30 + 1);
-  return moment().subtract(randomNum(), 'minutes');
+  return moment().subtract(randomNum(), 'minutes').format();
 };
 
 const randomSongTime = () => {

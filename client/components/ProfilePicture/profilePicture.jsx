@@ -10,7 +10,7 @@ const ProfilePic = (props) => {
       onMouseLeave={() => showProfileHover(false)}
     >
       {userProfileHover && (
-      <Styles.ProfileContainer>
+      <Styles.ProfileContainer className="profileContainer">
         <Styles.Arrow />
         <Styles.Profile>
           <Styles.Photo image={props.image} />
