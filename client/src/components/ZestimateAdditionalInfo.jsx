@@ -70,7 +70,6 @@ class ZestimateAdditionalInfo extends React.Component {
     });
   }
 
-
   toggleLocalHomes () {
     this.setState({
       isHiddenLocalHomes: !this.state.isHiddenLocalHomes

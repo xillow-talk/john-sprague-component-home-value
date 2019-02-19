@@ -22,7 +22,9 @@ const PropertyCard = styled.div`
 const PropertyDetailSection = styled.div``;
 
 
-const HomeStatus = styled.h5``;
+const HomeStatus = styled.h5`
+font-size: .83em;
+`;
 
 const PropertyImage = styled.img`
 box-sizing: border-box;
@@ -106,6 +108,5 @@ var LocalHomesItem = ({homeData, photo}) => {
     </div>
   );
 };
-
 
 export default LocalHomesItem; 
