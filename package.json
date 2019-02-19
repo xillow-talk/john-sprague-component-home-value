@@ -3,41 +3,64 @@
   "description": "Front end capstone project, buy a home from zillow.com, home value component.",
   "author": "John Sprague",
   "license": "ISC",
+  "main": "index.js",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch",
-    "start": "nodemon index/index.js"
+    "react-dev": "webpack -d --watch --display-error-details",
+    "start": "nodemon server/index.js",
+    "seed-db": "node database/seeder.js"
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-react": "^7.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-regular-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "ajv": "^6.8.1",
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
     "express": "^4.16.4",
+    "jquery": "^3.3.1",
     "mongo": "^0.1.0",
     "mongoose": "^5.4.10",
+    "popper": "^1.0.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "webpack": "^4.29.3"
+    "shelljs": "^0.8.3",
+    "styled-components": "^4.1.3"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-styled-components": "^1.10.0",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "eslint-plugin-import": "^2.16.0",
     "faker": "^4.1.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
   },
   "version": "1.0.0",
-  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zillow-talk/john-sprague-component-home-value.git"
+    "url": "git+https://github.com/xillow-talk/john-sprague-component-home-value.git"
   },
   "keywords": [
     "front-end-capstone-project"
   ],
   "bugs": {
-    "url": "https://github.com/zillow-talk/john-sprague-component-home-value/issues"
+    "url": "https://github.com/xillow-talk/john-sprague-component-home-value/issues"
   },
-  "homepage": "https://github.com/zillow-talk/john-sprague-component-home-value#readme"
+  "homepage": "https://github.com/xillow-talk/john-sprague-component-home-value#readme",
+  "resolutions": {
+    "ajv": "6.8.1"
+  }
 }
