@@ -23,8 +23,9 @@ const PropertyDetailSection = styled.div`
 padding-top: 3px;
 `;
 
-
-const HomeStatus = styled.span``;
+const HomeStatus = styled.span`
+font-size: .83em;
+`;
 
 const RecentlySold = styled.span`
   font-size: 13px;
@@ -40,7 +41,6 @@ width: .75em;
 border-radius: 50%;
 display: inline-block;
 `;
-
 
 const Price = styled.div`
   font-size: 28px;
@@ -110,6 +110,5 @@ var ComparableHomesItem = ({homeData, photo}) => {
     </div>
   );
 };
-
 
 export default ComparableHomesItem; 

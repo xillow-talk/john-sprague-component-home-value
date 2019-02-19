@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HomeDetailsCollapsibleComponent = styled.section``;
+const HomeDetailsCollapsibleComponent = styled.section`
+padding-bottom: 18px;
+`;
 
 const CollapsibleContent = styled.div``;
 
@@ -167,6 +169,5 @@ class MarketAppreciation extends React.Component {
     );
   }
 }
-
 
 export default MarketAppreciation;

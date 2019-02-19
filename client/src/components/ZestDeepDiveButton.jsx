@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle, faHome, faAngleDown} from '@fortawesome/free-solid-svg-icons'
-
 library.add(faHome, faCircle, faAngleDown);
-
 
 const ZestDeepDiveButtonContainer = styled.button`
   background: white;
@@ -21,10 +19,8 @@ const ZestDeepDiveButtonContainer = styled.button`
   line-height: 17px;
   color: #444444
   border-top: solid 1px #eee;
-  border-bottom: solid 1px #eee;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 15px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 `;
 
 const ZestDeepDiveEstimate = styled.div`
@@ -37,7 +33,6 @@ const DropDownArrow = styled.span`
   float: right;
   font-weight:;
 `;
-
 
 var ZestDeepDiveButton = ({name, estimate, onClick}) => {
   return (
@@ -52,7 +47,6 @@ var ZestDeepDiveButton = ({name, estimate, onClick}) => {
     </ZestDeepDiveButtonContainer>
   );
 };
-
 
 export default ZestDeepDiveButton; 
 
