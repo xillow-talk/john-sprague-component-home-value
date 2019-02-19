@@ -40,18 +40,21 @@ let localHomes = new Schema({
   baths: Number,
   sqft: String, 
   streetAddress: String, 
-<<<<<<< HEAD
   priceSqft: String,
   saleToList: Number
-=======
-  priceSqft: String
->>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
+});
+
+let photos = new Schema({
+  url: String, 
+  propertyId: Number 
 });
 
 // Accessing the models for each schema
 let Property = mongoose.model('Property', propertySchema);
 let ComparableHomes = mongoose.model('ComparableHomes', comparableHomes);
 let LocalHomes = mongoose.model('LocalHomes', localHomes);
+let Photos = mongoose.model('Photos', photos);
+
 
 // query to grab data for a single property 
 module.exports = {
@@ -74,6 +77,13 @@ module.exports = {
       callback(err, data);
     }).setOptions({
       limit: 10
+    });
+  },
+  getAllPhotos: (callback) => {
+    Photos.find((err, data) => {
+      callback(err, data);
+    }).setOptions({
+      limit: 50
     });
   }
 };

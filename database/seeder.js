@@ -51,10 +51,12 @@ let localHomes = new Schema({
   sqft: String, 
   streetAddress: String, 
   priceSqft: String,
-<<<<<<< HEAD
   saleToList: Number
-=======
->>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
+});
+
+let photos = new Schema({
+  url: String, 
+  propertyId: Number 
 });
 
 
@@ -62,6 +64,7 @@ let localHomes = new Schema({
 var propertyData = [];
 var comparableHomeData = [];
 var localHomesData = [];
+var photosData = [];
 
 // Generate a list of fake property data with 100 items 
 for (let i = 0; i < 100; i++) {
@@ -107,26 +110,33 @@ for (let i = 0; i < 100; i++) {
     sqft: numberWithCommas(faker.random.number({'min': 1000, 'max': 3500})),
     streetAddress: faker.address.streetAddress(),
     priceSqft: numberWithCommas(faker.random.number({'min': 1200, 'max': 2500})),
-<<<<<<< HEAD
     saleToList: faker.random.number({'min': 91, 'max': 105})
-=======
->>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
   };
   localHomesData.push(obj);
+}
+
+https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/large1.jpg
+
+
+for (let j = 1; j < 75; j++) {
+  photosData.push({
+    url: `https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/large${j}.jpg`,
+    propertyId: j
+  });
 }
 
 // Accessing the models for each schema
 let Property = mongoose.model('Property', propertySchema);
 let ComparableHomes = mongoose.model('ComparableHomes', comparableHomes);
 let LocalHomes = mongoose.model('LocalHomes', localHomes);
+let Photos = mongoose.model('Photos', photos); 
 
 // Insert dummydata into property model
 Property.insertMany(propertyData, (err, data) => { 
   if (err) {
     console.log('error inserting many documents into mongo', err)
     return;
-  }  
-  console.log();
+  }
   console.log('inserted many documents into mongoose');
 });
 
@@ -147,3 +157,12 @@ LocalHomes.insertMany(localHomesData, (err, data) => {
   }
   console.log('inserted many documents into comparableHomes');
 });
+
+//Insert photoData
+Photos.insertMany(photosData, (err, data) => {
+  if (err) {
+    console.log('error inserting documents into photos');
+    return;
+  }
+  console.log('inserted mnay photos into photos');
+})
