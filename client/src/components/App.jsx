@@ -103,7 +103,6 @@ class App extends React.Component {
   render () {
     return (
       <div> 
-        <button >hello</button>
         <Button id='hi' onClick={this.toggleHidden.bind(this)}>
           Home Value
           <DropDownArrow>
