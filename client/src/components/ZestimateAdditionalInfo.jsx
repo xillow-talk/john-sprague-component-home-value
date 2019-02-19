@@ -1,9 +1,6 @@
 import React from 'react';
 import ComparableHomes from './ComparableHomes.jsx';
-<<<<<<< HEAD
 import LocalHomes from './LocalHomes.jsx';
-=======
->>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
 import MarketAppreciation from './MarketAppreciation.jsx';
 import ZestDeepDiveButton from './ZestDeepDiveButton.jsx';
 import styled from 'styled-components';
@@ -55,12 +52,10 @@ class ZestimateAdditionalInfo extends React.Component {
     super(props);
     this.state = {
       isHiddenComparableHomes: true,
-<<<<<<< HEAD
       isHiddenMarketAppreciation: true,
       isHiddenLocalHomes: true
 =======
       isHiddenMarketAppreciation: true
->>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
     };
 
   }
@@ -77,14 +72,11 @@ class ZestimateAdditionalInfo extends React.Component {
     });
   }
 
-<<<<<<< HEAD
   toggleLocalHomes () {
     this.setState({
       isHiddenLocalHomes: !this.state.isHiddenLocalHomes
     });
   }
-=======
->>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
   render () {
     return (
       <div>
@@ -103,27 +95,18 @@ class ZestimateAdditionalInfo extends React.Component {
 
             <ZestDeepDiveCollapsible>
               <ZestDeepDiveButton 
-<<<<<<< HEAD
                 name={'Comparable homes'} 
-=======
-                name={'Comparable Homes'} 
->>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
                 estimate={`$${this.props.propertyData[0].comparableHomePrice}`} 
                 onClick={this.toggleHiddenComparableHomes.bind(this)}
               />
               {!this.state.isHiddenComparableHomes && <ComparableHomes comparableHomesData={this.props.comparableHomesData} /> }
               <ZestDeepDiveButton 
-<<<<<<< HEAD
                 name={'Market appreciation'} 
-=======
-                name={'Market Appreciation'} 
->>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
                 estimate={`$${this.props.propertyData[0].marketAppreciationPrice}`} 
                 onClick={this.toggleHiddenMarketAppreciation.bind(this)}  
               />
               {!this.state.isHiddenMarketAppreciation && 
                 <MarketAppreciation marketAppreciationData={this.props.propertyData} />}
-<<<<<<< HEAD
               <ZestDeepDiveButton 
                 name={'Local sale prices'}
                 estimate={`$${this.props.propertyData[0].comparableHomePrice}`} 
@@ -132,8 +115,6 @@ class ZestimateAdditionalInfo extends React.Component {
               {!this.state.isHiddenLocalHomes && 
                 <LocalHomes localHomesData={this.props.localHomesData} /> 
               }
-=======
->>>>>>> e1cfa818b3da8461d97c6ef8840333f017b6cb8d
             </ZestDeepDiveCollapsible>
           </ZestDeepDive>
 

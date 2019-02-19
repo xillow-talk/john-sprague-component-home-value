@@ -123,7 +123,6 @@ class ZestimateRow extends React.Component {
               <SecondaryTitle>
               Last 30-Day Change
                 <SecondaryContent>
-<<<<<<< HEAD
                   {`+$${this.props.propertyData[0].thirtyDayPriceChange} `}
 =======
                   {`$_${this.props.propertyData[0].thirtyDayPriceChange} `}
