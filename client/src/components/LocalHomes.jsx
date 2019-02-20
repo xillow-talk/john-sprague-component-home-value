@@ -1,64 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import LocalHomesItem from './LocalHomesItem.jsx';
-
-const LocalHomeDetailsCollapsibleComponent = styled.section`
-padding: 18px 0px 18px 0px;
-`;
-
-const CollapsibleContent = styled.div``;
-
-const LocalHomesHeader = styled.div`
-float: left;
-text-align: left;
-style: normal;
-color: #444444;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 400;
-font-size: 15px;
-line-height: 1.5;
-padding-top: 23px;
-`;
-
-const LocalHomesToolTip = styled.span`
-style: normal;
-font-weight: 300;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-size: 15px;
-line-height: 1.5;
-color: #0074e4;
-: hover {
-  color: #62aef7;
-}
-`;
-
-const LocalHomesToolTipText = styled.a`
-text-align: left;
-style: normal;
-color: #444444;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 300;
-font-size: 15px;
-line-height: 1.5;
-`;
-
-const LocalHomesListHeader = styled.p`
-text-align: left;
-style: normal;
-color: #444444;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 700;
-font-size: 15px;
-line-height: 15px;
-`;
-
-const LocalHomesListHeaderSqft = styled.span`
-  float: right;
-`;
-
-const LocalHomesList = styled.section``;
-
-const PropertyList = styled.div``;
+import {LocalHomeDetailsCollapsibleComponent, CollapsibleContent, LocalHomesHeader, LocalHomesToolTip, LocakHomesToolTipText, LocalHomesListHeader, LocalHomesListHeaderSqft, LocalHomesList, PropertyList} from '../style.js';mon
 
 class LocalHomes extends React.Component {
   constructor(props) {

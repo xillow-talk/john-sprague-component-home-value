@@ -1,62 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import ComparableHomesItem from './ComparableHomesItem.jsx';
-
-const HomeDetailsCollapsibleComponent = styled.section`
-padding: 18px 0px 18px 0px;
-`;
-
-const CollapsibleContent = styled.div``;
-
-const ComparableHomesHeader = styled.div`
-float: left;
-text-align: left;
-style: normal;
-color: #444444;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 400;
-font-size: 15px;
-line-height: 1.5;
-`;
-
-const ComparableHomesToolTip = styled.span`
-style: normal;
-font-weight: 300;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-size: 15px;
-line-height: 1.5;
-color: #0074e4;
-: hover {
-  color: #62aef7;
-}
-`;
-
-const ComparableHomesToolTipText = styled.a`
-style: normal;
-color: #444444;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 300;
-font-size: 15px;
-`;
-
-const ComparableHomesListHeader = styled.p`
-text-align: left;
-style: normal;
-color: #444444;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 700;
-font-size: 15px;
-line-height: 1.5;
-margin-top: 40px;
-`;
-
-const ComparableHomesListHeaderSqft = styled.span`
-  float: right;
-`;
-
-const ComparableHomesList = styled.section``;
-
-const PropertyList = styled.div``;
+import {HomeDetailsCollapsibleComponent, ComparableHomesHeader, ComparableHomesToolTip, ComparableHomesToolTipText, ComparableHomesListHeader, ComparableHomesListHeaderSqft, PropertyList} from '../style.js';
 
 class ComparableHomes extends React.Component {
   constructor(props) {
