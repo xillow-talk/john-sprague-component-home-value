@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HomeDetailsCollapsibleComponent = styled.section``;
+const HomeDetailsCollapsibleComponent = styled.section`
+padding: 18px 0px 18px 0px;
+`;
 
 const CollapsibleContent = styled.div``;
 
 const MarketAppreciationHeader = styled.div`
-  text-align: left;
   float: left;
   text-align: left;
   style: normal;
@@ -14,7 +15,7 @@ const MarketAppreciationHeader = styled.div`
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
   font-size: 15px;
-  line-height: 15px;
+  line-height: 1.5;
   padding-top: 23px;
 `;
 
@@ -23,7 +24,7 @@ const MarketAppreciationToolTip = styled.span`
   font-weight: 300;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 15px;
-  line-height: 23px;
+  line-height: 1.5;
   color: #0074e4;
   : hover {
     color: #62aef7;
@@ -32,14 +33,11 @@ const MarketAppreciationToolTip = styled.span`
 `;
 
 const MarketAppreciationToolTipText = styled.a`
-  text-align: left;
-  float: left;
-  text-align: left;
   style: normal;
   color: #444444;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: 300;
+  font-size: 1.5;
   line-height: 23px;
 `;
 
@@ -120,7 +118,7 @@ class MarketAppreciation extends React.Component {
               This estimate takes the price this home last sold for and adjusts it by the percentage change in market value for that area since that sale.
               <MarketAppreciationToolTip>
                 <MarketAppreciationToolTipText>
-                  What affects the accuracy of this estimate?
+                  {' '}What affects the accuracy of this estimate?
                 </MarketAppreciationToolTipText>
               </MarketAppreciationToolTip>
             </MarketAppreciationHeader>

@@ -95,25 +95,37 @@ class ZestimateAdditionalInfo extends React.Component {
             <ZestDeepDiveCollapsible>
               <ZestDeepDiveButton 
                 name={'Comparable homes'} 
-                estimate={`$${this.props.propertyData[0].comparableHomePrice}`} 
+                estimate={`$${this.props.propertyData[this.props.propertyId].comparableHomePrice}`} 
                 onClick={this.toggleHiddenComparableHomes.bind(this)}
               />
-              {!this.state.isHiddenComparableHomes && <ComparableHomes comparableHomesData={this.props.comparableHomesData} photosData={this.props.photosData} /> }
+              {!this.state.isHiddenComparableHomes && 
+                <ComparableHomes 
+                  comparableHomesData={this.props.comparableHomesData} 
+                  propertyData={this.props.propertyData}
+                  photosData={this.props.photosData} 
+                /> 
+              }
               <ZestDeepDiveButton 
                 name={'Market appreciation'} 
-                name={'Market Appreciation'} 
-                name={'Market appreciation'} 
-                estimate={`$${this.props.propertyData[0].marketAppreciationPrice}`} 
-                onClick={this.toggleHiddenMarketAppreciation.bind(this)}  
+                estimate={`$${this.props.propertyData[this.props.propertyId].marketAppreciationPrice}`} 
+                onClick={this.toggleHiddenMarketAppreciation.bind(this)}
               />
               {!this.state.isHiddenMarketAppreciation && 
-                <MarketAppreciation marketAppreciationData={this.props.propertyData} />}
+                <MarketAppreciation 
+                  marketAppreciationData={this.props.propertyData} 
+                />
+              }
               <ZestDeepDiveButton 
                 name={'Local sale prices'}
-                estimate={`$${this.props.propertyData[0].comparableHomePrice}`} 
+                estimate={`$${this.props.propertyData[this.props.propertyId].comparableHomePrice}`} 
                 onClick={this.toggleLocalHomes.bind(this)}
               />
-                <LocalHomes localHomesData={this.props.localHomesData} photosData={this.props.photosData} /> 
+              {!this.state.isHiddenLocalHomes && 
+                <LocalHomes 
+                  localHomesData={this.props.localHomesData} 
+                  photosData={this.props.photosData} 
+                  propertyId={this.props.propertyId}
+                /> 
               }
             </ZestDeepDiveCollapsible>
           </ZestDeepDive>

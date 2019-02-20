@@ -33,7 +33,7 @@ padding-top: -5px;
 `;
 
 const HomeStatus = styled.span`
-
+font-size: .83em
 `;
 
 const RecentlySoldIcon = styled.span`
@@ -86,7 +86,7 @@ var LocalHomesItem = ({homeData, photo}) => {
   return (
     <div>
       <PropertyCard>
-      <PropertyImage src={photo.url}></PropertyImage>
+        <PropertyImage src={photo.url}></PropertyImage>
         <PropertyDetailSection>
           <HomeStatus>
             <RecentlySoldIcon></RecentlySoldIcon>

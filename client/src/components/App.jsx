@@ -75,7 +75,8 @@ class App extends React.Component {
       comparableHomesData: [{}],
       localHomesData: [{}], 
       photosData: [{}],
-      isHidden: true
+      isHidden: true,
+      propertyId: 1
     };
   }
 
@@ -101,7 +102,6 @@ class App extends React.Component {
   }
 
   render () {
-    console.log(this.state)
     return (
 
       <div> 
@@ -117,6 +117,7 @@ class App extends React.Component {
             comparableHomesData={this.state.comparableHomesData}
             localHomesData={this.state.localHomesData}
             photosData={this.state.photosData}
+            propertyId = {this.state.propertyId}
           />
         }  
       </div>
@@ -124,7 +125,7 @@ class App extends React.Component {
   }
 }
 
-const Child = ({propertyData, comparableHomesData, localHomesData, photosData}) => {
+const Child = ({propertyData, comparableHomesData, localHomesData, photosData, propertyId}) => {
   return (
     <div>
       <CollapsibleContent>
@@ -134,7 +135,7 @@ const Child = ({propertyData, comparableHomesData, localHomesData, photosData}) 
             Zestimate
             </ZestimateTitle>
             <ZestimateValue> 
-              {`$${propertyData[0].zestimationPrice}`}
+              {`$${propertyData[propertyId].zestimationPrice}`}
             </ZestimateValue>
           </ZestimateHeaderContainer>
         </HomeDetails>
@@ -145,6 +146,7 @@ const Child = ({propertyData, comparableHomesData, localHomesData, photosData}) 
         comparableHomesData={comparableHomesData}
         localHomesData={localHomesData}
         photosData={photosData}
+        propertyId={propertyId}
       /> 
     </div>
   );

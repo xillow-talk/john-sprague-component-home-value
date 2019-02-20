@@ -123,7 +123,7 @@ class ZestimateRow extends React.Component {
               <SecondaryTitle>
               Last 30-Day Change
                 <SecondaryContent>
-                  {`$_${this.props.propertyData[0].thirtyDayPriceChange} `}
+                  {`$_${this.props.propertyData[this.props.propertyId].thirtyDayPriceChange} `}
                   <PercentIncrease>(+0.1%)</PercentIncrease>
                 </SecondaryContent>
               </SecondaryTitle>
@@ -141,7 +141,7 @@ class ZestimateRow extends React.Component {
               <SecondaryTitle>
                 One Year Forecast
                 <SecondaryContent>
-                  {`$${this.props.propertyData[0].oneYearForcast} - $${this.props.propertyData[0].oneYearForcast}`}
+                  {`$${this.props.propertyData[this.props.propertyId].oneYearForcast} - $${this.props.propertyData[this.props.propertyId].oneYearForcast}`}
                   <PercentIncrease></PercentIncrease>
                 </SecondaryContent>
               </SecondaryTitle>
@@ -159,6 +159,7 @@ class ZestimateRow extends React.Component {
             comparableHomesData={this.props.comparableHomesData}
             localHomesData={this.props.localHomesData}
             photosData={this.props.photosData}
+            propertyId={this.props.propertyId}
           />
         }
       </div> 

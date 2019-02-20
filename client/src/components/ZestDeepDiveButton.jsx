@@ -20,11 +20,9 @@ const ZestDeepDiveButtonContainer = styled.button`
   font-size: 15px;
   line-height: 17px;
   color: #444444
-  border-top: solid 1px #eee;
   border-bottom: solid 1px #eee;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-bottom: 15px;
 `;
 
 const ZestDeepDiveEstimate = styled.div`

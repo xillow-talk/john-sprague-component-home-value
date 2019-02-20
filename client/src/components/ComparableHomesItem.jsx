@@ -24,7 +24,9 @@ padding-top: 3px;
 `;
 
 
-const HomeStatus = styled.span``;
+const HomeStatus = styled.span`
+font-size: .83em
+`;
 
 const RecentlySold = styled.span`
   font-size: 13px;
@@ -83,7 +85,6 @@ padding-top: -5px;
 `;
 
 var ComparableHomesItem = ({homeData, photo}) => {
-  console.log('this is a photo', photo);
   return (
     <div>
       <PropertyCard>
