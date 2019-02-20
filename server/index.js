@@ -13,7 +13,7 @@ app.use(function(req, res, next) {
 });
 app.use(serve);
 app.use(bodyParser.json());
-app.get('/api/properties/id:', controller.get);
+app.get('/api/properties/', controller.get);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);

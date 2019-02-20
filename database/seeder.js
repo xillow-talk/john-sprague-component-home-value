@@ -181,4 +181,4 @@ Photos.insertMany(photosData, (err, data) => {
     return;
   }
   console.log('inserted mnay photos into photos');
-})
+});

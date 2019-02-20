@@ -101,7 +101,9 @@ class App extends React.Component {
   }
 
   render () {
+    console.log(this.state)
     return (
+
       <div> 
         <Button onClick={this.toggleHidden.bind(this)}>
           Home Value

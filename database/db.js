@@ -18,7 +18,15 @@ let propertySchema = new Schema({
   propertLastSaleDate: String,
   comparableHomePrice: String,
   marketAppreciationPrice: String,
-  localSalesAvg: String
+  localSalesAvg: String,
+  sellDate: String, 
+  sellPrice: String,
+  beds: Number, 
+  baths: Number,
+  sqft: String, 
+  streetAddress: String, 
+  priceSqft: String,
+  saleToList: Number
 });
 
 let comparableHomes = new Schema({
@@ -62,7 +70,7 @@ module.exports = {
     Property.find((err, data) => {
       callback(err, data);
     }).setOptions({
-      limit: 1
+      limit: 99
     });
   }, 
   getAllComparableHomes: (callback) => {
@@ -83,7 +91,7 @@ module.exports = {
     Photos.find((err, data) => {
       callback(err, data);
     }).setOptions({
-      limit: 50
+      limit: 99
     });
   }
 };
