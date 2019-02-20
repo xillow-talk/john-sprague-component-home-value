@@ -7,46 +7,19 @@ import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faHome, faAngleDown} from '@fortawesome/free-solid-svg-icons';
+import {
+  AdditionalZestimateInformation, 
+  ZestDeepDive, 
+  ZestDeepDiveIntro,
+  ZestDeepDiveIntroTitle,
+  ZestDeepDiveIntroContent,
+  ZestDeepDiveIntroEstimate,
+  ZestDeepDiveCollapsible,
+  ZestDeepDiveCollapsibleTitle, 
+  ZestDeepDiveCollapsibleTitleText
+} from '../style.js';
 
 library.add(faHome, faCircle, faAngleDown);
-
-const AdditionalZestimateInformation = styled.div`
-  display: flex;
-`;
-const ZestDeepDive = styled.div``;
-
-const ZestDeepDiveIntro = styled.div`
-  text-align: left;
-  float: left;
-  text-align: left;
-  style: normal;
-  color: #444444;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 18px 0px 18px 0px;
-`;
-
-const ZestDeepDiveIntroTitle = styled.h3`
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
-`;
-
-const ZestDeepDiveIntroContent = styled.p`
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 23px;
-`;
-
-const ZestDeepDiveIntroEstimate = styled.h4`
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 20px;
-  text-transform: uppercase;
-`;
-
-const ZestDeepDiveCollapsible = styled.div``;
-const ZestDeepDiveCollapisibleTitle = styled.div``;
-const ZestDeepDiveCollapisibleTitleText = styled.span``;
 
 class ZestimateAdditionalInfo extends React.Component {
   constructor(props) {

@@ -1,4 +1,21 @@
 import React from 'react';
+import {
+  HomeDetailsCollapsibleComponent, 
+  CollapsibleContent, 
+  MarketAppreciationHeader,
+  MarketAppreciationToolTip,
+  MarketAppreciationToolTipText,
+  CalculationSection, 
+  CalculationHeader, 
+  CalculationEquation,
+  CalculationOperator,
+  CalculationValuePercentage,
+  CalculationValueInfo, 
+  CalculationValue,
+  CalculationValueDate,
+  ListHeader, 
+  ListContent
+} from '../style.js';
 
 class MarketAppreciation extends React.Component {
   constructor(props) {

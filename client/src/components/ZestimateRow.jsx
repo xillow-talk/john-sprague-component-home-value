@@ -4,78 +4,20 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faHome, faAngleDown} from '@fortawesome/free-solid-svg-icons';
 import ZestimateAdditionalInfo from './ZestimateAdditionalInfo.jsx';
+import {
+  SecondaryZestimateItems,
+  SecondaryRow,
+  ZestimateIcon,
+  SecondaryWrapper,
+  SecondaryTitle,
+  SecondaryContent,
+  PercentIncrease,
+  ToggleSection,
+  ToggleHistory,
+  ExpandDown
+} from '../style.js';
 
 library.add(faHome, faCircle);
-
-const SecondaryZestimateItems = styled.div`
-  display: flex
-  text-align: center;
-  float: center;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
-`;
-
-const SecondaryRow = styled.div`
-    flex: 1;
-`;
-
-const ZestimateIcon = styled.div`
-  size: 27px;
-  line-height: 31px;
-  color: #0074e4;
-  text-align: center; 
-  float: center;
-  font-weight:light;
-`;
-
-const SecondaryWrapper = styled.div``;
-
-const SecondaryTitle = styled.div`
-  text-transform: uppercase;
-  float: center;
-  text-align:center;
-  style: normal;
-  font-weight: 700;
-  font-size: 13px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 20px;
-  #444444;
-  padding: 20px 0px 20px 0px;
-`;
-
-const SecondaryContent = styled.div`
-  float: center;
-  text-align:center;
-  style: normal;
-  font-weight: 400;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15px;
-  line-height: 23px;
-  #444444;
-`;
-
-const PercentIncrease = styled.span``;
-
-const ToggleSection = styled.div`
-  display: flex;  
-  justify-content: center;
-  style: normal;
-  font-weight: 300;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15px;
-  line-height: 23px;
-  color: #0074e4;
-  : hover {
-    color: #62aef7;
-  }
-
-`;
-
-const ToggleHistory = styled.a``;
-
-const ExpandDown = styled.span`
-  margin-top: 5px;
-`;
 
 class ZestimateRow extends React.Component {
   constructor(props) {
