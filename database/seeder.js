@@ -36,8 +36,7 @@ let propertySchema = new Schema({
   sqft: String, 
   streetAddress: String, 
   priceSqft: String,
-  saleToList: Number,
-  photoUrl: 
+  saleToList: Number
 });
 
 let comparableHomes = new Schema({
