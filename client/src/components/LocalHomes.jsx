@@ -1,6 +1,16 @@
 import React from 'react';
 import LocalHomesItem from './LocalHomesItem.jsx';
-import {LocalHomeDetailsCollapsibleComponent, CollapsibleContent, LocalHomesHeader, LocalHomesToolTip, LocakHomesToolTipText, LocalHomesListHeader, LocalHomesListHeaderSqft, LocalHomesList, PropertyList} from '../style.js';mon
+import {
+  LocalHomeDetailsCollapsibleComponent, 
+  CollapsibleContent, 
+  LocalHomesHeader, 
+  LocalHomesToolTip, 
+  LocalHomesToolTipText, 
+  LocalHomesListHeader, 
+  LocalHomesListHeaderSqft, 
+  LocalHomesList, 
+  PropertyList
+} from '../style.js';
 
 class LocalHomes extends React.Component {
   constructor(props) {
@@ -26,7 +36,7 @@ class LocalHomes extends React.Component {
           <LocalHomesList>
             <PropertyList>
               {this.props.localHomesData.map((home, i) => {
-                return <LocalHomesItem key={i} homeData={home} photo={this.props.photosData[Math.floor(Math.random() * Math.floor(49))]} />;
+                return <LocalHomesItem key={i} homeData={home} photo={this.props.photosData[Math.floor(Math.random() * Math.floor(88))]} />;
               })}
             </PropertyList>
           </LocalHomesList>

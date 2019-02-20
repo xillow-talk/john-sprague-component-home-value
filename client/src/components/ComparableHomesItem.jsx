@@ -1,6 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
-import {PropertyCard, PropertyDetailSection, HomeStatus, RecentlySold, RecentlySoldIcon, Price, PropertyDetailedInfo, PropertyAddress, PropertySqftCalculation, PropertyImage} from '../style.js';
+import {
+  PropertyCard, 
+  PropertyDetailSection, 
+  HomeStatus, 
+  RecentlySold, 
+  RecentlySoldIcon, 
+  Price, 
+  PropertyDetailedInfo, 
+  PropertyAddress, 
+  PropertySqftCalculation,
+  PropertyImage
+} from '../style.js';
 var ComparableHomesItem = ({homeData, photo}) => {
   return (
     <div>

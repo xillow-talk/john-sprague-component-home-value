@@ -1,6 +1,16 @@
 import React from 'react';
 import ComparableHomesItem from './ComparableHomesItem.jsx';
-import {HomeDetailsCollapsibleComponent, ComparableHomesHeader, ComparableHomesToolTip, ComparableHomesToolTipText, ComparableHomesListHeader, ComparableHomesListHeaderSqft, PropertyList} from '../style.js';
+import {
+  HomeDetailsCollapsibleComponent, 
+  ComparableHomesHeader, 
+  ComparableHomesToolTip, 
+  ComparableHomesToolTipText, 
+  ComparableHomesListHeader, 
+  ComparableHomesListHeaderSqft, 
+  PropertyList, 
+  CollapsibleContent, 
+  ComparableHomesList
+} from '../style.js';
 
 class ComparableHomes extends React.Component {
   constructor(props) {

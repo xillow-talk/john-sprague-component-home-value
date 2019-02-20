@@ -5,7 +5,15 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faHome } from '@fortawesome/free-solid-svg-icons';
 import fetchPropertyData from '../lib/get.js';
-import {Button, DropDownArrow, HomeDetails, ZestimateHeaderContainer, ZestimateTitle, ZestimateValue, CollapsibleContent} from '../style.js';
+import {
+  Button, 
+  DropDownArrow, 
+  HomeDetails, 
+  ZestimateHeaderContainer, 
+  ZestimateTitle, 
+  ZestimateValue, 
+  CollapsibleContent
+} from '../style.js';
 library.add(faAngleDown, faHome);
 
 
