@@ -9,7 +9,7 @@ const serve = express.static('./public/dist');
 
 app.use(serve);
 app.use(bodyParser.json());
-app.get('/api/properties', controller.get);
+app.get('/api/properties/id:', controller.get);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);

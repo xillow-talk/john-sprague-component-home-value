@@ -28,7 +28,16 @@ let propertySchema = new Schema({
   propertLastSaleDate: String,
   comparableHomePrice: String,
   marketAppreciationPrice: String,
-  localSalesAvg: String
+  localSalesAvg: String,
+  sellDate: String, 
+  sellPrice: String,
+  beds: Number, 
+  baths: Number,
+  sqft: String, 
+  streetAddress: String, 
+  priceSqft: String,
+  saleToList: Number,
+  photoUrl: 
 });
 
 let comparableHomes = new Schema({
@@ -67,7 +76,7 @@ var localHomesData = [];
 var photosData = [];
 
 // Generate a list of fake property data with 100 items 
-for (let i = 0; i < 100; i++) {
+for (let i = 1; i < 100; i++) {
   var obj = {
     id: i, 
     zestimationPrice: numberWithCommas(faker.random.number({'min': 500000, 'max': 5000000})), 
@@ -79,13 +88,21 @@ for (let i = 0; i < 100; i++) {
     propertLastSaleDate: `${faker.random.number({'min': 0, 'max': 12})}/${faker.random.number({'min': 0, 'max': 30})}/${faker.random.number({'min': 2010, 'max': 2019})}`, 
     comparableHomePrice: numberWithCommas(faker.random.number({'min': (500000 - 100000), 'max': (500000 + 100000)})), 
     marketAppreciationPrice: numberWithCommas(faker.random.number({'min': (500000 - 200000), 'max': (500000)})),
-    localSalesAvg: numberWithCommas(faker.random.number({'min': (500000 - 100000), 'max': (500000 + 100000)}))
+    localSalesAvg: numberWithCommas(faker.random.number({'min': (500000 - 100000), 'max': (500000 + 100000)})),
+    sellDate: `${faker.random.number({'min': 0, 'max': 12})}/${faker.random.number({'min': 0, 'max': 30})}/${faker.random.number({'min': 2010, 'max': 2019})}`,
+    sellPrice: numberWithCommas(faker.random.number({'min': 500000, 'max': 5000000})),
+    beds: faker.random.number({'min': 2, 'max': 6}),
+    baths: faker.random.number({'min': 2, 'max': 4}),
+    sqft: numberWithCommas(faker.random.number({'min': 1000, 'max': 3500})),
+    streetAddress: faker.address.streetAddress(),
+    priceSqft: numberWithCommas(faker.random.number({'min': 1200, 'max': 2500})), 
+    saleToList: faker.random.number({'min': 91, 'max': 105})
   };
   propertyData.push(obj);
 }
 
 // Generate a list of fake comparable data with 100 items
-for (let i = 0; i < 100; i++) {
+for (let i = 1; i < 100; i++) {
   var obj = {
     id: i,
     sellDate: `${faker.random.number({'min': 0, 'max': 12})}/${faker.random.number({'min': 0, 'max': 30})}/${faker.random.number({'min': 2010, 'max': 2019})}`,
@@ -100,7 +117,7 @@ for (let i = 0; i < 100; i++) {
 }
 
 // Generate a list of face local home data with 100 items
-for (let i = 0; i < 100; i++) {
+for (let i = 1; i < 100; i++) {
   var obj = {
     id: i,
     sellDate: `${faker.random.number({'min': 0, 'max': 12})}/${faker.random.number({'min': 0, 'max': 30})}/${faker.random.number({'min': 2010, 'max': 2019})}`,
@@ -118,7 +135,7 @@ for (let i = 0; i < 100; i++) {
 https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/large1.jpg
 
 
-for (let j = 1; j < 75; j++) {
+for (let j = 1; j < 100; j++) {
   photosData.push({
     url: `https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/large${j}.jpg`,
     propertyId: j

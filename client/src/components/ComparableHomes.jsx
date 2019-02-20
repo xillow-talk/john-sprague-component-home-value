@@ -64,7 +64,7 @@ class ComparableHomes extends React.Component {
   }
 
   render () {
-    
+    console.log(this.props.photoData);
     return (
       <HomeDetailsCollapsibleComponent>
         <CollapsibleContent>
