@@ -167,5 +167,4 @@ class ZestimateRow extends React.Component {
   }
 }
 
-
 export default ZestimateRow;

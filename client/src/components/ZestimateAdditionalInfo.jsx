@@ -22,6 +22,7 @@ const ZestDeepDiveIntro = styled.div`
   style: normal;
   color: #444444;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 18px 0px 18px 0px;
 `;
 
 const ZestDeepDiveIntroTitle = styled.h3`
@@ -81,7 +82,6 @@ class ZestimateAdditionalInfo extends React.Component {
       <div>
         <AdditionalZestimateInformation>
           <ZestDeepDive>
-
             <ZestDeepDiveIntro>
               <ZestDeepDiveIntroTitle>
               Inside the Zestimate
@@ -89,9 +89,8 @@ class ZestimateAdditionalInfo extends React.Component {
               <ZestDeepDiveIntroContent>
                 The Zestimate is Zillow’s best estimate of a home’s value. It is based on a blend of valuation methods, each of which may produce a different estimate depending on the available data.
               </ZestDeepDiveIntroContent>
-              <ZestDeepDiveIntroEstimate>Estimate based on</ZestDeepDiveIntroEstimate>
             </ZestDeepDiveIntro>
-
+            <ZestDeepDiveIntroEstimate>Estimate based on</ZestDeepDiveIntroEstimate>
             <ZestDeepDiveCollapsible>
               <ZestDeepDiveButton 
                 name={'Comparable homes'} 
