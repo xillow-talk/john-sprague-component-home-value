@@ -22,10 +22,9 @@ const connection = mysql.createConnection({
 
 seed();
 app.get('/comments', (req, res) => {
-  console.log('here');
   connection.query('SELECT * FROM comments', (err, response) => {
     if (err) {
-      console.log('errefwefr', err);
+      console.log('err', err);
       res.sendStatus(403);
     } else {
       console.log('working1');
@@ -35,7 +34,6 @@ app.get('/comments', (req, res) => {
 });
 
 app.get('/commentCount', (req, res) => {
-  console.log('hereoooo');
   connection.query('SELECT COUNT(*) FROM comments', (err, response) => {
     if (err) {
       console.log('errr', err);
