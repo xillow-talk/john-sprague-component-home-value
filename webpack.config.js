@@ -31,12 +31,6 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
-  // plugins: [
-  //   new webpack.ProvidePlugin({
-  //     styled: 'styled-components',
-  //   }),
-  // ],
-  // When running npm start the output of dev server will be to this folder
   devServer: {
     contentBase: './dist',
   },
