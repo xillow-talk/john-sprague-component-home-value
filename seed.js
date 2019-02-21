@@ -26,10 +26,11 @@ const moment = require('moment');
 // populateFolder();
 
 const connection = mysql.createConnection({
-  host: 'localhost',
+  host: '172.17.0.2',
   user: 'root',
-  password: '',
+  password: 'password',
 });
+
 
 const createTable = async () => {
   await connection.query('DROP TABLE IF EXISTS comments');
@@ -95,4 +96,4 @@ const Seed = async () => {
   await connection.end();
 };
 
-Seed();
+module.exports = Seed;

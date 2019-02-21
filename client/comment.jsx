@@ -28,7 +28,7 @@ const Comment = (props) => {
           </Styles.TimeStamp>
           {(reply || comment)
           && (
-          <Styles.FontContainer className="reply-container">
+          <Styles.FontContainer className="reply-containerKevin">
             <Styles.BorderContainer onClick={() => showComment(true)}>
               <FontAwesomeIcon icon="reply" />
               <Styles.Reply>Reply</Styles.Reply>

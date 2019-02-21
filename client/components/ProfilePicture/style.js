@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 export const PictureContainer = styled.div`
     display: flex;
     width: 40px;

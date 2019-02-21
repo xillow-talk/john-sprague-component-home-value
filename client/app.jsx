@@ -37,7 +37,7 @@ export default class CommentSection extends React.Component {
   }
 
   getComments = () => {
-    axios.get('http://localhost:3001/comments')
+    axios.get('http://ec2-3-16-113-121.us-east-2.compute.amazonaws.com/comments')
     .then((res) => {
       const sortedComments = _.sortBy(res.data, (i) => {
         return new moment(i.postedAt)
@@ -52,7 +52,7 @@ export default class CommentSection extends React.Component {
   }
 
   getCommentCount = () => {
-    axios.get('http://localhost:3001/commentCount')
+    axios.get('http://ec2-3-16-113-121.us-east-2.compute.amazonaws.com/commentCount')
     .then((response) => {
       this.setState({
         count: response.data.count
@@ -96,7 +96,7 @@ export default class CommentSection extends React.Component {
 
   render() {
     return (
-      <div style={{paddingLeft: '50px'}} className={'container'} onScroll={this.handleScroll}>
+      <div style={{paddingLeft: '50px'}} className={'containerKevin'} onScroll={this.handleScroll}>
       {this.state.count &&
         <CommentCount className='commentCount' count={this.state.count} />
       }

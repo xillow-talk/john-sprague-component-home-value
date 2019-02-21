@@ -5,7 +5,7 @@ import * as Styles from './style';
 const Count = props => (
   <Styles.Container>
     <FontAwesomeIcon style={{ color: '#999' }} icon="comment-alt" />
-    <Styles.Count className="commentCount">{`${props.count} comments`}</Styles.Count>
+    <Styles.Count className="commentCountKevin">{`${props.count} comments`}</Styles.Count>
   </Styles.Container>
 );
 

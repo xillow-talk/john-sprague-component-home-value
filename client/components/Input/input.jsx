@@ -32,7 +32,7 @@ const Input = (props) => {
         {!username
         && <Styles.User deleting={username}>{`@${props.username}`}</Styles.User>
       }
-        <Styles.ReplyInput className="replyInput" ref={(input) => { replyInput = input; }} value={value} onKeyUp={e => removeUser(e)} onChange={e => valueChange(e.target.value)} placeholder="Write a Reply" />
+        <Styles.ReplyInput className="replyInputKevin" ref={(input) => { replyInput = input; }} value={value} onKeyUp={e => removeUser(e)} onChange={e => valueChange(e.target.value)} placeholder="Write a Reply" />
       </Styles.InputContainer>
     </Styles.InputBorder>
   );

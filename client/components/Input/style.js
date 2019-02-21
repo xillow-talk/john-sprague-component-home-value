@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 export const InputContainer = styled.div`
     display: flex;
     width: 100%;
@@ -20,8 +18,8 @@ export const InputBorder = styled.div`
 `;
 
 export const ReplyInput = styled.input`
-    width: 100%
-    height: 20px
+    width: 100%;
+    height: 20px;
     border-style: none;
     margin-left: 5px;
     &:focus {
