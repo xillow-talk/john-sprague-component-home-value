@@ -76,12 +76,12 @@ const createMessage = async (count) => {
 };
 
 const createMessages = () => {
-  let count = 1;
+  let count = 0;
   const message = () => {
     if (count === 100) {
       return count;
     }
-    count += 1;
+    count += 0;
     createMessage(count);
     message();
   };
