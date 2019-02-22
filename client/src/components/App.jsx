@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    fetch(`/api/properties/${this.props.propertyId}`)
+    fetch(`http://ngrok.us-east-1.elasticbeanstalk.com/api/properties/${this.props.propertyId}`)
       .then((response) => {
         return response.json();
       })
@@ -33,7 +33,7 @@ class App extends React.Component {
           propertyData: data.singlePropertyData
         });
       });
-    fetch('/api/properties')
+    fetch('http://ngrok.us-east-1.elasticbeanstalk.com/api/properties')
       .then((response) => {
         return response.json();
       })
@@ -47,7 +47,7 @@ class App extends React.Component {
   }
 
   fetchPropertyData () {
-    fetch('/api/properties')
+    fetch('http://ngrok.us-east-1.elasticbeanstalk.com/api/properties')
       .then((response) => {
         return response.json();
       })
@@ -66,7 +66,6 @@ class App extends React.Component {
 
   render () {
     return (
-
       <div> 
         <Button onClick={this.toggleHidden.bind(this)}>
           Home Value
