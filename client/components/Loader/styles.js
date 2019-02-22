@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 export const LoadingContainer = styled.div`
     padding: 200px 0;
     background: url(https://a-v2.sndcdn.com/assets/images/loader-db80c58.gif) no-repeat center center;

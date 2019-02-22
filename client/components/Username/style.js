@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 export const UsernameContainer = styled.span`
     font-family: sans-serif;
     padding: 5px 0 0 10px;

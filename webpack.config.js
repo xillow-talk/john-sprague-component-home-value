@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './client/index.jsx',
+  entry: './client/index.js',
   // output of the bundle
   output: {
     path: `${__dirname}/dist`,
@@ -31,11 +31,6 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
-  // hot reloafer
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
-  // When running npm start the output of dev server will be to this folder
   devServer: {
     contentBase: './dist',
   },

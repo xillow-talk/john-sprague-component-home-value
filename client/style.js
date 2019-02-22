@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 export const CommentContainer = styled.div`
     display: flex;
     font-family: sans-serif;
