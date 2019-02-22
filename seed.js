@@ -81,7 +81,7 @@ const createMessages = () => {
     if (count === 100) {
       return count;
     }
-    count += 0;
+    count += 1;
     createMessage(count);
     message();
   };
