@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/scripts', express.static(path.resolve(__dirname, '../node_modules')));
 app.use('/song/:songId', express.static(path.resolve(__dirname, '../dist')));
+app.use(express.static(path.resolve(__dirname, '../dist')));
 
 
 const connection = mysql.createConnection({
