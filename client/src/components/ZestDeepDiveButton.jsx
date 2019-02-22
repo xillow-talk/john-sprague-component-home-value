@@ -12,13 +12,12 @@ var ZestDeepDiveButton = ({name, estimate, onClick}) => {
       <ZestDeepDiveEstimate>
         {estimate}
         <ZestDeepDiveDropDownArrow>
-        <i className="fas fa-angle-down"></i>
+          <i className="fas fa-angle-down"></i>
         </ZestDeepDiveDropDownArrow>
       </ZestDeepDiveEstimate>
     </ZestDeepDiveButtonContainer>
   );
 };
-
 
 export default ZestDeepDiveButton; 
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import ZestimateRow from './ZestimateRow.jsx';
-import fetchPropertyData from '../lib/get.js';
 import {
   Button, 
   DropDownArrow, 
@@ -10,7 +9,6 @@ import {
   ZestimateValue, 
   CollapsibleContent
 } from '../style.js';
-
 
 class App extends React.Component {
   constructor(props) {
