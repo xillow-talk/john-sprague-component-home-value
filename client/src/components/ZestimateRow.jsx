@@ -13,7 +13,6 @@ import {
   ExpandDown
 } from '../style.js';
 
-
 class ZestimateRow extends React.Component {
   constructor(props) {
     super(props);

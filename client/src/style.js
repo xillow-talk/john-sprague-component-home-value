@@ -562,10 +562,7 @@ export const ZestimateIcon = styled.div`
   text-align: center; 
   float: center;
   font-weight:light;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 `;
-
-export const SecondaryWrapper = styled.div``;
 
 export const SecondaryTitle = styled.div`
   text-transform: uppercase;
@@ -613,3 +610,5 @@ export const ToggleHistory = styled.a``;
 export const ExpandDown = styled.span`
   margin-top: 5px;
 `;
+
+export const SecondaryWrapper = styled.div``;
