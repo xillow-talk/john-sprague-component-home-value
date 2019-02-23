@@ -18,8 +18,7 @@ class App extends React.Component {
       comparableHomesData: [{}],
       localHomesData: [{}], 
       photosData: [{}],
-      isHidden: true,
-      propertyId: 5
+      isHidden: true
     };
   }
 
