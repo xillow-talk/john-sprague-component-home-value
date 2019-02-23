@@ -18,8 +18,7 @@ class App extends React.Component {
       comparableHomesData: [{}],
       localHomesData: [{}], 
       photosData: [{}],
-      isHidden: true,
-      propertyId: 5
+      isHidden: true
     };
   }
 
@@ -67,8 +66,7 @@ class App extends React.Component {
   render () {
     return (
       <div> 
-        <Button onClick={this.toggleHidden.bind(this)}>
-          Home Value
+        <Button onClick={this.toggleHidden.bind(this)}>Home Value
           <DropDownArrow>
             <i className="fas fa-angle-down"></i>
           </DropDownArrow>

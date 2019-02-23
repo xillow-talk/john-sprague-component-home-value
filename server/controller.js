@@ -11,7 +11,7 @@ module.exports = {
     });
   },
   fetchPropertyData: (req, res) => {
-    var propertyId = req._parsedOriginalUrl.pathname.slice(-1);
+    var propertyId = req.params.propertyId;
     model.fetchPropertyData(propertyId, (err, data) => {
       if (err) {
         console.log('error fetching propertyData');
