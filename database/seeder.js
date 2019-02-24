@@ -131,9 +131,6 @@ for (let i = 1; i < 100; i++) {
   localHomesData.push(obj);
 }
 
-https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/large1.jpg
-
-
 for (let j = 1; j < 100; j++) {
   photosData.push({
     url: `https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/large${j}.jpg`,

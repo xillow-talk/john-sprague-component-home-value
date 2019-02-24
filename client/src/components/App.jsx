@@ -100,7 +100,6 @@ const Child = ({propertyData, comparableHomesData, localHomesData, photosData}) 
           </ZestimateHeaderContainer>
         </HomeDetails>
       </CollapsibleContent>
-    
       <ZestimateRow 
         propertyData={propertyData[0]}
         comparableHomesData={comparableHomesData}

@@ -11,6 +11,7 @@ import {
   PropertySqftCalculation,
   PropertyImage
 } from '../style.js';
+
 var ComparableHomesItem = ({homeData, photo}) => {
   return (
     <div>

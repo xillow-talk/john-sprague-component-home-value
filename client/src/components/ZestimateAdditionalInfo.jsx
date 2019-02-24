@@ -100,6 +100,7 @@ class ZestimateAdditionalInfo extends React.Component {
               <TableContainer>
 
               <Table src='https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/table-data.png'>
+             
               </Table>
               </TableContainer>
 
