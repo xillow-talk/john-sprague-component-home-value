@@ -17,13 +17,12 @@ class App extends React.Component {
       propertyData: [{}],
       comparableHomesData: [{}],
       localHomesData: [{}], 
-      photosData: [{}],
       isHidden: true
     };
   }
 
   componentDidMount () {
-    fetch(`http://ngrok.us-east-1.elasticbeanstalk.com/api/properties/${this.props.propertyId}`)
+    fetch(`http:// ngrok.us-east-1.elasticbeanstalk.comapi/properties/${this.props.propertyId}`)
       .then((response) => {
         return response.json();
       })
@@ -40,19 +39,6 @@ class App extends React.Component {
         this.setState({
           comparableHomesData: data.comparableHomesData,
           localHomesData: data.localHomesData,
-          photosData: data.photosData
-        });
-      });
-  }
-
-  fetchPropertyData () {
-    fetch('http://ngrok.us-east-1.elasticbeanstalk.com/api/properties')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({
-          propertyData: data.propertyData
         });
       });
   }
@@ -76,8 +62,6 @@ class App extends React.Component {
             propertyData={this.state.propertyData} 
             comparableHomesData={this.state.comparableHomesData}
             localHomesData={this.state.localHomesData}
-            photosData={this.state.photosData}
-            propertyId = {this.state.propertyId}
           />
         }  
       </div>
@@ -85,7 +69,7 @@ class App extends React.Component {
   }
 }
 
-const Child = ({propertyData, comparableHomesData, localHomesData, photosData}) => {
+const Child = ({propertyData, comparableHomesData, localHomesData}) => {
   return (
     <div>
       <CollapsibleContent>
@@ -104,7 +88,6 @@ const Child = ({propertyData, comparableHomesData, localHomesData, photosData}) 
         propertyData={propertyData[0]}
         comparableHomesData={comparableHomesData}
         localHomesData={localHomesData}
-        photosData={photosData}
       /> 
     </div>
   );

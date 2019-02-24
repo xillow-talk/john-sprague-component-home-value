@@ -36,7 +36,8 @@ let propertySchema = new Schema({
   sqft: String, 
   streetAddress: String, 
   priceSqft: String,
-  saleToList: Number
+  saleToList: Number,
+  url: String
 });
 
 let comparableHomes = new Schema({
@@ -48,6 +49,7 @@ let comparableHomes = new Schema({
   sqft: String, 
   streetAddress: String, 
   priceSqft: String,
+  url: String
 });
 
 let localHomes = new Schema({
@@ -59,20 +61,16 @@ let localHomes = new Schema({
   sqft: String, 
   streetAddress: String, 
   priceSqft: String,
-  saleToList: Number
+  saleToList: Number,
+  url: String
 });
 
-let photos = new Schema({
-  url: String, 
-  propertyId: Number 
-});
 
 
 // Preping dummyData
 var propertyData = [];
 var comparableHomeData = [];
 var localHomesData = [];
-var photosData = [];
 
 // Generate a list of fake property data with 100 items 
 for (let i = 1; i < 100; i++) {
@@ -95,7 +93,8 @@ for (let i = 1; i < 100; i++) {
     sqft: numberWithCommas(faker.random.number({'min': 1000, 'max': 3500})),
     streetAddress: faker.address.streetAddress(),
     priceSqft: numberWithCommas(faker.random.number({'min': 1200, 'max': 2500})), 
-    saleToList: faker.random.number({'min': 91, 'max': 105})
+    saleToList: faker.random.number({'min': 91, 'max': 105}),
+    url: `https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/large${i}.jpg`,
   };
   propertyData.push(obj);
 }
@@ -110,7 +109,8 @@ for (let i = 1; i < 100; i++) {
     baths: faker.random.number({'min': 2, 'max': 4}),
     sqft: numberWithCommas(faker.random.number({'min': 1000, 'max': 3500})),
     streetAddress: faker.address.streetAddress(),
-    priceSqft: numberWithCommas(faker.random.number({'min': 1200, 'max': 2500})), 
+    priceSqft: numberWithCommas(faker.random.number({'min': 1200, 'max': 2500})),
+    url: `https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/large${i}.jpg`,
   };
   comparableHomeData.push(obj);
 }
@@ -126,28 +126,21 @@ for (let i = 1; i < 100; i++) {
     sqft: numberWithCommas(faker.random.number({'min': 1000, 'max': 3500})),
     streetAddress: faker.address.streetAddress(),
     priceSqft: numberWithCommas(faker.random.number({'min': 1200, 'max': 2500})),
-    saleToList: faker.random.number({'min': 91, 'max': 105})
+    saleToList: faker.random.number({'min': 91, 'max': 105}),
+    url: `https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/large${i}.jpg`,
   };
   localHomesData.push(obj);
-}
-
-for (let j = 1; j < 100; j++) {
-  photosData.push({
-    url: `https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/large${j}.jpg`,
-    propertyId: j
-  });
 }
 
 // Accessing the models for each schema
 let Property = mongoose.model('Property', propertySchema);
 let ComparableHomes = mongoose.model('ComparableHomes', comparableHomes);
 let LocalHomes = mongoose.model('LocalHomes', localHomes);
-let Photos = mongoose.model('Photos', photos); 
 
 // Insert dummydata into property model
 Property.insertMany(propertyData, (err, data) => { 
   if (err) {
-    console.log('error inserting many documents into mongo', err)
+    console.log('error inserting many documents into properties document', err)
     return;
   }
   console.log('inserted many documents into mongoose');
@@ -156,7 +149,7 @@ Property.insertMany(propertyData, (err, data) => {
 // Insert dummydata into comparableHomes model
 ComparableHomes.insertMany(comparableHomeData, (err, data) => {
   if (err) {
-    console.log('error inserting many documents into comparable homes', err);
+    console.log('error inserting many documents into comparable homes document', err);
     return;
   }
   console.log('inserted many documents into comparableHomes');
@@ -168,14 +161,5 @@ LocalHomes.insertMany(localHomesData, (err, data) => {
     console.log('error inserting many documents into comparable homes', err);
     return;
   }
-  console.log('inserted many documents into comparableHomes');
-});
-
-//Insert photoData
-Photos.insertMany(photosData, (err, data) => {
-  if (err) {
-    console.log('error inserting documents into photos');
-    return;
-  }
-  console.log('inserted mnay photos into photos');
+  console.log('inserted many documents into localhomes document');
 });

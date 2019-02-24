@@ -18,6 +18,7 @@ class LocalHomes extends React.Component {
   }
 
   render () {
+    var {localHomesData} = this.props; 
     return (
       <LocalHomeDetailsCollapsibleComponent>
         <CollapsibleContent>
@@ -31,12 +32,14 @@ class LocalHomes extends React.Component {
           </LocalHomesHeader>
           <LocalHomesListHeader>
             Recent Sales
-            <LocalHomesListHeaderSqft>Sale-to-list</LocalHomesListHeaderSqft>
+            <LocalHomesListHeaderSqft>
+              Sale-to-list
+            </LocalHomesListHeaderSqft>
           </LocalHomesListHeader>
           <LocalHomesList>
             <PropertyList>
-              {this.props.localHomesData.map((home, i) => {
-                return <LocalHomesItem key={i} homeData={home} photo={this.props.photosData[Math.floor(Math.random() * Math.floor(88))]} />;
+              {localHomesData.map((home, i) => {
+                return <LocalHomesItem key={i} homeData={home} />;
               })}
             </PropertyList>
           </LocalHomesList>

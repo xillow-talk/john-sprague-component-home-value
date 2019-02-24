@@ -56,7 +56,7 @@ class MarketAppreciation extends React.Component {
                 <CalculationValuePercentage>
                     17.3%
                   <CalculationValueInfo>
-                      Local market appreciation
+                    Local market appreciation
                   </CalculationValueInfo>
                 </CalculationValuePercentage>
                 <CalculationOperator>

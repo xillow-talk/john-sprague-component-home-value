@@ -30,6 +30,7 @@ text-align: right;
 float: right;
 font-weight:;
 `;
+
 export const HomeDetails = styled.div`
 `;
 

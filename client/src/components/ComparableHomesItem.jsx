@@ -12,11 +12,11 @@ import {
   PropertyImage
 } from '../style.js';
 
-var ComparableHomesItem = ({homeData, photo}) => {
+var ComparableHomesItem = ({homeData}) => {
   return (
     <div>
       <PropertyCard>
-        <PropertyImage src={photo.url} />
+        <PropertyImage src={homeData.url} />
         <PropertyDetailSection>
           <HomeStatus>
             <RecentlySoldIcon></RecentlySoldIcon>
