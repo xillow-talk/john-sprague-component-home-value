@@ -23,7 +23,7 @@ class ComparableHomes extends React.Component {
       <HomeDetailsCollapsibleComponent>
         <CollapsibleContent>
           <ComparableHomesHeader>
-          This estimate looks at for-sale or recently sold homes with similar features to this home, like its location, square footage and beds/baths. We then adjust the price of each comparable home based on its “similarity score” and local appreciation rate and use that set of adjusted values to calculate this estimate.
+            This estimate looks at for-sale or recently sold homes with similar features to this home, like its location, square footage and beds/baths. We then adjust the price of each comparable home based on its “similarity score” and local appreciation rate and use that set of adjusted values to calculate this estimate.
             <ComparableHomesToolTip>
               <ComparableHomesToolTipText>
                 {' '}What affects the accuracy of this estimate?
@@ -32,7 +32,9 @@ class ComparableHomes extends React.Component {
           </ComparableHomesHeader>
           <ComparableHomesListHeader>
             Top comparable homes in this estimate
-            <ComparableHomesListHeaderSqft>$/sqft</ComparableHomesListHeaderSqft>
+             <ComparableHomesListHeaderSqft>
+                $/sqft
+              </ComparableHomesListHeaderSqft>
           </ComparableHomesListHeader>
           <ComparableHomesList>
             <PropertyList>

@@ -4,8 +4,8 @@ mongoose.connect('mongodb+srv://john:zillowtalk@zillow-talk-db-ujzgi.mongodb.net
 
 // Initialize mongodb schema
 const Schema = mongoose.Schema;
-
 const ObjectId = Schema.ObjectId;
+
 // Create db schema for properties
 let propertySchema = new Schema({
   id: Number,
@@ -60,30 +60,33 @@ let Property = mongoose.model('Property', propertySchema);
 let ComparableHomes = mongoose.model('ComparableHomes', comparableHomes);
 let LocalHomes = mongoose.model('LocalHomes', localHomes);
 
-// query to grab data for a single property 
+// Query to grab data for all properties 
 module.exports = {
-  getAllProperties: (callback) => {
+  readAllProperties: (callback) => {
     Property.find((err, data) => {
       callback(err, data);
     }).setOptions({
       limit: 99
     });
   }, 
-  getAllComparableHomes: (callback) => {
+  // Query to grab data for comparableHomes 
+  readAllComparableHomes: (callback) => {
     ComparableHomes.find((err, data) => {
       callback(err, data);
     }).setOptions({
       limit: 10
     });
   }, 
-  getAllLocalHomes: (callback) => {
+  // Query to grab data for localhomes 
+  readAllLocalHomes: (callback) => {
     LocalHomes.find((err, data) => {
       callback(err, data);
     }).setOptions({
       limit: 10
     });
   },
-  getSingleProperty: (id, callback) => {
+  // Query to grab data from a single property 
+  readSingleProperty: (id, callback) => {
     Property.find({id}, (err, data) => {
       callback(err, data);
     });
