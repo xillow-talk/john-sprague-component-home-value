@@ -63,8 +63,8 @@ const randomFollowers = () => Math.floor(Math.random() * 10000 + 1);
 const randomNum = () => Math.floor(Math.random() * 99 + 1);
 const createMessage = async (count) => {
   await connection.query(`
-    INSERT INTO comments(profilePic, songId, username, message, postedAt, songTime, followers) 
-    VALUES('https://s3.us-east-2.amazonaws.com/kevinbece5/userpics/user${randomNum()}.jpg',
+    INSERT INTO comments(profilePic, songId, username, message, postedAt, songTime, followers)
+    VALUES('https://s3-us-west-1.amazonaws.com/kevin-zoundcloud/imgs/user${randomNum()}.jpg',
       '${count}',
       '${loremIpsum({ count: 1, units: 'words' })}',
       '${loremIpsum()}',

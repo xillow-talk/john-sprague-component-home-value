@@ -1,4 +1,5 @@
-const webpack = require('webpack');
+
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: './client/index.js',
@@ -31,6 +32,9 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
+  plugins: [
+    new CompressionPlugin(),
+  ],
   devServer: {
     contentBase: './dist',
   },

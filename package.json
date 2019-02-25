@@ -9,7 +9,7 @@
     "test:coverage": "jest test  --coverage",
     "test:watch": "jest tests --watch",
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "webpack_watch": "webpack -d --watch",
+    "webpack_watch": "webpack --watch",
     "build": "webpack",
     "server:dev": "nodemon server/index.js",
     "server": "node server/index.js",
@@ -33,6 +33,8 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-preset-airbnb": "^3.2.0",
+    "compression-webpack-plugin": "^2.0.0",
+    "concurrently": "^4.1.0",
     "css-loader": "^2.1.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
@@ -60,9 +62,8 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "aws-sdk": "^2.400.0",
     "axios": "^0.18.0",
-    "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
-    "concurrently": "^4.1.0",
+    "compression": "^1.7.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "font-awesome": "^4.7.0",
@@ -70,13 +71,10 @@
     "lodash": "^4.17.11",
     "lorem-ipsum": "^1.0.6",
     "moment": "^2.24.0",
-    "multer": "^1.4.1",
-    "multer-s3": "^2.9.0",
     "mysql": "^2.16.0",
     "npm": "^6.7.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "request": "^2.88.0",
-    "styled-components": "^4.1.3"
+    "request": "^2.88.0"
   }
 }
