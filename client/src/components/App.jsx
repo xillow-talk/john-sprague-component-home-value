@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    fetch(`http:// ngrok.us-east-1.elasticbeanstalk.comapi/properties/${this.props.propertyId}`)
+    fetch(`http://ngrok.us-east-1.elasticbeanstalk.com/api/properties/${this.props.propertyId}`)
       .then((response) => {
         return response.json();
       })
