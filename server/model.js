@@ -1,17 +1,17 @@
 const db = require('../database/db.js');
 
 module.exports = {
-  get: (callback) => {
-    db.getAllProperties((err, propertyData) => {
+  fetchAllPropertyData: (callback) => {
+    db.readAllProperties((err, propertyData) => {
       if (err) {
         callback(err);
       }
-      db.getAllComparableHomes((err, comparableHomesData) => {
+      db.readAllComparableHomes((err, comparableHomesData) => {
         if (err) {
           callback(err);
           return;
         }
-        db.getAllLocalHomes((err, localHomesData) => {
+        db.readAllLocalHomes((err, localHomesData) => {
           if (err) {
             callback(err);
             return; 
@@ -24,16 +24,16 @@ module.exports = {
           console.log('weve fetched all of the data');
           callback(null, data); 
         });
-        // To do, return one object and return data to the controller
       });
     });
   },
-  fetchPropertyData: (id, callback) => {
-    db.getSingleProperty(id, (err, singlePropertyData) => {
+  fetchSinglePropertyData: (id, callback) => {
+    db.readSingleProperty(id, (err, singlePropertyData) => {
       if (err) {
         callback(err);
         return;
       }
+      // Grab the results of the query and clean
       var singleProperty = {
         singlePropertyData: singlePropertyData
       };

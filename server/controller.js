@@ -1,8 +1,8 @@
 const model = require('./model.js');
 
 module.exports = {
-  get: (req, res) => {
-    model.get((err, data) => {
+  handleAllPropertyData: (req, res) => {
+    model.fetchAllPropertyData((err, data) => {
       if (err) {
         console.log('error GET request from the controller');
         return;
@@ -10,9 +10,9 @@ module.exports = {
       res.send(data);
     });
   },
-  fetchPropertyData: (req, res) => {
+  handleSinglePropertyData: (req, res) => {
     var propertyId = req.params.propertyId;
-    model.fetchPropertyData(propertyId, (err, data) => {
+    model.fetchSinglePropertyData(propertyId, (err, data) => {
       if (err) {
         console.log('error fetching propertyData');
       }

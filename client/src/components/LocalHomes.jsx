@@ -23,7 +23,7 @@ class LocalHomes extends React.Component {
       <LocalHomeDetailsCollapsibleComponent>
         <CollapsibleContent>
           <LocalHomesHeader>
-          This estimate looks at the regional average amount that homes sell for above or below their list price. We then use that number to determine the value of this home, based on its list price and other characteristics of the listing.             
+            This estimate looks at the regional average amount that homes sell for above or below their list price. We then use that number to determine the value of this home, based on its list price and other characteristics of the listing.             
             <LocalHomesToolTip>
               <LocalHomesToolTipText>
                 {' '}What affects the accuracy of this estimate?

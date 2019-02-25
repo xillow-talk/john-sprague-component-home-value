@@ -52,7 +52,8 @@ class App extends React.Component {
   render () {
     return (
       <div> 
-        <Button onClick={this.toggleHidden.bind(this)}>Home Value
+        <Button onClick={this.toggleHidden.bind(this)}>
+          Home Value
           <DropDownArrow>
             <i className="fas fa-angle-down"></i>
           </DropDownArrow>
@@ -76,7 +77,7 @@ const Child = ({propertyData, comparableHomesData, localHomesData}) => {
         <HomeDetails>
           <ZestimateHeaderContainer>
             <ZestimateTitle>
-            Zestimate
+              Zestimate
             </ZestimateTitle>
             <ZestimateValue> 
               {`$${propertyData[0].zestimationPrice}`}
