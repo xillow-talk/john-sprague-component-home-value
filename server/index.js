@@ -17,8 +17,8 @@ app.use(express.static(path.resolve(__dirname, '../dist')));
 
 
 const connection = mysql.createConnection({
-  host: '172.17.0.2',
-  user: 'root',
+  host: 'localhost',
+  user: 'john',
   password: 'password',
   database: 'ZoundCloud',
 });
