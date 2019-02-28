@@ -52,6 +52,7 @@ export default class CommentSection extends React.Component {
   }
 
   getCommentCount = () => {
+    console.log(window.location.pathname);
     axios.get(`http://localhost:3000${window.location.pathname}commentCount`)
     .then((response) => {
       this.setState({
