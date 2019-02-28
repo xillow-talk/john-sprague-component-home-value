@@ -26,8 +26,8 @@ const moment = require('moment');
 // populateFolder();
 
 const connection = mysql.createConnection({
-  host: '172.17.0.2',
-  user: 'root',
+  host: 'localhost',
+  user: 'john',
   password: 'password',
 });
 
@@ -100,4 +100,6 @@ const Seed = async () => {
   await connection.end();
 };
 
+
+Seed();
 module.exports = Seed;
