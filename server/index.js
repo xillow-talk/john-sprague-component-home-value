@@ -24,7 +24,7 @@ app.get('/song/:songId/commentCount', controller.handleNumberOfComments);
 // Handle POST requst to CREATE a new comment for a single song
 app.post('/song/:sondId/comment', controller.handleCreateComment);
 
-// Handle UPDATE request to UPDATE a message for a comment
+// Handle PUST request to UPDATE a message for a comment
 app.put('/song/:sondId/comment', controller.handleUpdateComment);
 
 // Handle DELETE request to DELETE a message for a single song

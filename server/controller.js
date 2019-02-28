@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const model = require('./model.js');
 
 module.exports = {
@@ -11,6 +12,17 @@ module.exports = {
       }
     });
   },
+  handleReadForAllSongsStingId: (req, res) => {
+    const { stringId } = req.params;
+    model.fetchAllSongsStringId(stringId, (err, data) => {
+      if (err) {
+        console.log('Error fetching all songs with a string Id: ', err);
+        res.sendStatus(404);
+      } else {
+        res.send(data).status(200);
+      }
+    });
+  },
   handleNumberOfComments: (req, res) => {
     const { songId } = req.params;
     model.fetchNumberOfComments(songId, (err, data) => {
@@ -19,6 +31,17 @@ module.exports = {
         res.sendStatus(403);
       } else {
         res.send({ count: data[0]['COUNT(*)'] });
+      }
+    });
+  },
+  handleNumberOfCommentsStringId: (req, res) => {
+    const { stringId } = req.params;
+    model.fetchNumberOfCommentsWithStringId(stringId, (err, data) => {
+      if (err) {
+        console.log('Error fetching number of comments with string id: ', err);
+        res.sendStatus(404);
+      } else {
+        res.send({ count: data[0]['COUNG(*)']});
       }
     });
   },

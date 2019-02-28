@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const db = require('./db.js');
 
 module.exports = {
@@ -11,8 +12,27 @@ module.exports = {
       }
     });
   },
+  fetchAllSongsStringId: (stringId, callback) => {
+    db.readAllSongsStringId(stringId, (err, songs) => {
+      if (err) {
+        callback(err);
+      } else {
+        // clean data here!
+        callback(null, songs);
+      }
+    });
+  },
   fetchNumberOfComments: (songId, callback) => {
     db.readNumberOfComments(songId, (err, numberOfComments) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, numberOfComments);
+      }
+    });
+  },
+  fetchNumberOfCommentsStringId: (stringId, callback) => {
+    db.readNumberOfCommentsStringId(stringId, (err, numberOfComments) => {
       if (err) {
         callback(err);
       } else {

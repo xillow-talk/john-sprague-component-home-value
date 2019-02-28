@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
@@ -13,11 +14,20 @@ module.exports = {
       callback(err, data);
     });
   },
+  readAllSongsStringId: (stringId, callback) => {
+    connection.query(`SELECT * FROM comments WHERE songId = ${stringId}`, (err, data) => {
+      callback(err, data);
+    })
+  },
   readNumberOfComments: (songId, callback) => {
     connection.query(`SELECT COUNT(*) FROM comments where songId = ${songId}`, (err, data) => {
       callback(err, data);
     });
   },
+  readNumberOfCommentsStringId: (stringId, callback) => {
+    connection.query(`SELECT COUNT(*) FROM comments where songId = ${stringId}`, (err, data) => {
+      callback(err, data);
+    });
   writeNewComment: (params, callback) => { 
     const {
       songId, profilePic, username, message, postedAt, songTime, followers,
