@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -24,11 +25,11 @@ app.get('/song/:songId/commentCount', controller.handleNumberOfComments);
 app.post('/song/:sondId/comment', controller.handleCreateComment);
 
 // Handle UPDATE request to UPDATE a message for a comment
-app.put('/song/:sondId/comment', controller.handleUpdateComment)
+app.put('/song/:sondId/comment', controller.handleUpdateComment);
 
 // Handle DELETE request to DELETE a message for a single song
 // Potentially an optimiation by searching for somehing other than message?
-app.delete('/song/:sondId/comment', controller.handleDeleteComment)
+app.delete('/song/:sondId/comment', controller.handleDeleteComment);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
