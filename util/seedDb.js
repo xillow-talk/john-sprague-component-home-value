@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable linebreak-style */
 const pg = require('pg');
-const config = require('../config.js');
+const config = require('../configDB.js');
 const { dropTable, createTable,  insertCSV } = require('./seedQueries.js');        
 
 const client = new pg.Client(config);
