@@ -26,6 +26,7 @@ dist/
 images/
 /util/dummyRecords.csv
 util/dummyRecords.csv
+config.js/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*

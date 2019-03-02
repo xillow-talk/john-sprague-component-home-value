@@ -24,8 +24,6 @@ const createTable = async () => {
     followers VARCHAR()
   )`);
 };
-\
-
 
 const Seed = async () => {
   await connection.query('DROP DATABASE IF EXISTS ZoundCloud');

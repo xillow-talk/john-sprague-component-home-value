@@ -16,6 +16,7 @@ module.exports = {
      ],
      "rules": {
        "react/prop-types": 0,
-       "react/destructuring-assignment": 0
+       "react/destructuring-assignment": 0,
+       "linebreak-style": off
      }
 };
