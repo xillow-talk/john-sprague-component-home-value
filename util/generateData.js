@@ -18,13 +18,14 @@ const randomSongTime = () => {
 };
 const randomFollowers = () => Math.floor(Math.random() * 10000 + 1);
 const randomNum = () => Math.floor(Math.random() * 498 + 1);
+const randomSongNum = () => Math.floor(Math.random() * 100000 + 1)
 
 let string = '';
 const newHead = 'profilePic,songId,stringId,userName,message,postedAt,songTime,followers,\n';
 wstream.write(newHead);
 
 for (let i = 0; i <= 10000000; i++) {
-  string += `https:s3.amazonaws.com/cloud-vibes-comments/large${randomNum()}.jpg',${i},message${i},${loremIpsum({ count: 1, units: 'words' })},${loremIpsum()},${getRandomTime()},${randomSongTime()},${randomFollowers()}\n`;
+  string += `https:s3.amazonaws.com/cloud-vibes-comments/large${randomNum()}.jpg',${randomSongNum()},message${i},${loremIpsum({ count: 1, units: 'words' })},${loremIpsum()},${getRandomTime()},${randomSongTime()},${randomFollowers()}\n`;
   if (i % 100000 === 0) {
     wstream.write(string);
     string = '';

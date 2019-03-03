@@ -18,6 +18,5 @@ const insertCSV =  `COPY comments (profilePic,songId,stringId,userName,message,p
 
  module.exports.dropTable = dropTable;
  module.exports.createTable = createTable; 
- module.exports.sampleInsert = sampleInsert;
  module.exports.insertCSV = insertCSV;
  
