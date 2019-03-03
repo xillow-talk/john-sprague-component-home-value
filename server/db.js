@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 const mysql = require('mysql');
+const { readAllCommentsQuery, readAllCommentsStringQuery, readNumberOfCommentsQuery, readNumberOfCommentsStringQuery, updateCommentQuery, deleteCommentQuery }
 
 const connection = mysql.createConnection({
   host: 'localhost',
