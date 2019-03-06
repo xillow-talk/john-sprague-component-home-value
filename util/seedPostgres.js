@@ -2,7 +2,13 @@
 /* eslint-disable linebreak-style */
 const pg = require('pg');
 const config = require('../configDB.js');
-const { dropTable, dropSongsTable, createCommentsTable, createSongsTable, insertCSV, insertSongsCSV } = require('./seedQueries.js');        
+const { dropTable, 
+        dropSongsTable, 
+        createCommentsTable, 
+        createSongsTable, 
+        insertCSV, 
+        insertSongsCSV 
+      } = require('./seedQueries.js');        
 
 const client = new pg.Client(config);
 
