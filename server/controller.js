@@ -58,7 +58,6 @@ module.exports = {
     });
   },
   handleUpdateComment: (req, res) => {
-    
     const { message } = req.params;
     model.updateComment(message, (err, data) => {
       if (err) {

@@ -1,38 +1,23 @@
 /* eslint-disable linebreak-style */
-const db = require('./db.js');
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'john',
+  password: 'password',
+  database: 'ZoundCloud',
+})
 
 module.exports = {
   fetchAllSongs: (songId, callback) => {
-    db.readAllSongs(songId, (err, songs) => {
+    connection.query(`SELECT * FROM comments where songId = ${songId}`, (err, allComments) => {
       if (err) {
-        callback(err);
-      } else {
-        // clean data here!!!
-        callback(null, songs);
+        callback(err, null); 
       }
-    });
-  },
-  fetchAllSongsStringId: (stringId, callback) => {
-    db.readAllSongsStringId(stringId, (err, songs) => {
-      if (err) {
-        callback(err);
-      } else {
-        // clean data here!
-        callback(null, songs);
-      }
+      callback(null, allComments);
     });
   },
   fetchNumberOfComments: (songId, callback) => {
-    db.readNumberOfComments(songId, (err, numberOfComments) => {
-      if (err) {
-        callback(err);
-      } else {
-        callback(null, numberOfComments);
-      }
-    });
-  },
-  fetchNumberOfCommentsStringId: (stringId, callback) => {
-    db.readNumberOfCommentsStringId(stringId, (err, numberOfComments) => {
+    connection.query(`SELECT COUNT(*) FROM comments where songId = ${songId}`, (err, numberOfComments) => {
       if (err) {
         callback(err);
       } else {
@@ -41,7 +26,13 @@ module.exports = {
     });
   },
   writeNewComment: (params, callback) => {
-    db.writeNewComment(params, (err, newComment) => {
+    const {
+      songId, profilePic, username, message, postedAt, songTime, followers,
+    } = params;
+    console.log('these are the params', params);
+    const createCommentQuery = `INSERT INTO comments (songId, profilePic, username, message, postedAt, songTime, followers)
+                                VALUES  ( "${songId}","${profilePic}","${username}","${message}","${postedAt}","${songTime}","${followers}")`;
+    connection.query(createCommentQuery, (err, newComment) => {
       if (err) {
         callback(err);
       } else {
@@ -49,8 +40,17 @@ module.exports = {
       }
     });
   },
-  updateComment: (message, callback) => {
-    db.updateComment(message, (err, updatedComment) => {
+  updateComment: (newMessage, callback) => {
+    // make sure to refactor this soon!
+    const updateMessageQuery = `UPDATE comments
+    SET message = "${newMessage}"
+    WHERE id = (SELECT id 
+                FROM (SELECT * 
+                      FROM comments
+                      ) AS A
+                WHERE message = "${oldMessage}"
+                )`;
+    connection.query(updateMessageQuery, (err, updatedComment) => {
       if (err) {
         callback(err);
       } else {
@@ -58,12 +58,25 @@ module.exports = {
       }
     });
   },
-  deleteComment: (newMessage, oldMessage, callback) => {
-    db.deleteComment(newMessage, oldMessage, (err, response) => {
+  deleteComment: (oldMessage, callback) => {
+    const selectCommentIdQuery = `SELECT id
+    FROM comments
+    WHERE message = "${oldMessage}"
+    `;
+    const deleteCommentQuery = `DELETE FROM comments
+      WHERE id = (?)
+      `;
+    connection.query(selectCommentIdQuery, (err, response) => {
       if (err) {
         callback(err);
       } else {
-        callback(null, response);
+        connection.query(deleteCommentQuery, (err, response) => {
+          if (err) {
+            callback(err);
+          } else {
+            callback(null, response);
+          }
+        });
       }
     });
   },
