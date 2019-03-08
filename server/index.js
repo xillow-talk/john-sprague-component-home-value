@@ -1,49 +1,35 @@
+/* eslint-disable linebreak-style */
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const mysql = require('mysql');
 const cors = require('cors');
 const compress = require('compression');
+const controller = require('./controller.js');
 
 const port = 3000;
 const app = express();
 app.use(cors());
 app.use(compress());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/scripts', express.static(path.resolve(__dirname, '../node_modules')));
 app.use('/song/:songId', express.static(path.resolve(__dirname, '../dist')));
 app.use(express.static(path.resolve(__dirname, '../dist')));
 
+// Handle GET request read all song comments
+app.get('/song/:songId/comments', controller.handleReadForAllSongs);
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'john',
-  password: 'password',
-  database: 'ZoundCloud',
-});
+// Handle GET request to READ number of comments for a single song
+app.get('/song/:songId/commentCount', controller.handleNumberOfComments);
 
-app.get('/song/:songId/comments', (req, res) => {
-  const { songId } = req.params;
-  connection.query(`SELECT * FROM comments where songId = ${songId}`, (err, response) => {
-    if (err) {
-      res.sendStatus(403);
-    } else {
-      res.send(response);
-    }
-  });
-});
+// Handle POST requst to CREATE a new comment for a single song
+app.post('/song/:sondId/comment', controller.handleCreateComment);
 
-app.get('/song/:songId/commentCount', (req, res) => {
-  const { songId } = req.params;
-  connection.query(`SELECT COUNT(*) FROM comments where songId = ${songId}`, (err, response) => {
-    if (err) {
-      res.sendStatus(403);
-    } else {
-      res.send({ count: response[0]['COUNT(*)'] });
-    }
-  });
-});
+// Handle PUST request to UPDATE a message for a comment
+app.put('/song/:sondId/comment', controller.handleUpdateComment);
+
+// Handle DELETE request to DELETE a message for a single song
+// Potentially an optimiation by searching for somehing other than message?
+app.delete('/song/:sondId/comment', controller.handleDeleteComment);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
