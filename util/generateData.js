@@ -22,11 +22,9 @@ const randomNum = () => Math.floor(Math.random() * 498 + 1);
 const randomSongNum = () => Math.floor(Math.random() * 10000000);
 
 let string = '';
-// const newHead = 'id, profilePic, songId,stringId,userName,message,postedAt,songTime,followers,\n';
-// wstream.write(newHead);
 
 for (let i = 20000000; i <= 30000000; i++) {
-  string += `${i}, https:s3.amazonaws.com/cloud-vibes-comments/large${randomNum()}.jpg,${randomSongNum()},songname${randomSongNum()},${loremIpsum({ count: 1, units: 'words' })},${loremIpsum()},${getRandomTime()},${randomSongTime()},${randomFollowers()}\n`;
+  string += `https:s3.amazonaws.com/cloud-vibes-comments/large${randomNum()}.jpg,${randomSongNum()},songname${randomSongNum()},${loremIpsum({ count: 1, units: 'words' })},${loremIpsum()},${getRandomTime()},${randomSongTime()},${randomFollowers()}\n`;
   if (i % 100000 === 0) {
     wstream.write(string);
     string = '';

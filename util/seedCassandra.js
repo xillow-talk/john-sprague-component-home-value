@@ -10,26 +10,24 @@ const { dropTable,
 
 var client = new cassandra.Client({contactPoints: ['127.0.0.1'], localDataCenter: 'datacenter1', keyspace: 'cloudvibes'});
 
-
-// Read users and print to console
-  // client.execute("SELECT * from comments", (err, result) => {
-  //   if (err) {
-  //     console.log('error from db: ', err) 
-  //   } 
-  //   var message = result.rows[0];
-  //   console.log(message);
-  //     // Run next function in series
-  // });
+  client.execute("SELECT * from comments", (err, result) => {
+    if (err) {
+      console.log('error from db: ', err) 
+    } 
+    var message = result.rows[0];
+    console.log(message);
+      // Run next function in series
+  });
   client.execute(dropTable, (err) => {
     if (err) {
       console.error('error droping table', err);
     }
     console.log('successfully droped table')
-    // client.execute(dropSongsTable, (err) => {
-    //   if (err) {
-    //     console.error('error droping songs table', err);
-    //   }
-    //   console.log('successfully droped songs table')
+    client.execute(dropSongsTable, (err) => {
+      if (err) {
+        console.error('error droping songs table', err);
+      }
+      console.log('successfully droped songs table')
       client.execute(createSongsTable, (err) => {
         if (err) {
           console.error('error creating table', err);
@@ -41,13 +39,13 @@ var client = new cassandra.Client({contactPoints: ['127.0.0.1'], localDataCenter
           }
           console.log('successfully created table');
         });
-        // client.execute(insertSongsCSV, (err) => {
-        //   if (err) {
-        //     console.error('error inserting csv', err);
-        //   }
-        //   process.exit();
-        //   console.log('successfully loaded songs csv file')
-        // })
+        client.execute(insertSongsCSV, (err) => {
+          if (err) {
+            console.error('error inserting csv', err);
+          }
+          process.exit();
+          console.log('successfully loaded songs csv file')
+        })
       });
     });
   });
@@ -56,13 +54,4 @@ var client = new cassandra.Client({contactPoints: ['127.0.0.1'], localDataCenter
 
 
 
-  // client.execute(insertCSV, (err) => {
-  //   if (err) {
-  //     console.error('error inserting csv', err);
-  //   }
-  //   client.end();
-  //   console.log('successfully loaded comments csv file')
-  // })
-
-// datacenter1
 
