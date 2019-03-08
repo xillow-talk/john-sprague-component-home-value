@@ -1,11 +1,7 @@
 /* eslint-disable linebreak-style */
 const mysql = require('mysql');
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'john',
-  password: 'password',
-  database: 'ZoundCloud',
-})
+const config = require('../configDB.js')
+const connection = mysql.createConnection(config)
 
 module.exports = {
   fetchAllSongs: (songId, callback) => {

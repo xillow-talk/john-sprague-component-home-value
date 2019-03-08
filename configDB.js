@@ -1,10 +1,9 @@
 
 module.exports = {
-  user: 'me',
   host: 'localhost',
-  database: 'cloudvibes',
+  user: 'john',
   password: 'password',
-  port: 5432,
-};
+  database: 'ZoundCloud',
+}
 
 // psql -U me -d cloudvibes -h 127.0.0.1 -W
