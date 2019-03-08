@@ -1,11 +1,14 @@
 /* eslint-disable linebreak-style */
-const mysql = require('mysql');
-const config = require('../configDB.js')
-const connection = mysql.createConnection(config)
+
+const pg = require('pg');
+const config = require('../configDB.js');      
+const client = new pg.Client(config);
+
+client.connect();
 
 module.exports = {
   fetchAllSongs: (songId, callback) => {
-    connection.query(`SELECT * FROM comments where songId = ${songId}`, (err, allComments) => {
+    client.query(`SELECT * FROM comments where songId = ${songId}`, (err, allComments) => {
       if (err) {
         callback(err, null); 
       }
@@ -13,7 +16,7 @@ module.exports = {
     });
   },
   fetchNumberOfComments: (songId, callback) => {
-    connection.query(`SELECT COUNT(*) FROM comments where songId = ${songId}`, (err, numberOfComments) => {
+    client.query(`SELECT COUNT(*) FROM comments where songId = ${songId}`, (err, numberOfComments) => {
       if (err) {
         callback(err);
       } else {
@@ -28,7 +31,7 @@ module.exports = {
     console.log('these are the params', params);
     const createCommentQuery = `INSERT INTO comments (songId, profilePic, username, message, postedAt, songTime, followers)
                                 VALUES  ( "${songId}","${profilePic}","${username}","${message}","${postedAt}","${songTime}","${followers}")`;
-    connection.query(createCommentQuery, (err, newComment) => {
+    client.query(createCommentQuery, (err, newComment) => {
       if (err) {
         callback(err);
       } else {
@@ -46,7 +49,7 @@ module.exports = {
                       ) AS A
                 WHERE message = "${oldMessage}"
                 )`;
-    connection.query(updateMessageQuery, (err, updatedComment) => {
+    client.query(updateMessageQuery, (err, updatedComment) => {
       if (err) {
         callback(err);
       } else {
@@ -62,11 +65,11 @@ module.exports = {
     const deleteCommentQuery = `DELETE FROM comments
       WHERE id = (?)
       `;
-    connection.query(selectCommentIdQuery, (err, response) => {
+    client.query(selectCommentIdQuery, (err, response) => {
       if (err) {
         callback(err);
       } else {
-        connection.query(deleteCommentQuery, (err, response) => {
+        client.query(deleteCommentQuery, (err, response) => {
           if (err) {
             callback(err);
           } else {
