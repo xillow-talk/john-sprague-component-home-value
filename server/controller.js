@@ -8,6 +8,7 @@ module.exports = {
       if (err) {
         res.sendStatus(403);
       } else {
+        console.log('hi')
         res.send(data.rows).status(200);
       }
     });
@@ -21,12 +22,12 @@ module.exports = {
       } else {
         res.status(200).send(data.rows[0].count);
         // res.send({ count: data[0]['COUNT(*)'] });
-      }
+      }app.use(bodyParser.json());
     });
   },
   handleCreateComment: (req, res) => {
-    const { params } = req;
-    model.writeNewComment(params, (err, data) => {
+    const { body} = req;
+    model.writeNewComment(body, (err, data) => {
       if (err) {
         console.log('Error writing comment: ', err);
         res.sendStatus(404); 

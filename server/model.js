@@ -26,16 +26,18 @@ module.exports = {
   },
   writeNewComment: (params, callback) => {
     const {
-      songId, profilePic, username, message, postedAt, songTime, followers,
+      songid, stringid, profilepic, username, message, postedat, songtime, followers
     } = params;
-    console.log('these are the params', params);
-    const createCommentQuery = `INSERT INTO comments (songId, profilePic, username, message, postedAt, songTime, followers)
-                                VALUES  ( "${songId}","${profilePic}","${username}","${message}","${postedAt}","${songTime}","${followers}")`;
+    const createCommentQuery = `INSERT INTO comments (songid,profilePic,username,message,postedat,songtime,followers)
+                                VALUES  (${songid},'${profilepic}','${username}','${message}','${postedat}','${songtime}',${followers})`;
+                      ;
     client.query(createCommentQuery, (err, newComment) => {
+      console.log(createCommentQuery)
       if (err) {
         callback(err);
       } else {
-        callback(null, newComment);
+        
+        callback(null, null);
       }
     });
   },

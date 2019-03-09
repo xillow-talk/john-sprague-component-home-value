@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+const newrelic = require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -8,7 +9,7 @@ const controller = require('./controller.js');
 
 const port = 3000;
 const app = express();
-app.use(cors());
+// app.use(cors());
 app.use(compress());
 app.use(bodyParser.json());
 app.use('/scripts', express.static(path.resolve(__dirname, '../node_modules')));
