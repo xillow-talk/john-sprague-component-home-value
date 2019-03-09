@@ -4,7 +4,11 @@ const pg = require('pg');
 const config = require('../configDB.js');      
 const client = new pg.Client(config);
 
-client.connect();
+client.connect((err) => {
+  if (err) {
+    console.log('Not able to connect to database: ', err);
+  }
+});
 module.exports = {
   fetchAllSongs: (songId, callback) => {
     client.query(`SELECT * FROM comments where songId = ${songId}`, (err, allComments) => {
@@ -25,7 +29,7 @@ module.exports = {
   },
   writeNewComment: (params, callback) => {
     const {
-      songid, stringid, profilepic, username, message, postedat, songtime, followers
+      songid, profilepic, username, message, postedat, songtime, followers
     } = params;
     const createCommentQuery = `INSERT INTO comments (songid,profilePic,username,message,postedat,songtime,followers)
                                 VALUES  (${songid},'${profilepic}','${username}','${message}','${postedat}','${songtime}',${followers})`;
