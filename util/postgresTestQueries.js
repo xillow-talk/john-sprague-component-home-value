@@ -17,7 +17,3 @@ module.exports = {
   deleteCommentQuery: 'DELETE FROM comments WHERE id = (?)',
 };
 
-
-INSERT INTO comments (songId, stringId, profilePic, username, message, postedAt, songTime, followers)
-VALUES (2597659, 'songname3763779', 'https:s3.amazonaws.com/cloud-vibes-comments/large10.jpg', 'officia', 'Enim in est sunt voluptate laboris commodo tempor.',
-        '2019-03-05T20:32:22-08:00', '3:52', 7434);

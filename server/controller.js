@@ -8,18 +8,7 @@ module.exports = {
       if (err) {
         res.sendStatus(403);
       } else {
-        res.send(data).status(200);
-      }
-    });
-  },
-  handleReadForAllSongsStingId: (req, res) => {
-    const { stringId } = req.params;
-    model.fetchAllSongsStringId(stringId, (err, data) => {
-      if (err) {
-        console.log('Error fetching all songs with a string Id: ', err);
-        res.sendStatus(404);
-      } else {
-        res.send(data).status(200);
+        res.send(data.rows).status(200);
       }
     });
   },
@@ -30,25 +19,14 @@ module.exports = {
         console.log('Error fetching number of comments: ', err);
         res.sendStatus(403);
       } else {
-        res.send({ count: data[0]['COUNT(*)'] });
+        res.status(200).send(data.rows[0].count);
       }
-    });
-  },
-  handleNumberOfCommentsStringId: (req, res) => {
-    const { stringId } = req.params;
-    model.fetchNumberOfCommentsWithStringId(stringId, (err, data) => {
-      if (err) {
-        console.log('Error fetching number of comments with string id: ', err);
-        res.sendStatus(404);
-      } else {
-        res.send({ count: data[0]['COUNG(*)']});
-      }
+      app.use(bodyParser.json());
     });
   },
   handleCreateComment: (req, res) => {
-    const { params } = req;
-
-    model.writeNewComment(params, (err, data) => {
+    const { body} = req;
+    model.writeNewComment(body, (err, data) => {
       if (err) {
         console.log('Error writing comment: ', err);
         res.sendStatus(404); 
