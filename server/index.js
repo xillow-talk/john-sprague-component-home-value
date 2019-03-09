@@ -11,7 +11,6 @@ const port = 3000;
 const app = express();
 // app.use(cors());
 app.use(compress());
-// app.use(bodyParser.json());
 app.use('/scripts', express.static(path.resolve(__dirname, '../node_modules')));
 app.use('/song/:songId', express.static(path.resolve(__dirname, '../dist')));
 app.use(express.static(path.resolve(__dirname, '../dist')));

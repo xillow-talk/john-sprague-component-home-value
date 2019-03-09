@@ -20,8 +20,8 @@ module.exports = {
         res.sendStatus(403);
       } else {
         res.status(200).send(data.rows[0].count);
-        // res.send({ count: data[0]['COUNT(*)'] });
-      }app.use(bodyParser.json());
+      }
+      app.use(bodyParser.json());
     });
   },
   handleCreateComment: (req, res) => {

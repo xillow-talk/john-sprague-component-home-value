@@ -5,7 +5,6 @@ const config = require('../configDB.js');
 const client = new pg.Client(config);
 
 client.connect();
-
 module.exports = {
   fetchAllSongs: (songId, callback) => {
     client.query(`SELECT * FROM comments where songId = ${songId}`, (err, allComments) => {
@@ -41,7 +40,6 @@ module.exports = {
     });
   },
   updateComment: (newMessage, callback) => {
-    // make sure to refactor this soon!
     const updateMessageQuery = `UPDATE comments
     SET message = "${newMessage}"
     WHERE id = (SELECT id 
@@ -81,6 +79,3 @@ module.exports = {
     });
   },
 };
-
-
-// 'fetch for one route'; also include fetching with a string and a number
