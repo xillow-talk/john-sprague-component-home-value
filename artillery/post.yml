@@ -4,9 +4,13 @@ config:
   http: 
     pool: 14
   phases:
-    - duration: 5
-      arrivalRate: 400
-      # rampTo: 1000
+    - duration: 60
+      arrivalRate: 10
+      rampTo: 400
+      name: "Warm up the application"
+    - duration: 60
+      arrivalRate: 1000
+      name: "Substain max load"
   defaults:
     headers:
       x-my-service-auth: '987401838271002188298567'
