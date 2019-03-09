@@ -111,7 +111,7 @@ export default class CommentSection extends React.Component {
         key={index}
         image={i.profilepic}
         username={i.username}
-        songTime={i.songime}
+        songTime={i.songtime}
         comment={i.message}
         followers={i.followers}
         postedAt={i.postedat}
