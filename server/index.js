@@ -11,7 +11,7 @@ const port = 3000;
 const app = express();
 // app.use(cors());
 app.use(compress());
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use('/scripts', express.static(path.resolve(__dirname, '../node_modules')));
 app.use('/song/:songId', express.static(path.resolve(__dirname, '../dist')));
 app.use(express.static(path.resolve(__dirname, '../dist')));
@@ -20,10 +20,10 @@ app.use(express.static(path.resolve(__dirname, '../dist')));
 app.get('/song/:songId/comments', controller.handleReadForAllSongs);
 
 // Handle GET request to READ number of comments for a single song
-app.get('/song/:songId/commentCount', controller.handleNumberOfComments);
+app.get('/song/:songId/commentCount',  controller.handleNumberOfComments);
 
 // Handle POST requst to CREATE a new comment for a single song
-app.post('/song/:sondId/comment', controller.handleCreateComment);
+app.post('/song/:sondId/comment', bodyParser.json(), controller.handleCreateComment);
 
 // Handle PUST request to UPDATE a message for a comment
 app.put('/song/:sondId/comment', controller.handleUpdateComment);

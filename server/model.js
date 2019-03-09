@@ -32,7 +32,6 @@ module.exports = {
                                 VALUES  (${songid},'${profilepic}','${username}','${message}','${postedat}','${songtime}',${followers})`;
                       ;
     client.query(createCommentQuery, (err, newComment) => {
-      console.log(createCommentQuery)
       if (err) {
         callback(err);
       } else {

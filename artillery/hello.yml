@@ -16,6 +16,4 @@ scenarios:
     - function: 'generateRandomEndPoints'
     - get:
         url: "/song/{{ endPoint }}"
-    - post: 
-        url: "/song/{{ endPoint }}"
-        body: 
+  

@@ -8,7 +8,6 @@ module.exports = {
       if (err) {
         res.sendStatus(403);
       } else {
-        console.log('hi')
         res.send(data.rows).status(200);
       }
     });

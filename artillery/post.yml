@@ -1,0 +1,26 @@
+config:
+  target: 'http://localhost:3000'
+  processor: './randomEndPoints.js'
+  http: 
+    pool: 14
+  phases:
+    - duration: 5
+      arrivalRate: 400
+      # rampTo: 1000
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - name: 'post a new message'
+    flow: 
+    - function: 'generateRandomEndPoints'
+    - post: 
+        url: "/song/{{ endPoint }}/comment"
+        json: 
+          songid: 45000000
+          profilepic: 'https:s3.amazonaws.com/cloud-vibes-comments/large1'
+          message: 'this is a random message'
+          postedat: '2019-03-05'
+          songtime: '3:00'
+          followers: 232
+
