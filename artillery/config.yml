@@ -20,4 +20,16 @@ scenarios:
     - function: 'generateRandomEndPoints'
     - get:
         url: "/song/{{ endPoint }}"
+  - name: 'post a new message'
+    flow: 
+    - function: 'generateRandomEndPoints'
+    - post: 
+        url: "/song/{{ endPoint }}/comment"
+        json: 
+          songid: 45000000
+          profilepic: 'https:s3.amazonaws.com/cloud-vibes-comments/large1'
+          message: 'this is a random message'
+          postedat: '2019-03-05'
+          songtime: '3:00'
+          followers: 232
   
