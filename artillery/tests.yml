@@ -5,7 +5,7 @@ config:
     pool: 14
   phases:
     - duration: 60
-      arrivalRate: 50
+      arrivalRate: 5
       rampTo: 400
       name: "Warm up the application"
     - duration: 60
@@ -20,17 +20,17 @@ scenarios:
     - function: 'generateRandomEndPoints'
     - get:
         url: "/{{ endPoint }}"
-  - name: 'post a new message'
-    flow: 
-    - function: 'generateRandomEndPoints'
-    - post: 
-        url: "/{{ endPoint }}/comment"
-        json: 
-          songid: 45000000
-          profilepic: 'https:s3.amazonaws.com/cloud-vibes-comments/large1'
-          message: 'this is a random message'
-          postedat: '2019-03-05'
-          songtime: '3:00'
-          followers: 232
+  # - name: 'post a new message'
+  #   flow: 
+  #   - function: 'generateRandomEndPoints'
+  #   - post: 
+  #       url: "/{{ endPoint }}"
+  #       json: 
+  #         songid: 45000000
+  #         profilepic: 'https:s3.amazonaws.com/cloud-vibes-comments/large1'
+  #         message: 'this is a random message'
+  #         postedat: '2019-03-05'
+  #         songtime: '3:00'
+  #         followers: 232
 
 

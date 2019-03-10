@@ -1,18 +1,16 @@
 /* eslint-disable linebreak-style */
+require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const compress = require('compression');
 const controller = require('./controller.js');
-const morgan = require('morgan');
 const port = 3000;
 const app = express();
 
 app.use(cors());
-app.use(morgan('dev'))
 app.use(compress());
-
 app.use('/scripts', express.static(path.resolve(__dirname, '../node_modules')));
 app.use('/api/comments/song/:songId', express.static(path.resolve(__dirname, '../dist')));
 app.use(express.static(path.resolve(__dirname, '../dist')));

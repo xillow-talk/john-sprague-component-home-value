@@ -1,9 +1,7 @@
 /* eslint-disable linebreak-style */
-
 const pg = require('pg');
 const config = require('../configDB.js');      
 const client = new pg.Client(config);
-
 client.connect((err) => {
   if (err) {
     console.log('Not able to connect to database: ', err);
