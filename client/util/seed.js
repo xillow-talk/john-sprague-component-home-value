@@ -5,7 +5,6 @@ const request = require('request');
 const fs = require('fs');
 const moment = require('moment');
 
-
 // GETS IMAGES FOR PROFILE PIC
 // const download = async (uri, filename, callback) => {
 //   request.head(uri, (err, res, body) => {
