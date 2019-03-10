@@ -1,5 +1,5 @@
 config:
-  target: 'http://localhost:3000'
+  target: 'http://localhost:3001'
   processor: './generateData.js'
   http: 
     pool: 14
@@ -19,12 +19,12 @@ scenarios:
     flow: 
     - function: 'generateRandomEndPoints'
     - get:
-        url: "/song/{{ endPoint }}"
+        url: "/{{ endPoint }}"
   - name: 'post a new message'
     flow: 
     - function: 'generateRandomEndPoints'
     - post: 
-        url: "/song/{{ endPoint }}/comment"
+        url: "/{{ endPoint }}/comment"
         json: 
           songid: 45000000
           profilepic: 'https:s3.amazonaws.com/cloud-vibes-comments/large1'
@@ -32,4 +32,5 @@ scenarios:
           postedat: '2019-03-05'
           songtime: '3:00'
           followers: 232
-  
+
+
