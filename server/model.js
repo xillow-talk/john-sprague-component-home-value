@@ -29,7 +29,7 @@ module.exports = {
     const {
       songid, profilepic, username, message, postedat, songtime, followers
     } = params;
-    const createCommentQuery = `INSERT INTO comments (songid,profilePic,username,message,postedat,songtime,followers)
+    const createCommentQuery = `INSERT INTO comments (songid,profilepic,username,message,postedat,songtime,followers)
                                 VALUES  (${songid},'${profilepic}','${username}','${message}','${postedat}','${songtime}',${followers})`;
                       ;
     client.query(createCommentQuery, (err, newComment) => {

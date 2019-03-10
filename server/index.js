@@ -17,7 +17,7 @@ app.use(express.static(path.resolve(__dirname, '../dist')));
 
 app.get('/api/comments/bundle', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/bundle.js'));
-})
+});
 
 // Handle GET request read all song comments
 app.get('/api/comments/song/:songId/comments', controller.handleReadForAllSongs);

@@ -25,7 +25,7 @@ module.exports = {
     });
   },
   handleCreateComment: (req, res) => {
-    const { body} = req;
+    const { body } = req;
     model.writeNewComment(body, (err, data) => {
       if (err) {
         console.log('Error writing comment: ', err);
