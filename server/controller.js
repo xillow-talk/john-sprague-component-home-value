@@ -21,7 +21,7 @@ module.exports = {
       } else {
         res.status(200).send(data.rows[0].count);
       }
-      app.use(bodyParser.json());
+    
     });
   },
   handleCreateComment: (req, res) => {
