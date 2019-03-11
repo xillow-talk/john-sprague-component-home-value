@@ -4,7 +4,6 @@ const dropSongsTable = 'DROP TABLE IF EXISTS songs';
 const createCommentsTable = `CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
   songId INT,
-  stringId VARCHAR(20),
   profilePic VARCHAR(100),
   username VARCHAR(100),
   message VARCHAR(200),
@@ -18,7 +17,7 @@ const createSongsTable = `CREATE TABLE songs (
   songname VARCHAR(20)
 )`
                    
-const insertCSV =  `COPY comments (profilePic,songId,stringId,userName,message,postedAt,songTime,followers) 
+const insertCSV =  `COPY comments (songId, profilePic,userName,message,postedAt,songTime,followers) 
                     FROM '/home/unome/Documents/courseHr/repos/SDC/dummyData/dummyRecords.csv' 
                     DELIMITERS ',' CSV HEADER`;
 
@@ -33,4 +32,9 @@ DELIMITERS ',' CSV HEADER`;
  module.exports.createSongsTable = createSongsTable;
  module.exports.insertSongsCSV = insertSongsCSV;
 
- 
+//  scp -i ~/home/unome/Documents/courseHr/repos/SDC/dummyData/dummyRecords.csv ec2-user@ec2-52-71-249-188.compute-1.amazonaws.com:~/data/
+
+
+//  scp -i ~/Documents/courseHr/repos/SDC/SDCDb.pem ~/Documents/courseHr/repos/SDC/dummyData/dummyRecords.csv/ ec2-user@ec2-52-71-249-188.compute-1.amazonaws.com:/tmp
+//  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+//  nvm install 4.4.5

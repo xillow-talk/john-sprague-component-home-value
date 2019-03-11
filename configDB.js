@@ -1,9 +1,9 @@
 
 module.exports = {
   user: 'me',
-  host: 'localhost',
+  host: 'ec2-52-71-249-188.compute-1.amazonaws.com',
   database: 'cloudvibes',
-  password: 'password',
+  password: '$password',
   port: 5432,
 };
 
