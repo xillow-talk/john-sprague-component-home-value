@@ -28,7 +28,7 @@ wstream.write(newHead);
 
 for (let i = 1 ; i <= 35000000; i++) {
   string += `https:s3.amazonaws.com/cloud-vibes-comments/large${randomNum()}.jpg,${randomSongNum()},songname${randomSongNum()},${loremIpsum({ count: 1, units: 'words' })},${loremIpsum()},${getRandomTime()},${randomSongTime()},${randomFollowers()}\n`;
-  if (i % 100000 === 0) {
+  if (i % 1000 === 0) {
     wstream.write(string);
     string = '';
     console.log(i)
