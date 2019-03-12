@@ -3,7 +3,6 @@ const model = require('./model.js');
 
 module.exports = {
   handleReadForAllSongs: (req, res) => {
-    console.log('hi')
     const { songId } = req.params;
     model.fetchAllSongs(songId, (err, data) => {
       if (err) {
