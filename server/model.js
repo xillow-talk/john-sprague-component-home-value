@@ -6,12 +6,11 @@ client.connect((err) => {
   if (err) {
     console.log('Not able to connect to database: ', err);
   } else {
-    console.log('connect to db')
+    console.log('hidy ho captain, we\'ve successfully conected to the db!')
   }
 });
 module.exports = {
   fetchAllSongs: (songId, callback) => {
-    console.log('made a request, ', songId);
     client.query(`SELECT * FROM comments where songId = ${songId}`, (err, allComments) => {
       if (err) {
         callback(err, null); 
