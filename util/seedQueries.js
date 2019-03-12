@@ -2,7 +2,7 @@
 const dropTable = 'DROP TABLE IF EXISTS comments';
 const dropSongsTable = 'DROP TABLE IF EXISTS songs';
 const createCommentsTable = `CREATE TABLE comments (
-  id SERIAL PRIMARY KEY,
+  id PRIMARY KEY,
   songId INT,
   stringId VARCHAR(20),
   profilePic VARCHAR(100),
@@ -18,8 +18,8 @@ const createSongsTable = `CREATE TABLE songs (
   songname VARCHAR(20)
 )`
                    
-const insertCSV =  `COPY comments (profilePic,songId,stringId,userName,message,postedAt,songTime,followers) 
-                    FROM '/home/unome/Documents/courseHr/repos/SDC/dummyData/dummyRecords.csv' 
+const insertCSV =  `COPY comments (profilePic,songId, stringId, userName,message,postedAt,songTime,followers) 
+                    FROM '/tmp/dummyRecords.csv' 
                     DELIMITERS ',' CSV HEADER`;
 
 const insertSongsCSV = `COPY songs (songname) 

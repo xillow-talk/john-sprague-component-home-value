@@ -4,7 +4,7 @@ const loremIpsum = require('lorem-ipsum');
 const moment = require('moment');
 
 //  {flags: 'a'}
-const wstream = fs.createWriteStream('../../dummyData/dummyRecords.csv');
+const wstream = fs.createWriteStream('../../dummyData/dummyRecords.csv', {flags: 'a'});
 
 const getRandomTime = () => {
   const randomNum = () => Math.floor(Math.random() * 30 + 1);
@@ -23,12 +23,12 @@ const randomSongNum = () => Math.floor(Math.random() * 10000000);
 
 let string = '';
 
-const newHead = 'profilePic,songId,username,message,postedAt,songTime,followers,\n';
-wstream.write(newHead);
+// const newHead = 'profilePic,songId,username,message,postedAt,songTime,followers,\n';
+// wstream.write(newHead);
 
-for (let i = 1 ; i <= 35000000; i++) {
-  string += `https:s3.amazonaws.com/cloud-vibes-comments/large${randomNum()}.jpg,${randomSongNum()},songname${randomSongNum()},${loremIpsum({ count: 1, units: 'words' })},${loremIpsum()},${getRandomTime()},${randomSongTime()},${randomFollowers()}\n`;
-  if (i % 1000 === 0) {
+for (let i = 20000001 ; i <= 30000000; i++) {
+  string += `https:s3.amazonaws.com/cloud-vibes-comments/large${randomNum()}.jpg,${randomSongNum()},${loremIpsum({ count: 1, units: 'words' })},${loremIpsum()},${getRandomTime()},${randomSongTime()},${randomFollowers()}\n`;
+  if (i % 100000 === 0) {
     wstream.write(string);
     string = '';
     console.log(i)
