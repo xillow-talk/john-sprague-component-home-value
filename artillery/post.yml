@@ -18,17 +18,15 @@ scenarios:
   - name: 'navigate to a particular song'
     flow: 
     - function: 'generateRandomEndPoints'
-    - get: 
-        url: "/api/comments/song/{{ endPoint }}/comments"
-    # - post:
-    #     url: "/api/comments/song/29000000/comment"
-    #     json:
-    #       songid: 4
-    #       profilepic: {{ profilepic }}
-    #       username: {{ username }}
-    #       message: {{ message }}
-    #       songtime: {{ songtime }}
-    #       followers: {{ followers }}
+    - post:
+      url: "/api/comments/song/29000000/comment"
+      json:
+        songid: 4
+        profilepic: "http://www.sampleurl.com/api/large/2323"
+        username: "big d"
+        message: "you know you want to get with thie :?"
+        songtime: "4:69"
+        followers: 43434
 
 
 
