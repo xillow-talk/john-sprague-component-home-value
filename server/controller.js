@@ -22,11 +22,11 @@ module.exports = {
       } else {
         res.status(200).send(data.rows[0].count);
       }
-      app.use(bodyParser.json());
+    
     });
   },
   handleCreateComment: (req, res) => {
-    const { body} = req;
+    const { body } = req;
     model.writeNewComment(body, (err, data) => {
       if (err) {
         console.log('Error writing comment: ', err);

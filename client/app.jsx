@@ -36,8 +36,11 @@ export default class CommentSection extends React.Component {
     window.removeEventListener('scroll', this.onScroll, false);
   }
 
-  getComments = () => {
-    axios.get(`http://localhost:3000${window.location.pathname}comments`)
+  getComments = () => {  
+    var paths = window.location.pathname.split('/');
+    var songId = paths[paths.length - 1];
+    
+    axios.get(`/api/comments/song/${songId}/comments`)
     .then((res) => {
       const sortedComments = _.sortBy(res.data, (i) => {
         return new moment(i.postedat)
@@ -52,8 +55,9 @@ export default class CommentSection extends React.Component {
   }
 
   getCommentCount = () => {
-    console.log(window.location.pathname);
-    axios.get(`http://localhost:3000${window.location.pathname}commentCount`)
+    var paths = window.location.pathname.split('/');
+    var songId = paths[paths.length - 1];
+    axios.get(`/api/comments/song/${songId}/commentCount`)
     .then((response) => {
       this.setState({
         count: response.data.count

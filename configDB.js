@@ -1,4 +1,3 @@
-
 module.exports = {
   user: 'postgres',
   host: 'ec2-52-71-249-188.compute-1.amazonaws.com',
