@@ -1,9 +1,8 @@
-
 module.exports = {
-  user: 'me',
-  host: 'ec2-52-71-249-188.compute-1.amazonaws.com',
+  user: 'postgres',
+  host: 'localhost',
   database: 'cloudvibes',
-  password: '$password',
+  password: 'password',
   port: 5432,
 };
 
