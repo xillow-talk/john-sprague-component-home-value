@@ -6,10 +6,10 @@ config:
   phases:
     - duration: 30
       arrivalRate: 1
-      rampTo: 100
+      rampTo: 250
       name: "Warm up the application"
     - duration: 60
-      arrivalRate: 100
+      arrivalRate: 250
       name: "Substain max load"
   defaults:
     headers:
