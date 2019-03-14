@@ -14,7 +14,11 @@ app.use(compress());
 app.use('/scripts', express.static(path.resolve(__dirname, '../node_modules')));
 
 app.use(express.static(path.resolve(__dirname, '../dist')));
+app.use('/', express.static(path.resolve(__dirname, '../dist')));
 
+app.get('/loaderio-5e290d216094338c2d32f9f4c9f7808f/', (req, res) => { 
+	res.sendFile(path.resolve(__dirname, './loaderio-5e290d216094338c2d32f9f4c9f7808f.txt'));
+}); 
 app.get('/api/comments/bundle', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/bundle.js'));
 });
