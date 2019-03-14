@@ -35,6 +35,3 @@ util/dummyRecords.csv
 !.elasticbeanstalk/*.global.yml
 
 # Artillery Files
-
-newrelic.js
-
