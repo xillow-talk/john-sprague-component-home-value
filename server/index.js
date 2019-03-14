@@ -16,16 +16,12 @@ app.use('/scripts', express.static(path.resolve(__dirname, '../node_modules')));
 app.use(express.static(path.resolve(__dirname, '../dist')));
 app.use('/', express.static(path.resolve(__dirname, '../dist')));
 
-app.get('/loaderio-5e290d216094338c2d32f9f4c9f7808f/', (req, res) => { 
-	res.sendFile(path.resolve(__dirname, './loaderio-5e290d216094338c2d32f9f4c9f7808f.txt'));
+app.get('/loaderio-da68e5d82a57bfe472f00248b5164f9c/', (req, res) => { 
+	res.sendFile(path.resolve(__dirname, './loaderio-da68e5d82a57bfe472f00248b5164f9c.txt'));
 }); 
 app.get('/api/comments/bundle', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/bundle.js'));
 });
-
-app.get('/loaderio-a5b6108bcae44329e64de6542f68cb0c',(req, res) => {
-  res.sendFile(path.resolve(__dirname, './loaderio-a5b6108bcae44329e64de6542f68cb0c.txt'));
-})
 
 // Handle GET request read all song comments
 app.get('/api/comments/song/:songId/comments', controller.handleReadForAllSongs);
