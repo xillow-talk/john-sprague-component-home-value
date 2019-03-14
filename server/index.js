@@ -12,7 +12,6 @@ const app = express();
 app.use(cors());
 app.use(compress());
 app.use('/scripts', express.static(path.resolve(__dirname, '../node_modules')));
-app.use('/api/comments/song/:songId', express.static(path.resolve(__dirname, '../dist')));
 
 app.use(express.static(path.resolve(__dirname, '../dist')));
 
