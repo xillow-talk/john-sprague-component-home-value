@@ -8,7 +8,11 @@ module.exports = {
       if (err) {
         res.sendStatus(403);
       } else {
-        res.send(data.rows).status(200);
+        // Parse the data, only if the songId is in the redis cache 
+        if (typeof data === 'string') {
+          data = JSON.parse(data);
+        }
+        res.send(data).status(200);
       }
     });
   },

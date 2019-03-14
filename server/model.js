@@ -2,6 +2,18 @@
 const pg = require('pg');
 const config = require('../configDB.js');      
 const client = new pg.Client(config);
+const host = "127.0.0.1";
+var redis = require('redis');
+var redisClient = redis.createClient(6379, host);
+
+// Redis 
+redisClient.on('connect', function() {
+  console.log('hidy ho captain, we\'ve successfylly connected to redis!');
+})
+redisClient.on('error', function (err) {
+  console.log('Something went wrong ' + err);
+});
+
 client.connect((err) => {
   if (err) {
     console.log('Not able to connect to database: ', err);
@@ -11,11 +23,29 @@ client.connect((err) => {
 });
 module.exports = {
   fetchAllSongs: (songId, callback) => {
-    client.query(`SELECT * FROM comments where songId = ${songId}`, (err, allComments) => {
-      if (err) {
-        callback(err, null); 
+    // Check to see if the the songId is in redis cache
+    redisClient.exists(`${songId}`, (err, reply) => {
+      // If songId is in cache, fetch the comments and return the value in the callback
+      if (reply === 1) {
+          redisClient.get(`${songId}`, (err, result) => {
+            if (err) {
+                console.log('error from redis: ', err);
+                throw error;
+            }
+            callback(null, result);
+        });
+        // If songId is not in the cache, fetch the comments from the database and also save the results to the cache
+      } else {
+        // Send GET request and then store the result in the cache, and return value to controller 
+        client.query(`SELECT * FROM comments where songId = ${songId}`, (err, allComments) => {
+          if (err) {
+            callback(err, null); 
+          }
+          // Set key value to the results of the GET requst to redis
+          redisClient.set(`${songId}`, `${JSON.stringify(allComments.rows)}`, (err, reply) => {          });
+          callback(null, allComments.rows);
+        });
       }
-      callback(null, allComments);
     });
   },
   fetchNumberOfComments: (songId, callback) => {
