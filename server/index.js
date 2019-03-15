@@ -16,8 +16,8 @@ app.use('/scripts', express.static(path.resolve(__dirname, '../node_modules')));
 app.use(express.static(path.resolve(__dirname, '../dist')));
 app.use('/', express.static(path.resolve(__dirname, '../dist')));
 
-app.get('/loaderio-da68e5d82a57bfe472f00248b5164f9c/', (req, res) => { 
-	res.sendFile(path.resolve(__dirname, './loaderio-da68e5d82a57bfe472f00248b5164f9c.txt'));
+app.get('/loaderio-00072e857aba6340088297ab56ffd7c6/', (req, res) => { 
+	res.sendFile(path.resolve(__dirname, './loaderio-00072e857aba6340088297ab56ffd7c6.txt'));
 }); 
 app.get('/api/comments/bundle', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/bundle.js'));

@@ -11,9 +11,8 @@ const pool = new pg.Pool({
   database: config.database,
   password: config.password,
   port: config.port,
-  // idleTimeoutMillis: 20000,
-  // connectionTimeoutMillis: 3000,
-  max: 50 //default
+
+  max: 15 //default
 });
 // client.connect; //TODO: determine if the connection should be open/closed or remain open
 pool.connect();
@@ -26,13 +25,13 @@ redisClient.on('error', function (err) {
   console.log('Something went wrong ' + err);
 });
 
-client.connect((err) => {
-  if (err) {
-    console.log('Not able to connect to database: ', err);
-  } else {
-    console.log('hidy ho captain, we\'ve successfully conected to the db!')
-  }
-});
+// client.connect((err) => {
+//   if (err) {
+//     console.log('Not able to connect to database: ', err);
+//   } else {
+//     console.log('hidy ho captain, we\'ve successfully conected to the db!')
+//   }
+// });
 module.exports = {
   fetchAllSongs: (songId, callback) => {
     // Check to see if the the songId is in redis cache
@@ -126,3 +125,5 @@ module.exports = {
   },
 };
 
+  // idleTimeoutMillis: 20000,
+  // connectionTimeoutMillis: 3000,
