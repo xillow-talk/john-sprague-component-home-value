@@ -5,6 +5,18 @@ const client = new pg.Client(config);
 const host = "127.0.0.1";
 var redis = require('redis');
 var redisClient = redis.createClient(6379, host);
+const pool = new pg.Pool({
+  user: config.user,
+  host: config.host,
+  database: config.database,
+  password: config.password,
+  port: config.port,
+  // idleTimeoutMillis: 20000,
+  // connectionTimeoutMillis: 3000,
+  max: 15 //default
+});
+// client.connect; //TODO: determine if the connection should be open/closed or remain open
+pool.connect();
 
 // Redis 
 redisClient.on('connect', function() {
@@ -14,13 +26,6 @@ redisClient.on('error', function (err) {
   console.log('Something went wrong ' + err);
 });
 
-client.connect((err) => {
-  if (err) {
-    console.log('Not able to connect to database: ', err);
-  } else {
-    console.log('hidy ho captain, we\'ve successfully conected to the db!')
-  }
-});
 module.exports = {
   fetchAllSongs: (songId, callback) => {
     // Check to see if the the songId is in redis cache
@@ -37,7 +42,7 @@ module.exports = {
         // If songId is not in the cache, fetch the comments from the database and also save the results to the cache
       } else {
         // Send GET request and then store the result in the cache, and return value to controller 
-        client.query(`SELECT * FROM comments where songId = ${songId}`, (err, allComments) => {
+        pool.query(`SELECT * FROM comments where songId = ${songId}`, (err, allComments) => {
           if (err) {
             callback(err, null); 
           }
