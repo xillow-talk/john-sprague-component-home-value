@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Count Component tests 01- Matches Snapshot 1`] = `
+<styled.div>
+  <FontAwesomeIcon
+    border={false}
+    className=""
+    fixedWidth={false}
+    flip={null}
+    icon="comment-alt"
+    inverse={false}
+    listItem={false}
+    mask={null}
+    pull={null}
+    pulse={false}
+    rotation={null}
+    size={null}
+    spin={false}
+    style={
+      Object {
+        "color": "#999",
+      }
+    }
+    symbol={false}
+    title=""
+    transform={null}
+  />
+  <styled.span
+    className="commentCount"
+  >
+    100 comments
+  </styled.span>
+</styled.div>
+`;
+
+exports[`Input Component tests 01- Matches Snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.span
+      image="https://s3.us-east-2.amazonaws.com/kevinbece5/userpics/user2.jpg"
+    />
+    <styled.a
+      deleting={null}
+    >
+      @Test
+    </styled.a>
+    <styled.input
+      className="replyInput"
+      onChange={[Function]}
+      onKeyUp={[Function]}
+      placeholder="Write a Reply"
+      value=""
+    />
+  </styled.div>
+</styled.div>
+`;

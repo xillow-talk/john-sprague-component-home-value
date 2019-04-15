@@ -1,0 +1,35 @@
+config:
+  target: 'http://localhost:3000'
+  processor: './generateData.js'
+  http: 
+    pool: 14
+  phases:
+    - duration: 30
+      arrivalRate: 1
+      rampTo: 200
+      name: "Warm up the application"
+    - duration: 60
+      arrivalRate: 150
+      name: "Substain max load"
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - name: 'navigate to a particular song'
+    flow: 
+    - function: 'generateRandomEndPoints'
+    - get: 
+        url: "/api/comments/song/{{ endPoint }}/comments"
+    # - post:
+    #     url: "/api/comments/song/29000000/comment"
+    #     json:
+    #       songid: 4
+    #       profilepic: {{ profilepic }}
+    #       username: {{ username }}
+    #       message: {{ message }}
+    #       songtime: {{ songtime }}
+    #       followers: {{ followers }}
+
+
+
+
