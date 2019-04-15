@@ -2,7 +2,9 @@
 const model = require('./model.js');
 
 module.exports = {
-  handleReadForAllSongs: (req, res) => {
+  handleReadForAllSongs: (req, res) => {app.get('/loaderio-00072e857aba6340088297ab56ffd7c6/', (req, res) => { 
+    res.sendFile(path.resolve(__dirname, './loaderio-00072e857aba6340088297ab56ffd7c6.txt'));
+  }); 
     const { songId } = req.params;
     model.fetchAllSongs(songId, (err, data) => {
       if (err) {
