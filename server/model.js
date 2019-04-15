@@ -13,7 +13,7 @@ const pool = new pg.Pool({
   port: config.port,
   // idleTimeoutMillis: 20000,
   // connectionTimeoutMillis: 3000,
-  max: 15 //default
+  max: 15 // Default
 });
 // client.connect; //TODO: determine if the connection should be open/closed or remain open
 pool.connect();
