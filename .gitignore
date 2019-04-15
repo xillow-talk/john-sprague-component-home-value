@@ -37,11 +37,9 @@ util/dummyRecords.csv
 # Artillery Files
 /client/loaderio.txt
 
-# Config 
+# Config and any other files that will not be pushed to github
 .configDB.js
-
-.redis-5.0.3.tar.gz
-
+redis-5.0.3.tar.gz
 /util/seed.js
 /util/queries.js
 /redis-5.0.3
