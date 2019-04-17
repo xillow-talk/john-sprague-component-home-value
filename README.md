@@ -1,6 +1,12 @@
 # Project Name
 
->  This is a complex, yet beautiful front-end microservice that dynamically renders a module on a single page application. This is build with the lastes Javascript frameworks including React.js & ES6, Webpack, Babel, Express, Node.js, and mongodb. Some of the key deliverables were to perform a technical spike about my use case (read operations), create React components. build the microservice with react.js, implement custom styling, ensure that the page is dynamic (there are 10,000 products in the database),and deploy to AWS Elastic Bean Stalk. After all this was complete, my next tast was to tie together the microservices from the team onto one page via proxy server. 
+>  This is a complex, yet beautiful front-end responsive microservice that dynamically renders a module on a single page application. This is build with the lastes Javascript frameworks including React.js & ES6, Webpack, Babel, Express, Node.js, and mongodb. Some of the key deliverables were to perform a technical spike about my use case (read operations), create React components, build the microservice with react.js, implement custom styling, ensure that the page is dynamic (there are 10,000 products in the database),and deploy to AWS Elastic Bean Stalk. After all this was complete, my next tast was to tie together the microservices from the team onto one page via proxy server. 
+
+> » Crafted a complex user interface using flex box and the react.js library for ease of state management. 
+> » Built composable, state-full and state-less react components using styled components to focus on separation of concerns, > code readability/maintainability and re-usability. 
+> » Programmed a RESTful API that conforms to the REST architectural style and constraints. 
+> » Tied together the teams services via proxy server using http-middle-ware.
+> » Deployed the proxy to AWS beanstalk that provided a 99.9% service uptime rate. 
 
 ## Related Projects
 
