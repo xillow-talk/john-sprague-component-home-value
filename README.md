@@ -18,7 +18,7 @@
 
 1. [Usage](#Usage)
 2. [Requirements](#requirements)
-3. [Installing Dependencies](#installing dependencies)
+3. [Installing Dependencies](#installingdependencies)
 4. [License](#license)
 5. [Versioning](#versioning)
 6. [Authors](#authors)
