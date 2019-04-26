@@ -12,7 +12,9 @@ import {
   ZestDeepDiveIntroEstimate,
   ZestDeepDiveCollapsible,
   ZestDeepDiveCollapsibleTitle, 
-  ZestDeepDiveCollapsibleTitleText
+  ZestDeepDiveCollapsibleTitleText,
+  Table, 
+  TableContainer
 } from '../style.js';
 
 class ZestimateAdditionalInfo extends React.Component {
@@ -95,6 +97,12 @@ class ZestimateAdditionalInfo extends React.Component {
                   photosData={photosData} 
                 /> 
               }
+              <TableContainer>
+
+              <Table src='https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/table-data.png'>
+              </Table>
+              </TableContainer>
+
             </ZestDeepDiveCollapsible>
           </ZestDeepDive>
 
