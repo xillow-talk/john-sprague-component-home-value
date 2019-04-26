@@ -3,22 +3,21 @@
 // App
 export const Button = styled.button`
 background: white;
+width: 80%
 cursor: pointer;
 padding: 18px;
 width: 100%;
 border: none;
 text-align: left;
 outline: none;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: '900';
+font-family: 'font-family: 'Montserrat', sans-serif';
+font-weight: 'Bold';
 font-size: 28px;
-line-height: 31px;
+line-height: 1.1;
 color: #444444
 border-top: solid 1px #eee;
 border-bottom: solid 1px #eee;
 padding-top: 20px;
-padding-bottom: 20px;
-margin-bottom: 15px;
 :hover {
   
 }
@@ -83,6 +82,9 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 `;
 
 export const ComparableHomesToolTip = styled.span`
+`;
+
+export const ComparableHomesToolTipText = styled.a`
 style: normal;
 font-weight: 300;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -92,14 +94,6 @@ color: #0074e4;
 : hover {
   color: #62aef7;
 }
-`;
-
-export const ComparableHomesToolTipText = styled.a`
-style: normal;
-color: #444444;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 300;
-font-size: 15px;
 `;
 
 export const ComparableHomesListHeader = styled.p`
@@ -251,6 +245,9 @@ padding-top: 23px;
 `;
 
 export const LocalHomesToolTip = styled.span`
+`;
+
+export const LocalHomesToolTipText = styled.a`
 style: normal;
 font-weight: 300;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -260,16 +257,6 @@ color: #0074e4;
 : hover {
   color: #62aef7;
 }
-`;
-
-export const LocalHomesToolTipText = styled.a`
-text-align: left;
-style: normal;
-color: #444444;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 300;
-font-size: 15px;
-line-height: 1.5;
 `;
 
 export const LocalHomesListHeader = styled.p`
@@ -379,25 +366,18 @@ export const MarketAppreciationHeader = styled.div`
 `;
 
 export const MarketAppreciationToolTip = styled.span`
-  style: normal;
-  font-weight: 300;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #0074e4;
-  : hover {
-    color: #62aef7;
-  }
-
 `;
 
 export const MarketAppreciationToolTipText = styled.a`
-  style: normal;
-  color: #444444;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 300;
-  font-size: 1.5;
-  line-height: 23px;
+style: normal;
+font-weight: 300;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 15px;
+line-height: 1.5;
+color: #0074e4;
+: hover {
+  color: #62aef7;
+}
 `;
 
 export const CalculationSection = styled.div``;
@@ -482,7 +462,7 @@ export const ZestDeepDiveButtonContainer = styled.button`
   color: #444444
   border-bottom: solid 1px #eee;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom:
 `;
 
 export const ZestDeepDiveEstimate = styled.div`
@@ -498,12 +478,13 @@ export const ZestDeepDiveDropDownArrow = styled.span`
 `;
 
 //ZestimateAdditionalInfo
-
-
 export const AdditionalZestimateInformation = styled.div`
-  display: flex;
+max-width: 100vw;
+
 `;
-export const ZestDeepDive = styled.div``;
+export const ZestDeepDive = styled.div`
+
+`;
 
 export const ZestDeepDiveIntro = styled.div`
   text-align: left;
@@ -612,3 +593,13 @@ export const ExpandDown = styled.span`
 `;
 
 export const SecondaryWrapper = styled.div``;
+
+export const TableContainer = styled.div`
+text-align: center;
+`;
+
+export const Table = styled.img`
+margin-left: auto;
+margin-right: auto;
+max-width: 99%;
+`;
