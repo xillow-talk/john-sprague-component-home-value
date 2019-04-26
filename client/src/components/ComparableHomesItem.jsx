@@ -11,15 +11,18 @@ import {
   PropertySqftCalculation,
   PropertyImage
 } from '../style.js';
-var ComparableHomesItem = ({homeData, photo}) => {
+
+var ComparableHomesItem = ({homeData}) => {
   return (
     <div>
       <PropertyCard>
-        <PropertyImage src={photo.url} />
+        <PropertyImage src={homeData.url} />
         <PropertyDetailSection>
           <HomeStatus>
             <RecentlySoldIcon></RecentlySoldIcon>
-            <RecentlySold> SOLD ({homeData.sellDate})</RecentlySold>
+            <RecentlySold> 
+              SOLD ({homeData.sellDate})
+            </RecentlySold>
           </HomeStatus>
           <Price>
             {`$${homeData.sellPrice}`}

@@ -1,14 +1,14 @@
-import React from 'react';
-import ZestimateRow from './ZestimateRow.jsx';
+import React from "react";
+import ZestimateRow from "./ZestimateRow.jsx";
 import {
-  Button, 
-  DropDownArrow, 
-  HomeDetails, 
-  ZestimateHeaderContainer, 
-  ZestimateTitle, 
-  ZestimateValue, 
+  Button,
+  DropDownArrow,
+  HomeDetails,
+  ZestimateHeaderContainer,
+  ZestimateTitle,
+  ZestimateValue,
   CollapsibleContent
-} from '../style.js';
+} from "../style.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -16,99 +16,85 @@ class App extends React.Component {
     this.state = {
       propertyData: [{}],
       comparableHomesData: [{}],
-      localHomesData: [{}], 
+      localHomesData: [{}],
       photosData: [{}],
       isHidden: true
     };
   }
 
-  componentDidMount () {
-    fetch(`http://ngrok.us-east-1.elasticbeanstalk.com/api/properties/${this.props.propertyId}`)
-      .then((response) => {
+  componentDidMount() {
+    fetch(
+      `http://ngrok.us-east-1.elasticbeanstalk.com/api/properties/${
+        this.props.propertyId
+      }`
+    )
+      .then(response => {
         return response.json();
       })
-      .then((data) => {
+      .then(data => {
         this.setState({
           propertyData: data.singlePropertyData
         });
       });
-    fetch('http://ngrok.us-east-1.elasticbeanstalk.com/api/properties')
-      .then((response) => {
+    fetch("http://ngrok.us-east-1.elasticbeanstalk.com/api/properties")
+      .then(response => {
         return response.json();
       })
-      .then((data) => {
+      .then(data => {
         this.setState({
           comparableHomesData: data.comparableHomesData,
-          localHomesData: data.localHomesData,
-          photosData: data.photosData
+          localHomesData: data.localHomesData
         });
       });
   }
 
-  fetchPropertyData () {
-    fetch('http://ngrok.us-east-1.elasticbeanstalk.com/api/properties')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({
-          propertyData: data.propertyData
-        });
-      });
-  }
-
-  toggleHidden () {
+  toggleHidden() {
     this.setState({
       isHidden: !this.state.isHidden
     });
   }
 
-  render () {
+  render() {
     return (
-      <div> 
-        <Button onClick={this.toggleHidden.bind(this)}>Home Value
+      <div>
+        <Button onClick={this.toggleHidden.bind(this)}>
+          Home Value
           <DropDownArrow>
-            <i className="fas fa-angle-down"></i>
+            <i className="fas fa-angle-down" />
           </DropDownArrow>
         </Button>
-        {!this.state.isHidden && 
-          <Child 
-            propertyData={this.state.propertyData} 
+        {!this.state.isHidden && (
+          <Child
+            propertyData={this.state.propertyData}
             comparableHomesData={this.state.comparableHomesData}
             localHomesData={this.state.localHomesData}
-            photosData={this.state.photosData}
-            propertyId = {this.state.propertyId}
           />
-        }  
+        )}
       </div>
     );
   }
 }
 
-const Child = ({propertyData, comparableHomesData, localHomesData, photosData}) => {
+const Child = ({ propertyData, comparableHomesData, localHomesData }) => {
   return (
     <div>
       <CollapsibleContent>
         <HomeDetails>
           <ZestimateHeaderContainer>
-            <ZestimateTitle>
-            Zestimate
-            </ZestimateTitle>
-            <ZestimateValue> 
+            <ZestimateTitle>Zestimate</ZestimateTitle>
+            <ZestimateValue>
               {`$${propertyData[0].zestimationPrice}`}
             </ZestimateValue>
           </ZestimateHeaderContainer>
         </HomeDetails>
       </CollapsibleContent>
-    
-      <ZestimateRow 
+      <ZestimateRow
         propertyData={propertyData[0]}
         comparableHomesData={comparableHomesData}
         localHomesData={localHomesData}
-        photosData={photosData}
-      /> 
+      />
     </div>
   );
 };
 
-export default App; 
+export default App;

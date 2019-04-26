@@ -14,15 +14,17 @@ import {
   LocalPropertyDetailSection
 } from '../style.js';
 
-var LocalHomesItem = ({homeData, photo}) => {
+var LocalHomesItem = ({homeData}) => {
   return (
     <div>
       <PropertyCard>
-        <PropertyImage src={photo.url}></PropertyImage>
+        <PropertyImage src={homeData.url}></PropertyImage>
         <LocalPropertyDetailSection>
           <HomeStatus>
             <RecentlySoldIcon></RecentlySoldIcon>
-            <RecentlySold> SOLD ({homeData.sellDate})</RecentlySold>
+            <RecentlySold> 
+              SOLD ({homeData.sellDate})
+            </RecentlySold>
           </HomeStatus>
           <Price>
             {`$${homeData.sellPrice}`}

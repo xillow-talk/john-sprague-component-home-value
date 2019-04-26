@@ -48,19 +48,18 @@ class MarketAppreciation extends React.Component {
                   <CalculationValueDate>
                     (7/19/2018)
                   </CalculationValueDate>
-                  
                 </CalculationValue>
                 <CalculationOperator>
-                +
+                  +
                 </CalculationOperator>
                 <CalculationValuePercentage>
                     17.3%
                   <CalculationValueInfo>
-                      Local market appreciation
+                    Local market appreciation
                   </CalculationValueInfo>
                 </CalculationValuePercentage>
                 <CalculationOperator>
-                =
+                  =
                 </CalculationOperator>
                 <CalculationValue>
                   $14,660,343
