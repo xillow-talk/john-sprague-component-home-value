@@ -1,22 +1,21 @@
-const model = require('./model.js');
+const model = require("./database/models/homes.js");
 
 module.exports = {
-  get: (req, res) => {
-    model.get((err, data) => {
-      if (err) {
-        console.log('error GET request from the controller');
-        return;
-      }
-      res.send(data);
-    });
+  get: async (req, res) => {
+    try {
+      const results = model.get();
+      res.status(200).send(results);
+    } catch {
+      return res.status(404).send(err);
+    }
   },
-  fetchPropertyData: (req, res) => {
-    var propertyId = req._parsedOriginalUrl.pathname.slice(-1);
-    model.fetchPropertyData(propertyId, (err, data) => {
-      if (err) {
-        console.log('error fetching propertyData');
-      }
-      res.send(data);
-    });
+  fetchPropertyData: async (req, res) => {
+    try {
+      var propertyId = req.params.propertyId;
+      const results = model.fetchPropertyData(propertyId);
+      res.status(200).send(results);
+    } catch {
+      return res.status(404).send(err);
+    }
   }
-}
+};
