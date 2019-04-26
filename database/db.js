@@ -1,6 +1,8 @@
-const mongoose = require('mongoose');
-var faker = require('faker');
-mongoose.connect('mongodb+srv://john:zillowtalk@zillow-talk-db-ujzgi.mongodb.net/test?retryWrites=true');
+const mongoose = require("mongoose");
+var faker = require("faker");
+mongoose.connect(
+  "mongodb+srv://john:zillowtalk@zillow-talk-db-ujzgi.mongodb.net/test?retryWrites=true"
+);
 
 // Initialize mongodb schema
 const Schema = mongoose.Schema;
@@ -14,89 +16,94 @@ let propertySchema = new Schema({
   endPriceRange: String,
   thirtyDayPriceChange: String,
   oneYearForcast: String,
-  propertyLastSalePrice: String, 
+  propertyLastSalePrice: String,
   propertLastSaleDate: String,
   comparableHomePrice: String,
   marketAppreciationPrice: String,
   localSalesAvg: String,
-  sellDate: String, 
+  sellDate: String,
   sellPrice: String,
-  beds: Number, 
+  beds: Number,
   baths: Number,
-  sqft: String, 
-  streetAddress: String, 
+  sqft: String,
+  streetAddress: String,
   priceSqft: String,
   saleToList: Number
 });
 
 let comparableHomes = new Schema({
-  id: {type: Number},
-  sellDate: String, 
+  id: { type: Number },
+  sellDate: String,
   sellPrice: String,
-  beds: Number, 
+  beds: Number,
   baths: Number,
-  sqft: String, 
-  streetAddress: String, 
+  sqft: String,
+  streetAddress: String,
   priceSqft: String
 });
 
 let localHomes = new Schema({
-  id: {type: Number},
-  sellDate: String, 
+  id: { type: Number },
+  sellDate: String,
   sellPrice: String,
-  beds: Number, 
+  beds: Number,
   baths: Number,
-  sqft: String, 
-  streetAddress: String, 
+  sqft: String,
+  streetAddress: String,
   priceSqft: String,
   saleToList: Number
 });
 
 let photos = new Schema({
-  url: String, 
-  propertyId: Number 
+  url: String,
+  propertyId: Number
 });
 
 // Accessing the models for each schema
-let Property = mongoose.model('Property', propertySchema);
-let ComparableHomes = mongoose.model('ComparableHomes', comparableHomes);
-let LocalHomes = mongoose.model('LocalHomes', localHomes);
-let Photos = mongoose.model('Photos', photos);
+let Property = mongoose.model("Property", propertySchema);
+let ComparableHomes = mongoose.model("ComparableHomes", comparableHomes);
+let LocalHomes = mongoose.model("LocalHomes", localHomes);
+let Photos = mongoose.model("Photos", photos);
 
-
-// query to grab data for a single property 
+// query to grab data for a single property
 module.exports = {
-  getAllProperties: (callback) => {
-    Property.find((err, data) => {
-      callback(err, data);
-    }).setOptions({
-      limit: 99
-    });
-  }, 
-  getAllComparableHomes: (callback) => {
-    ComparableHomes.find((err, data) => {
-      callback(err, data);
-    }).setOptions({
-      limit: 10
-    });
-  }, 
-  getAllLocalHomes: (callback) => {
-    LocalHomes.find((err, data) => {
-      callback(err, data);
-    }).setOptions({
-      limit: 10
-    });
+  getAllProperties: async propertyData => {
+    try {
+      const propertyData = await Property.find(propertyData).setOptions({
+        limit: 99
+      });
+
+      const comparableHomesData = await comparableHomes.find().setOptions({
+        limit: 10
+      });
+
+      const localHomesData = await LocalHomes.find().setOptions({
+        limit: 10
+      });
+
+      const photosData = await Photos.find().setOptions({
+        limit: 99
+      });
+      var data = {
+        propertyData: propertyData,
+        comparableHomesData: comparableHomesData,
+        localHomesData: localHomesData,
+        photosData: photosData
+      };
+      return data;
+    } catch (err) {
+      return err;
+    }
   },
-  getAllPhotos: (callback) => {
-    Photos.find((err, data) => {
-      callback(err, data);
-    }).setOptions({
-      limit: 99
-    });
-  }, 
-  getSingleProperty: (id, callback) => {
-    Property.find({id}, (err, data) => {
-      callback(err, data);
-    });
+  getSingleProperty: async id => {
+    try {
+      const results = Property.find({ id });
+      var singleProperty = {
+        singlePropertyData: results
+      };
+      return singleProperty;
+    } catch (err) {
+      return err;
+    }
   }
 };
