@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 var faker = require("faker");
-const db = require("../db");
 
 // Initialize mongodb schema
 const Schema = mongoose.Schema;
